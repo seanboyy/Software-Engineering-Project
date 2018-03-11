@@ -16,7 +16,7 @@ namespace SoftwareEngineeringProject
         public string meets;
         public string building;
         public string room;
-        public Class[] prerequisites;
+        public List<Class> prerequisites;
         public int enrollment;
         public int capacity;
 

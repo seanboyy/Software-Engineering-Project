@@ -22,7 +22,20 @@ namespace SoftwareEngineeringProject
             }
             for(int i = 0; i < lineCount2 - 1; ++i)
             {
-                string[] tokens = lines2[i + 1]
+                string[] tokens = lines2[i + 1].Split(',');
+                for(int j = 0; j < classes.Length; ++j)
+                {
+                    if(classes[j].courseCode == tokens[0])
+                    {
+                        for(int k = 0; k < classes.Length; ++k)
+                        {
+                            if(classes[k].courseCode == tokens[1])
+                            {
+                                classes[j].prerequisites.Add(classes[k]);
+                            }
+                        }
+                    }
+                }
             }
             return classes;
         }
