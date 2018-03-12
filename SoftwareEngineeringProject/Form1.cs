@@ -31,5 +31,25 @@ namespace SoftwareEngineeringProject
         {
             //GO AWAY
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+            //MOTHER OF GOD
+        }
+
+        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
+        {
+            //oo
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //DEAR LORDY
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //NOOOOOOOOO
+        }
     }
 }
