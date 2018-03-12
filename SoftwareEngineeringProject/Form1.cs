@@ -21,5 +21,15 @@ namespace SoftwareEngineeringProject
         {
             //whoops
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //FEEECK
+        }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+            //GO AWAY
+        }
     }
 }
