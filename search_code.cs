@@ -31,11 +31,21 @@ vector<Class> filter_TimeRange(string input){
 			filtered.push_back(temp);
 		}
 	}
+	return filtered;
 }
 
 //filter created vector based on meeting days
 vector<Class> filter_MeetDays(string *days) //could input multiple days
 //for the UI, may just check value of certain checkboxes
 {
+	vector<Class> filtered;
 	
+	//I'm still not sure of this algorithm
+	
+	return filtered;
 }
+
+
+
+
+
