@@ -42,8 +42,51 @@ vector<Class> filter_MeetDays(string *days) //could input multiple days
 	
 	//I'm still not sure of this algorithm
 	
+	string temp = "";
+	//concatenate all days 
+	if(checkMon.checked = true)
+	{
+		temp += "M";
+	}
+	if(checkTue.checked = true)
+	{
+		temp += "T";
+	}
+	if(checkWed.checked = true)
+	{
+		temp += "W";
+	}
+	if(checkThu.checked = true)
+	{
+		temp += "R";
+	}
+	if(checkFri.checked = true)
+	{
+		temp += "F";
+	}
+	
+	//push_front any classes with meet strings that match exactly	
+	//push_back classes with meet containing temp
+	for(Class classTemp : classes)
+	{
+		if(classTemp.meets == temp)
+		{
+			filtered.push_front(classTemp);
+		}
+		else //use Match with literal string 
+		{
+			Regex r = new Regex("(" + temp + ")")
+			Match matchTemp = r.Match(temp);
+			//determine if there is a match
+			if()
+			{
+				filtered.push_back(classTemp);
+			}
+		}
+	}
 	return filtered;
 }
+
 
 
 
