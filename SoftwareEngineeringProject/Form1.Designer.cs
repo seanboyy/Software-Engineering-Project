@@ -54,6 +54,8 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -92,6 +94,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.listBox3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -125,7 +128,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(414, 199);
+            this.panel2.Size = new System.Drawing.Size(415, 199);
             this.panel2.TabIndex = 1;
             // 
             // richTextBox1
@@ -157,9 +160,9 @@
             this.panel1.Controls.Add(this.radioButton5);
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(423, 3);
+            this.panel1.Location = new System.Drawing.Point(424, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 199);
+            this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
             // 
             // checkBox6
@@ -255,6 +258,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.listBox2);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -276,10 +280,10 @@
             this.Friday,
             this.Saturday,
             this.Sunday});
-            this.dataGridView1.Location = new System.Drawing.Point(56, 24);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(703, 300);
             this.dataGridView1.TabIndex = 0;
             // 
             // Tuesday
@@ -317,6 +321,24 @@
             // 
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
+            // 
+            // listBox2
+            // 
+            this.listBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(56, 319);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(703, 95);
+            this.listBox2.TabIndex = 2;
+            // 
+            // listBox3
+            // 
+            this.listBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(3, 221);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(844, 199);
+            this.listBox3.TabIndex = 2;
             // 
             // Form1
             // 
@@ -367,6 +389,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBox3;
     }
 }
 
