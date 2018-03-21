@@ -10,7 +10,10 @@ namespace SoftwareEngineeringProject
     {
         public List<Class> classes;
 
-        public Schedule() { }
+        public Schedule()
+        {
+            classes = new List<Class>();
+        }
 
         public void AddClass(Class _class)
         {
@@ -19,7 +22,7 @@ namespace SoftwareEngineeringProject
 
         public void RemoveClass(Class _class)
         {
-            classes.Remove(_class);
+
         }
     }
 }

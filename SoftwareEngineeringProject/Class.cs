@@ -32,6 +32,7 @@ namespace SoftwareEngineeringProject
             this.room = room;
             enrollment = enroll;
             this.capacity = capacity;
+            prerequisites = new List<Class>();
         }
     }
 }
