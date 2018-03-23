@@ -2,19 +2,24 @@
 
 
 //Compile vector of courses based on course name or course code
+
+/*
+Changed to accept substrings of long&short name, code, and partial matching meeting days
+*/
 vector<Class> search_Code_Name(string input){
 	vector<Class> search_list;
+	input = input.toUpper;
 	for(Class temp : classes) //for every Class object in the array of classes
 	{
-		if(temp.longName == input)
+		if((temp.longName).Contains(input))
 		{
 			search_list.push_back(temp);
 		}
-		else if(temp.shortName == input)
+		else if((temp.shortName).Contains(input))
 		{
 			search_list.push_back(temp);
 		}
-		else if(temp.courseCode == input)
+		else if((temp.courseCode).Contains(input))
 		{
 			search_list.push_back(temp);
 		}
@@ -73,22 +78,10 @@ vector<Class> filter_MeetDays(string *days) //could input multiple days
 		{
 			filtered.push_front(classTemp);
 		}
-		else //use Match with literal string 
+		else if((classTemp.meets).Contains(temp))
 		{
-			Regex r = new Regex("(" + temp + ")")
-			Match matchTemp = r.Match(temp);
-			//determine if there is a match
-			if()
-			{
-				filtered.push_back(classTemp);
-			}
+			filtered.push_back(classTemp); //this will hopefully make classes that exactly meet on user-specified days appear at the top of the list
 		}
 	}
 	return filtered;
 }
-
-
-
-
-
-
