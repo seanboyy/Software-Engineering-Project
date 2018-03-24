@@ -38,6 +38,9 @@
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.endText = new System.Windows.Forms.RichTextBox();
+            this.to = new System.Windows.Forms.TextBox();
+            this.beginTime = new System.Windows.Forms.RichTextBox();
             this.checkTue = new System.Windows.Forms.CheckBox();
             this.checkWed = new System.Windows.Forms.CheckBox();
             this.checkThu = new System.Windows.Forms.CheckBox();
@@ -60,9 +63,6 @@
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.to = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -166,9 +166,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.endText);
             this.panel1.Controls.Add(this.to);
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.beginTime);
             this.panel1.Controls.Add(this.checkTue);
             this.panel1.Controls.Add(this.checkWed);
             this.panel1.Controls.Add(this.checkThu);
@@ -183,6 +183,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
+            // 
+            // endText
+            // 
+            this.endText.Location = new System.Drawing.Point(157, 21);
+            this.endText.Name = "endText";
+            this.endText.Size = new System.Drawing.Size(66, 19);
+            this.endText.TabIndex = 15;
+            this.endText.Text = "";
+            // 
+            // to
+            // 
+            this.to.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.to.Location = new System.Drawing.Point(134, 25);
+            this.to.Name = "to";
+            this.to.Size = new System.Drawing.Size(17, 13);
+            this.to.TabIndex = 14;
+            this.to.Text = "to";
+            this.to.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // beginTime
+            // 
+            this.beginTime.Location = new System.Drawing.Point(59, 21);
+            this.beginTime.Name = "beginTime";
+            this.beginTime.Size = new System.Drawing.Size(66, 19);
+            this.beginTime.TabIndex = 13;
+            this.beginTime.Text = "";
             // 
             // checkTue
             // 
@@ -363,32 +389,6 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(59, 21);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(66, 19);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
-            // 
-            // to
-            // 
-            this.to.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.to.Location = new System.Drawing.Point(134, 25);
-            this.to.Name = "to";
-            this.to.Size = new System.Drawing.Size(17, 13);
-            this.to.TabIndex = 14;
-            this.to.Text = "to";
-            this.to.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(157, 21);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(66, 19);
-            this.richTextBox2.TabIndex = 15;
-            this.richTextBox2.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,9 +443,9 @@
         private System.Windows.Forms.ListView Search_Results;
         private System.Windows.Forms.ListView My_Courses;
         private System.Windows.Forms.TextBox to;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox beginTime;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox endText;
     }
 }
 
