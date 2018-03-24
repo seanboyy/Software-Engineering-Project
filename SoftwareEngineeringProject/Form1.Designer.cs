@@ -37,6 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
+
             this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
@@ -58,7 +59,9 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
+
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -90,7 +93,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+
             // 
             // tableLayoutPanel1
             // 
@@ -131,7 +134,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(844, 205);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint_1);
+            
             // 
             // panel2
             // 
@@ -152,9 +155,10 @@
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
-            // 
             // SearchBox
-            // 
+
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(407, 51);

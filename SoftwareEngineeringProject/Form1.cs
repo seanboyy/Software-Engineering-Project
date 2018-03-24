@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringProject
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -17,44 +18,9 @@ namespace SoftwareEngineeringProject
             InitializeComponent();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
-            //whoops
-        }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            //FEEECK
-        }
-
-        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
-        {
-            //GO AWAY
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-            //MOTHER OF GOD
-        }
-
-        private void tableLayoutPanel2_Paint_1(object sender, PaintEventArgs e)
-        {
-            //oo
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //DEAR LORDY
-        }
-
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //NOOOOOOOOO
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            //frick me
         }
     }
 }
