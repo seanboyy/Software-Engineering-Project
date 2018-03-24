@@ -31,14 +31,40 @@ namespace SoftwareEngineeringProject
         private void Search_Click(object sender, EventArgs e)
         {
             string input = SearchBox.Text.ToUpper(); //results will ignore case of search 
-           
+            List<Course> search_list = new List<Course>();
             foreach (Course temp in CourseList.COURSE_LIST)
             {
+
                 if((temp.longTitle.Contains(input)))
                 {
-
+                    search_list.Add(temp);
+                }
+                else if((temp.shortTitle.Contains(input)))
+                {
+                    search_list.Add(temp);
+                }
+                else if((temp.courseCode.Contains(input)))
+                {
+                    search_list.Add(temp);
                 }
             }
+            //filter by days if radio button selected
+            if(TimeButton.Checked)
+            {
+
+            }
+            //filter by time if radio button selected
+            else if(DayButton.Checked)
+            {
+                Course[] tempList = new Course[search_list.Count];
+                search_list.CopyTo(temp);
+                string tempStr = "";
+
+                if()
+            }
+            /*
+             * TODO: filter by popular courses if radio button selected
+             */
 
         }
     }

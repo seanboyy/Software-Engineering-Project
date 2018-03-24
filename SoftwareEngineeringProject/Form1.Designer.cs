@@ -37,14 +37,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
-
             this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkTue = new System.Windows.Forms.CheckBox();
+            this.checkWed = new System.Windows.Forms.CheckBox();
+            this.checkThu = new System.Windows.Forms.CheckBox();
+            this.checkFri = new System.Windows.Forms.CheckBox();
+            this.checkMon = new System.Windows.Forms.CheckBox();
             this.SearchLabel = new System.Windows.Forms.TextBox();
             this.DayButton = new System.Windows.Forms.RadioButton();
             this.PopularCourseButton = new System.Windows.Forms.RadioButton();
@@ -59,9 +58,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
-
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -93,7 +90,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             this.tabPage1.UseVisualStyleBackColor = true;
-
             // 
             // tableLayoutPanel1
             // 
@@ -134,7 +130,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(844, 205);
             this.tableLayoutPanel2.TabIndex = 0;
-            
             // 
             // panel2
             // 
@@ -155,10 +150,10 @@
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
-            // SearchBox
-
             this.Search.Click += new System.EventHandler(this.Search_Click);
-            
+            // 
+            // SearchBox
+            // 
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(407, 51);
@@ -177,11 +172,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.checkBox6);
-            this.panel1.Controls.Add(this.checkBox5);
-            this.panel1.Controls.Add(this.checkBox4);
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.checkTue);
+            this.panel1.Controls.Add(this.checkWed);
+            this.panel1.Controls.Add(this.checkThu);
+            this.panel1.Controls.Add(this.checkFri);
+            this.panel1.Controls.Add(this.checkMon);
             this.panel1.Controls.Add(this.SearchLabel);
             this.panel1.Controls.Add(this.DayButton);
             this.panel1.Controls.Add(this.PopularCourseButton);
@@ -192,55 +187,55 @@
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox6
+            // checkTue
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(125, 45);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(67, 17);
-            this.checkBox6.TabIndex = 12;
-            this.checkBox6.Text = "Tuesday";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkTue.AutoSize = true;
+            this.checkTue.Location = new System.Drawing.Point(125, 45);
+            this.checkTue.Name = "checkTue";
+            this.checkTue.Size = new System.Drawing.Size(67, 17);
+            this.checkTue.TabIndex = 12;
+            this.checkTue.Text = "Tuesday";
+            this.checkTue.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkWed
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(195, 45);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(83, 17);
-            this.checkBox5.TabIndex = 11;
-            this.checkBox5.Text = "Wednesday";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkWed.AutoSize = true;
+            this.checkWed.Location = new System.Drawing.Point(195, 45);
+            this.checkWed.Name = "checkWed";
+            this.checkWed.Size = new System.Drawing.Size(83, 17);
+            this.checkWed.TabIndex = 11;
+            this.checkWed.Text = "Wednesday";
+            this.checkWed.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkThu
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(279, 45);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(70, 17);
-            this.checkBox4.TabIndex = 10;
-            this.checkBox4.Text = "Thursday";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkThu.AutoSize = true;
+            this.checkThu.Location = new System.Drawing.Point(279, 45);
+            this.checkThu.Name = "checkThu";
+            this.checkThu.Size = new System.Drawing.Size(70, 17);
+            this.checkThu.TabIndex = 10;
+            this.checkThu.Text = "Thursday";
+            this.checkThu.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkFri
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(349, 45);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(54, 17);
-            this.checkBox3.TabIndex = 9;
-            this.checkBox3.Text = "Friday";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkFri.AutoSize = true;
+            this.checkFri.Location = new System.Drawing.Point(349, 45);
+            this.checkFri.Name = "checkFri";
+            this.checkFri.Size = new System.Drawing.Size(54, 17);
+            this.checkFri.TabIndex = 9;
+            this.checkFri.Text = "Friday";
+            this.checkFri.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkMon
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(55, 45);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(64, 17);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Monday";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkMon.AutoSize = true;
+            this.checkMon.Location = new System.Drawing.Point(55, 45);
+            this.checkMon.Name = "checkMon";
+            this.checkMon.Size = new System.Drawing.Size(64, 17);
+            this.checkMon.TabIndex = 7;
+            this.checkMon.Text = "Monday";
+            this.checkMon.UseVisualStyleBackColor = true;
             // 
             // SearchLabel
             // 
@@ -393,11 +388,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox SearchLabel;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkTue;
+        private System.Windows.Forms.CheckBox checkWed;
+        private System.Windows.Forms.CheckBox checkThu;
+        private System.Windows.Forms.CheckBox checkFri;
+        private System.Windows.Forms.CheckBox checkMon;
         private System.Windows.Forms.RadioButton DayButton;
         private System.Windows.Forms.RadioButton PopularCourseButton;
         private System.Windows.Forms.RadioButton TimeButton;
