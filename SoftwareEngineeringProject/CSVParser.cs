@@ -41,7 +41,7 @@ namespace SoftwareEngineeringProject
                         for(int k = 0; k < classes.Length; ++k)
                         {
                             //to find the class associated with the prerequisite's course code
-                            if(classes[k].courseCode == tokens[1])
+                            if(classes[k].courseCode.Contains(tokens[1]))
                             {
                                 //add the class to the list of classes
                                 classes[j].prerequisites.Add(classes[k]);
