@@ -34,6 +34,7 @@
             this.MyClasses = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Search = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,7 +57,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -88,7 +88,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+
             // 
             // tableLayoutPanel1
             // 
@@ -129,7 +129,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(844, 205);
             this.tableLayoutPanel2.TabIndex = 0;
-            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint_1);
+            
             // 
             // panel2
             // 
@@ -141,6 +141,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(415, 199);
             this.panel2.TabIndex = 1;
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(336, 4);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 51);
+            this.Search.TabIndex = 3;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
             // richTextBox1
             // 
@@ -343,15 +353,6 @@
             // 
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
-            // 
-            // Search
-            // 
-            this.Search.Location = new System.Drawing.Point(336, 4);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 51);
-            this.Search.TabIndex = 3;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
