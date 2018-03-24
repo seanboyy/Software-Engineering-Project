@@ -31,21 +31,23 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MyClasses = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.TextBox();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Details = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +56,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.Search = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -94,7 +95,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.listBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.MyClasses, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -104,6 +105,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 423);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // MyClasses
+            // 
+            this.MyClasses.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.MyClasses.FormattingEnabled = true;
+            this.MyClasses.Location = new System.Drawing.Point(3, 221);
+            this.MyClasses.Name = "MyClasses";
+            this.MyClasses.Size = new System.Drawing.Size(844, 199);
+            this.MyClasses.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
@@ -123,8 +133,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Search);
             this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.SearchResults);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -139,23 +150,24 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
-            // listBox1
+            // SearchResults
             // 
-            this.listBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 62);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(408, 134);
-            this.listBox1.TabIndex = 1;
+            this.SearchResults.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.SearchResults.FormattingEnabled = true;
+            this.SearchResults.Location = new System.Drawing.Point(3, 62);
+            this.SearchResults.Name = "SearchResults";
+            this.SearchResults.Size = new System.Drawing.Size(408, 134);
+            this.SearchResults.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.checkBox6);
             this.panel1.Controls.Add(this.checkBox5);
             this.panel1.Controls.Add(this.checkBox4);
             this.panel1.Controls.Add(this.checkBox3);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.SearchLabel);
             this.panel1.Controls.Add(this.radioButton6);
             this.panel1.Controls.Add(this.radioButton5);
             this.panel1.Controls.Add(this.radioButton1);
@@ -168,7 +180,7 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(125, 55);
+            this.checkBox6.Location = new System.Drawing.Point(125, 45);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(67, 17);
             this.checkBox6.TabIndex = 12;
@@ -178,7 +190,7 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(195, 55);
+            this.checkBox5.Location = new System.Drawing.Point(195, 45);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(83, 17);
             this.checkBox5.TabIndex = 11;
@@ -188,7 +200,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(279, 55);
+            this.checkBox4.Location = new System.Drawing.Point(279, 45);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(70, 17);
             this.checkBox4.TabIndex = 10;
@@ -198,7 +210,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(349, 55);
+            this.checkBox3.Location = new System.Drawing.Point(349, 45);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(54, 17);
             this.checkBox3.TabIndex = 9;
@@ -208,25 +220,26 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(55, 55);
+            this.checkBox1.Location = new System.Drawing.Point(55, 45);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(64, 17);
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "Monday";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // SearchLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Search By:";
+            this.SearchLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SearchLabel.Location = new System.Drawing.Point(4, 4);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(65, 13);
+            this.SearchLabel.TabIndex = 6;
+            this.SearchLabel.Text = "Search By:";
             // 
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(4, 53);
+            this.radioButton6.Location = new System.Drawing.Point(4, 43);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(49, 17);
             this.radioButton6.TabIndex = 5;
@@ -237,7 +250,7 @@
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(4, 76);
+            this.radioButton5.Location = new System.Drawing.Point(4, 66);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(102, 17);
             this.radioButton5.TabIndex = 4;
@@ -248,7 +261,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(4, 30);
+            this.radioButton1.Location = new System.Drawing.Point(4, 20);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(48, 17);
             this.radioButton1.TabIndex = 0;
@@ -258,7 +271,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Controls.Add(this.Details);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -267,6 +280,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Calendar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Details
+            // 
+            this.Details.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.Details.FormattingEnabled = true;
+            this.Details.Location = new System.Drawing.Point(102, 319);
+            this.Details.Name = "Details";
+            this.Details.Size = new System.Drawing.Size(703, 95);
+            this.Details.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -280,7 +302,7 @@
             this.Friday,
             this.Saturday,
             this.Sunday});
-            this.dataGridView1.Location = new System.Drawing.Point(56, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(102, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(703, 300);
@@ -322,23 +344,14 @@
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
             // 
-            // listBox2
+            // Search
             // 
-            this.listBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(56, 319);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(703, 95);
-            this.listBox2.TabIndex = 2;
-            // 
-            // listBox3
-            // 
-            this.listBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(3, 221);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(844, 199);
-            this.listBox3.TabIndex = 2;
+            this.Search.Location = new System.Drawing.Point(336, 4);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 51);
+            this.Search.TabIndex = 3;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -369,7 +382,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SearchLabel;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.CheckBox checkBox4;
@@ -378,7 +391,7 @@
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox SearchResults;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -389,8 +402,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox Details;
+        private System.Windows.Forms.ListBox MyClasses;
+        private System.Windows.Forms.Button Search;
     }
 }
 
