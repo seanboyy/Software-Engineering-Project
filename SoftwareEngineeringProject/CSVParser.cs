@@ -8,7 +8,7 @@ namespace SoftwareEngineeringProject
 {
     class CSVParser
     {
-        public static Class[] ParseCSV()
+        public static Course[] ParseCSV()
         {
             //grab each line separately from both files
             string[] lines = System.IO.File.ReadAllLines("Course List (CSV).csv");
@@ -17,14 +17,14 @@ namespace SoftwareEngineeringProject
             int lineCount = lines.Length;
             int lineCount2 = lines2.Length;
             //create a list of classes
-            Class[] classes = new Class[lineCount];
+            Course[] classes = new Course[lineCount];
             //add classes to the list of classes
             for(int i = 0; i < lineCount - 1; ++i)
             {
                 //split the line based on ,
                 string[] tokens = lines[i + 1].Split(',');
                 //use the constructor
-                classes[i] = new Class(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], Convert.ToInt32(tokens[8]), Convert.ToInt32(tokens[9]));
+                classes[i] = new Course(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], Convert.ToInt32(tokens[8]), Convert.ToInt32(tokens[9]));
             }
             //start grabbing prerequisites
             for(int i = 0; i < lineCount2 - 1; ++i)

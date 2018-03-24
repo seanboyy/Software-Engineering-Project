@@ -8,19 +8,31 @@ namespace SoftwareEngineeringProject
 {
     class Schedule
     {
-        public List<Class> classes;
+        private static Schedule instance;
+        public List<Course> classes;
 
-        public Schedule()
+        private Schedule()
         {
-            classes = new List<Class>();
+            classes = new List<Course>();
+        }
+        public static Schedule Instance
+        {
+            get
+            {
+                if(Instance == null)
+                {
+                    instance = new Schedule();
+                }
+                return instance;
+            }
         }
 
-        public void AddClass(Class _class)
+        public void AddClass(Course _class)
         {
             classes.Add(_class);
         }
 
-        public void RemoveClass(Class _class)
+        public void RemoveClass(Course _class)
         {
 
         }

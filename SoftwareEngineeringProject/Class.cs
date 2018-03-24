@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineeringProject
 {
-    class Class
+    class Course
     {
         public string courseCode;
         public string shortTitle;
@@ -16,11 +16,11 @@ namespace SoftwareEngineeringProject
         public string meets;
         public string building;
         public string room;
-        public List<Class> prerequisites;
+        public List<Course> prerequisites;
         public int enrollment;
         public int capacity;
 
-        public Class(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity)
+        public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity)
         {
             courseCode = code;
             this.shortTitle = shortTitle;
@@ -32,7 +32,7 @@ namespace SoftwareEngineeringProject
             this.room = room;
             enrollment = enroll;
             this.capacity = capacity;
-            prerequisites = new List<Class>();
+            prerequisites = new List<Course>();
         }
     }
 }
