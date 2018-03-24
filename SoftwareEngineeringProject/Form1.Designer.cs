@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.MyClasses = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Search = new System.Windows.Forms.Button();
+            this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
@@ -43,12 +45,12 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SearchLabel = new System.Windows.Forms.TextBox();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.DayButton = new System.Windows.Forms.RadioButton();
+            this.PopularCourseButton = new System.Windows.Forms.RadioButton();
+            this.TimeButton = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Details = new System.Windows.Forms.ListBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.WeekCalendar = new System.Windows.Forms.DataGridView();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +58,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Search = new System.Windows.Forms.Button();
+            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -64,7 +66,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeekCalendar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -134,7 +136,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.Search);
-            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Controls.Add(this.SearchBox);
             this.panel2.Controls.Add(this.SearchResults);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
@@ -142,13 +144,22 @@
             this.panel2.Size = new System.Drawing.Size(415, 199);
             this.panel2.TabIndex = 1;
             // 
-            // richTextBox1
+            // Search
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(4, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(407, 51);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.Search.Location = new System.Drawing.Point(336, 4);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 51);
+            this.Search.TabIndex = 3;
+            this.Search.Text = "Search";
+            this.Search.UseVisualStyleBackColor = true;
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Location = new System.Drawing.Point(4, 4);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(407, 51);
+            this.SearchBox.TabIndex = 2;
+            this.SearchBox.Text = "";
             // 
             // SearchResults
             // 
@@ -168,9 +179,9 @@
             this.panel1.Controls.Add(this.checkBox3);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.SearchLabel);
-            this.panel1.Controls.Add(this.radioButton6);
-            this.panel1.Controls.Add(this.radioButton5);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.DayButton);
+            this.panel1.Controls.Add(this.PopularCourseButton);
+            this.panel1.Controls.Add(this.TimeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(424, 3);
             this.panel1.Name = "panel1";
@@ -236,43 +247,43 @@
             this.SearchLabel.TabIndex = 6;
             this.SearchLabel.Text = "Search By:";
             // 
-            // radioButton6
+            // DayButton
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(4, 43);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(49, 17);
-            this.radioButton6.TabIndex = 5;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Days";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.DayButton.AutoSize = true;
+            this.DayButton.Location = new System.Drawing.Point(4, 43);
+            this.DayButton.Name = "DayButton";
+            this.DayButton.Size = new System.Drawing.Size(49, 17);
+            this.DayButton.TabIndex = 5;
+            this.DayButton.TabStop = true;
+            this.DayButton.Text = "Days";
+            this.DayButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // PopularCourseButton
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(4, 66);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(102, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Popular Courses";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.PopularCourseButton.AutoSize = true;
+            this.PopularCourseButton.Location = new System.Drawing.Point(4, 66);
+            this.PopularCourseButton.Name = "PopularCourseButton";
+            this.PopularCourseButton.Size = new System.Drawing.Size(102, 17);
+            this.PopularCourseButton.TabIndex = 4;
+            this.PopularCourseButton.TabStop = true;
+            this.PopularCourseButton.Text = "Popular Courses";
+            this.PopularCourseButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // TimeButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(4, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(48, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Time";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.TimeButton.AutoSize = true;
+            this.TimeButton.Location = new System.Drawing.Point(4, 20);
+            this.TimeButton.Name = "TimeButton";
+            this.TimeButton.Size = new System.Drawing.Size(48, 17);
+            this.TimeButton.TabIndex = 0;
+            this.TimeButton.TabStop = true;
+            this.TimeButton.Text = "Time";
+            this.TimeButton.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.Details);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.WeekCalendar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -290,11 +301,11 @@
             this.Details.Size = new System.Drawing.Size(703, 95);
             this.Details.TabIndex = 2;
             // 
-            // dataGridView1
+            // WeekCalendar
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.WeekCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.WeekCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WeekCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tuesday,
             this.Wednesday,
             this.Thursday,
@@ -302,11 +313,11 @@
             this.Friday,
             this.Saturday,
             this.Sunday});
-            this.dataGridView1.Location = new System.Drawing.Point(102, 13);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(703, 300);
-            this.dataGridView1.TabIndex = 0;
+            this.WeekCalendar.Location = new System.Drawing.Point(102, 13);
+            this.WeekCalendar.Name = "WeekCalendar";
+            this.WeekCalendar.RowHeadersVisible = false;
+            this.WeekCalendar.Size = new System.Drawing.Size(703, 300);
+            this.WeekCalendar.TabIndex = 0;
             // 
             // Tuesday
             // 
@@ -344,14 +355,9 @@
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
             // 
-            // Search
+            // SearchHelp
             // 
-            this.Search.Location = new System.Drawing.Point(336, 4);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 51);
-            this.Search.TabIndex = 3;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
+            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
             // Form1
             // 
@@ -369,7 +375,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WeekCalendar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -388,13 +394,13 @@
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton DayButton;
+        private System.Windows.Forms.RadioButton PopularCourseButton;
+        private System.Windows.Forms.RadioButton TimeButton;
         private System.Windows.Forms.ListBox SearchResults;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RichTextBox SearchBox;
+        private System.Windows.Forms.DataGridView WeekCalendar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tuesday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
@@ -405,6 +411,7 @@
         private System.Windows.Forms.ListBox Details;
         private System.Windows.Forms.ListBox MyClasses;
         private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.ToolTip SearchHelp;
     }
 }
 
