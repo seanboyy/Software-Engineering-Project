@@ -22,6 +22,7 @@ namespace SoftwareEngineeringProject
             InitializeComponent();
 
             //add columns to search results list
+            Search_Results.View = View.Details;
             Search_Results.Columns.Add("Code", 100);
             Search_Results.Columns.Add("Course Name", 200);
             Search_Results.Columns.Add("Begin Time", 100);
@@ -32,6 +33,7 @@ namespace SoftwareEngineeringProject
             Search_Results.Columns.Add("Open Seats", 100);
 
             //add columns to my courses list
+            My_Courses.View = View.Details;
             My_Courses.Columns.Add("Code");
             My_Courses.Columns.Add("Course Name");
             My_Courses.Columns.Add("Begin Time");
@@ -44,6 +46,7 @@ namespace SoftwareEngineeringProject
 
         private void Search_Click(object sender, EventArgs e)
         {
+            Search_Results.Items.Clear();
             string input = SearchBox.Text.ToUpper(); //results will ignore case of search 
             List<Course> search_list = new List<Course>();
             #region genSearch
