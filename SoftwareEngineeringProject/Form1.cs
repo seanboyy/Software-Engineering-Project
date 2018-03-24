@@ -15,13 +15,8 @@ namespace SoftwareEngineeringProject
 {
     public partial class Form1 : Form
     {
-
-        static class CourseList
-        {
-            public static Course[] COURSE_LIST = CSVParser.ParseCSV();
-        }
-        
-
+        public Course[] COURSE_LIST = CSVParser.ParseCSV();
+       
         public Form1()
         {
             InitializeComponent();
@@ -52,7 +47,7 @@ namespace SoftwareEngineeringProject
             string input = SearchBox.Text.ToUpper(); //results will ignore case of search 
             List<Course> search_list = new List<Course>();
             #region genSearch
-            foreach (Course temp in CourseList.COURSE_LIST)
+            foreach (Course temp in COURSE_LIST)
             {
 
                 if((temp.longTitle.Contains(input)))
