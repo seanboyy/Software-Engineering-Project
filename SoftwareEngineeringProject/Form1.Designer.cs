@@ -140,9 +140,9 @@
             // 
             // Search_Results
             // 
-            this.Search_Results.Location = new System.Drawing.Point(4, 58);
+            this.Search_Results.Location = new System.Drawing.Point(4, 34);
             this.Search_Results.Name = "Search_Results";
-            this.Search_Results.Size = new System.Drawing.Size(406, 140);
+            this.Search_Results.Size = new System.Drawing.Size(406, 164);
             this.Search_Results.TabIndex = 4;
             this.Search_Results.UseCompatibleStateImageBehavior = false;
             // 
@@ -150,7 +150,7 @@
             // 
             this.Search.Location = new System.Drawing.Point(336, 4);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 51);
+            this.Search.Size = new System.Drawing.Size(75, 24);
             this.Search.TabIndex = 3;
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
             // 
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
             this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(407, 51);
+            this.SearchBox.Size = new System.Drawing.Size(407, 24);
             this.SearchBox.TabIndex = 2;
             this.SearchBox.Text = "";
             // 
