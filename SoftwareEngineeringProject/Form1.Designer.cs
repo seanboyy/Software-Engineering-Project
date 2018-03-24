@@ -32,12 +32,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.MyClasses = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
-            this.SearchResults = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.checkTue = new System.Windows.Forms.CheckBox();
             this.checkWed = new System.Windows.Forms.CheckBox();
@@ -59,6 +57,8 @@
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.Search_Results = new System.Windows.Forms.ListView();
+            this.My_Courses = new System.Windows.Forms.ListView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -96,8 +96,8 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.MyClasses, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.My_Courses, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -106,15 +106,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 423);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // MyClasses
-            // 
-            this.MyClasses.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.MyClasses.FormattingEnabled = true;
-            this.MyClasses.Location = new System.Drawing.Point(3, 221);
-            this.MyClasses.Name = "MyClasses";
-            this.MyClasses.Size = new System.Drawing.Size(844, 199);
-            this.MyClasses.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
@@ -133,9 +124,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.Search_Results);
             this.panel2.Controls.Add(this.Search);
             this.panel2.Controls.Add(this.SearchBox);
-            this.panel2.Controls.Add(this.SearchResults);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
@@ -159,15 +150,6 @@
             this.SearchBox.Size = new System.Drawing.Size(407, 51);
             this.SearchBox.TabIndex = 2;
             this.SearchBox.Text = "";
-            // 
-            // SearchResults
-            // 
-            this.SearchResults.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SearchResults.FormattingEnabled = true;
-            this.SearchResults.Location = new System.Drawing.Point(3, 62);
-            this.SearchResults.Name = "SearchResults";
-            this.SearchResults.Size = new System.Drawing.Size(408, 134);
-            this.SearchResults.TabIndex = 1;
             // 
             // panel1
             // 
@@ -358,6 +340,22 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
+            // Search_Results
+            // 
+            this.Search_Results.Location = new System.Drawing.Point(4, 58);
+            this.Search_Results.Name = "Search_Results";
+            this.Search_Results.Size = new System.Drawing.Size(406, 140);
+            this.Search_Results.TabIndex = 4;
+            this.Search_Results.UseCompatibleStateImageBehavior = false;
+            // 
+            // My_Courses
+            // 
+            this.My_Courses.Location = new System.Drawing.Point(3, 214);
+            this.My_Courses.Name = "My_Courses";
+            this.My_Courses.Size = new System.Drawing.Size(844, 204);
+            this.My_Courses.TabIndex = 1;
+            this.My_Courses.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -396,7 +394,6 @@
         private System.Windows.Forms.RadioButton DayButton;
         private System.Windows.Forms.RadioButton PopularCourseButton;
         private System.Windows.Forms.RadioButton TimeButton;
-        private System.Windows.Forms.ListBox SearchResults;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox SearchBox;
         private System.Windows.Forms.DataGridView WeekCalendar;
@@ -408,9 +405,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
         private System.Windows.Forms.ListBox Details;
-        private System.Windows.Forms.ListBox MyClasses;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ToolTip SearchHelp;
+        private System.Windows.Forms.ListView Search_Results;
+        private System.Windows.Forms.ListView My_Courses;
     }
 }
 
