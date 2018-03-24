@@ -34,6 +34,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Search_Results = new System.Windows.Forms.ListView();
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,6 +47,7 @@
             this.DayButton = new System.Windows.Forms.RadioButton();
             this.PopularCourseButton = new System.Windows.Forms.RadioButton();
             this.TimeButton = new System.Windows.Forms.RadioButton();
+            this.My_Courses = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Details = new System.Windows.Forms.ListBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
@@ -57,8 +59,10 @@
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.Search_Results = new System.Windows.Forms.ListView();
-            this.My_Courses = new System.Windows.Forms.ListView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.to = new System.Windows.Forms.TextBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -133,6 +137,14 @@
             this.panel2.Size = new System.Drawing.Size(415, 199);
             this.panel2.TabIndex = 1;
             // 
+            // Search_Results
+            // 
+            this.Search_Results.Location = new System.Drawing.Point(4, 58);
+            this.Search_Results.Name = "Search_Results";
+            this.Search_Results.Size = new System.Drawing.Size(406, 140);
+            this.Search_Results.TabIndex = 4;
+            this.Search_Results.UseCompatibleStateImageBehavior = false;
+            // 
             // Search
             // 
             this.Search.Location = new System.Drawing.Point(336, 4);
@@ -154,6 +166,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.to);
+            this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.checkTue);
             this.panel1.Controls.Add(this.checkWed);
             this.panel1.Controls.Add(this.checkThu);
@@ -261,6 +276,14 @@
             this.TimeButton.Text = "Time";
             this.TimeButton.UseVisualStyleBackColor = true;
             // 
+            // My_Courses
+            // 
+            this.My_Courses.Location = new System.Drawing.Point(3, 214);
+            this.My_Courses.Name = "My_Courses";
+            this.My_Courses.Size = new System.Drawing.Size(844, 204);
+            this.My_Courses.TabIndex = 1;
+            this.My_Courses.UseCompatibleStateImageBehavior = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.Details);
@@ -340,21 +363,31 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
-            // Search_Results
+            // richTextBox1
             // 
-            this.Search_Results.Location = new System.Drawing.Point(4, 58);
-            this.Search_Results.Name = "Search_Results";
-            this.Search_Results.Size = new System.Drawing.Size(406, 140);
-            this.Search_Results.TabIndex = 4;
-            this.Search_Results.UseCompatibleStateImageBehavior = false;
+            this.richTextBox1.Location = new System.Drawing.Point(59, 21);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(66, 19);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
             // 
-            // My_Courses
+            // to
             // 
-            this.My_Courses.Location = new System.Drawing.Point(3, 214);
-            this.My_Courses.Name = "My_Courses";
-            this.My_Courses.Size = new System.Drawing.Size(844, 204);
-            this.My_Courses.TabIndex = 1;
-            this.My_Courses.UseCompatibleStateImageBehavior = false;
+            this.to.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.to.Location = new System.Drawing.Point(134, 25);
+            this.to.Name = "to";
+            this.to.Size = new System.Drawing.Size(17, 13);
+            this.to.TabIndex = 14;
+            this.to.Text = "to";
+            this.to.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(157, 21);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(66, 19);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
             // 
             // Form1
             // 
@@ -409,6 +442,10 @@
         private System.Windows.Forms.ToolTip SearchHelp;
         private System.Windows.Forms.ListView Search_Results;
         private System.Windows.Forms.ListView My_Courses;
+        private System.Windows.Forms.TextBox to;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 
