@@ -34,7 +34,7 @@ namespace SoftwareEngineeringProject
 
         public void RemoveClass(Course _class)
         {
-
+            classes.RemoveAll(i => i.courseCode == _class.courseCode);
         }
     }
 }
