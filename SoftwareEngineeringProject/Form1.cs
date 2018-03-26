@@ -16,7 +16,7 @@ namespace SoftwareEngineeringProject
     public partial class Form1 : Form
     {
         public Course[] COURSE_LIST = CSVParser.ParseCSV();
-       
+
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +42,14 @@ namespace SoftwareEngineeringProject
             My_Courses.Columns.Add("Building");
             My_Courses.Columns.Add("Room");
             My_Courses.Columns.Add("Open Seats");
+
+            foreach (Course course in COURSE_LIST)
+            {
+                foreach(Label courseBox in course.courseBoxes)
+                {
+                    WeekCalendar.Controls.Add(courseBox);
+                }
+            }
         }
 
         private void Search_Click(object sender, EventArgs e)
@@ -53,15 +61,15 @@ namespace SoftwareEngineeringProject
             foreach (Course temp in COURSE_LIST)
             {
 
-                if((temp.longTitle.Contains(input)))
+                if ((temp.longTitle.Contains(input)))
                 {
                     search_list.Add(temp);
                 }
-                else if((temp.shortTitle.Contains(input)))
+                else if ((temp.shortTitle.Contains(input)))
                 {
                     search_list.Add(temp);
                 }
-                else if((temp.courseCode.Contains(input)))
+                else if ((temp.courseCode.Contains(input)))
                 {
                     search_list.Add(temp);
                 }
@@ -83,11 +91,11 @@ namespace SoftwareEngineeringProject
                 search_list.CopyTo(tempList);
                 string tempStr = "";
 
-                if(checkMon.Checked)
+                if (checkMon.Checked)
                 {
                     tempStr += "M";
                 }
-                if(checkTue.Checked)
+                if (checkTue.Checked)
                 {
                     tempStr += "T";
                 }
@@ -95,18 +103,18 @@ namespace SoftwareEngineeringProject
                 {
                     tempStr += "W";
                 }
-                if(checkThu.Checked)
+                if (checkThu.Checked)
                 {
                     tempStr += "R";
                 }
-                if(checkFri.Checked)
+                if (checkFri.Checked)
                 {
                     tempStr += "F";
                 }
 
-                foreach(Course tempC in tempList)
+                foreach (Course tempC in tempList)
                 {
-                    if(!(tempC.meets.Contains(tempStr)))
+                    if (!(tempC.meets.Contains(tempStr)))
                     {
                         search_list.Remove(tempC);
                     }
@@ -118,7 +126,7 @@ namespace SoftwareEngineeringProject
              */
 
             //get class information from search_list into SearchResults
-            foreach(Course temp in search_list)
+            foreach (Course temp in search_list)
             {
                 string[] arr = new string[8];
                 ListViewItem itm;
@@ -138,6 +146,11 @@ namespace SoftwareEngineeringProject
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public DataGridView getCalendar()
+        {
+            return WeekCalendar;
         }
     }
 }

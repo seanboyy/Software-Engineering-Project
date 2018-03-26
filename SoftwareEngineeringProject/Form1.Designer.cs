@@ -55,6 +55,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Details = new System.Windows.Forms.ListBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
+            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,8 +64,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -350,45 +350,52 @@
             this.WeekCalendar.Size = new System.Drawing.Size(703, 300);
             this.WeekCalendar.TabIndex = 0;
             // 
+            // SearchHelp
+            // 
+            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
+            // 
             // Tuesday
             // 
+            this.Tuesday.Frozen = true;
             this.Tuesday.HeaderText = "Monday";
             this.Tuesday.Name = "Tuesday";
             // 
             // Wednesday
             // 
+            this.Wednesday.Frozen = true;
             this.Wednesday.HeaderText = "Tuesday";
             this.Wednesday.Name = "Wednesday";
             // 
             // Thursday
             // 
+            this.Thursday.Frozen = true;
             this.Thursday.HeaderText = "Wednesday";
             this.Thursday.Name = "Thursday";
             // 
             // Monday
             // 
             this.Monday.DataPropertyName = "Monday";
+            this.Monday.Frozen = true;
             this.Monday.HeaderText = "Thursday";
             this.Monday.Name = "Monday";
             // 
             // Friday
             // 
+            this.Friday.Frozen = true;
             this.Friday.HeaderText = "Friday";
             this.Friday.Name = "Friday";
             // 
             // Saturday
             // 
+            this.Saturday.Frozen = true;
             this.Saturday.HeaderText = "Saturday";
             this.Saturday.Name = "Saturday";
             // 
             // Sunday
             // 
+            this.Sunday.Frozen = true;
             this.Sunday.HeaderText = "Sunday";
             this.Sunday.Name = "Sunday";
-            // 
-            // SearchHelp
-            // 
-            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
             // Form1
             // 
@@ -432,13 +439,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox SearchBox;
         private System.Windows.Forms.DataGridView WeekCalendar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tuesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
         private System.Windows.Forms.ListBox Details;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ToolTip SearchHelp;
@@ -448,6 +448,13 @@
         private System.Windows.Forms.RichTextBox beginTime;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.RichTextBox endText;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tuesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
     }
 }
 
