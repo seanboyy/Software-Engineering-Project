@@ -268,7 +268,7 @@ namespace SoftwareEngineeringProject
                 if(temp.courseCode == course[0])
                 {
                     string info = temp.courseCode + "\nCourse Name: " + temp.longTitle + "\nMeets on: " + temp.meets + 
-                        "\nIn: "  +temp.building + " " + temp.room + "\nTaught by: " + temp.professor +"\nStarts at: " + temp.beginTime
+                        "\nIn: "  +temp.building + " " + temp.room + "\nTaught by: " + temp.professor + "\nEmpty Seats: "+ (temp.capacity-temp.enrollment).ToString()+"\nStarts at: " + temp.beginTime
                         + "\nEnds at: "+ temp.endTime + "\nPrerequisites:\n";
                     bool prerequs = false;
                     foreach(string preReq in temp.prerequisites)
