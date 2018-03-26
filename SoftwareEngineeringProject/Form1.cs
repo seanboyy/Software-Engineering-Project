@@ -109,7 +109,7 @@ namespace SoftwareEngineeringProject
                         //translate to military time
                         string[] tempSt = stop.Split(':');
                         int stoHrs = int.Parse(tempSt[0]);
-                        if (staHrs >= stoHrs) //earliest class ends at 8:50
+                        if (staHrs > stoHrs) //earliest class ends at 8:50
                         {
                             stoHrs += 12;
                             stop = stoHrs.ToString();
