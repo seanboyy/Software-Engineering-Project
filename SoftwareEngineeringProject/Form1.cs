@@ -31,7 +31,6 @@ namespace SoftwareEngineeringProject
             Search_Results.Columns.Add("Building", 100);
             Search_Results.Columns.Add("Room", 100);
             Search_Results.Columns.Add("Open Seats", 100);
-            Search_Results.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(Search_Results_Item_Selection_Changed);
             Search_Results.Columns.Add("Professor", 150);
 
             //add columns to my courses list
@@ -251,16 +250,6 @@ namespace SoftwareEngineeringProject
                 itm = new ListViewItem(arr);
                 Search_Results.Items.Add(itm);
             }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        
-        private void Search_Results_Item_Selection_Changed(object sender, EventArgs e)
-        {
-
         }
 
         private void box_Click(object sender, EventArgs e) {

@@ -18,5 +18,5 @@ Changes:
 	- added AM/PM drop downs to avoid ambiguity for time filter
 	- also changed time filter drop down to user-inputted times, to allow for class time discrepancies 
 	
-Everything else in our sprint breakdown works as expected.
+Everything else in our sprint 1 breakdown works as expected.
 	- (https://docs.google.com/spreadsheets/d/1oKQSNMu295VGPaNDzGY4_ykkZrS3O8V7rkLE_NDJoG0/edit?usp=sharing) 

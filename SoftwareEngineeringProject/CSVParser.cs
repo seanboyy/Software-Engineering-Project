@@ -12,35 +12,14 @@ namespace SoftwareEngineeringProject
     {
         public static Course[] ParseCSV()
         {
-            /*
-            //grab each line separately from both files
-            WebClient client = new WebClient();
-            Stream readCourses = client.OpenRead("https://github.com/seanboyy/Software-Engineering-Project/blob/master/SoftwareEngineeringProject/courses.txt");
-            StreamReader reader = new StreamReader(readCourses);
-            List<string> lines = new List<string>();
-            while (!reader.EndOfStream)
-            {
-                lines.Add(reader.ReadLine());
-            }
-            readCourses.Close();
-            Stream readPrereqs = client.OpenRead("https://github.com/seanboyy/Software-Engineering-Project/blob/master/SoftwareEngineeringProject/prereqs.txt");
-            reader = new StreamReader(readPrereqs);
-            List<string> lines2 = new List<string>();
-            while (!reader.EndOfStream)
-            {
-                lines2.Add(reader.ReadLine());
-            }
-            //get the length of each one
-            int lineCount = lines.ToArray().Length;
-            int lineCount2 = lines2.ToArray().Length;
-            */
+            
             //grab each line separately from both files
             string[] lines = System.IO.File.ReadAllLines("courses.txt");
             string[] lines2 = System.IO.File.ReadAllLines("prereqs.txt");
             //get the length of each one
             int lineCount = lines.Length;
             int lineCount2 = lines2.Length;
-            //create a list of classes
+            
             //create a list of classes
             Course[] classes = new Course[lineCount - 1];
             //add classes to the list of classes
@@ -48,9 +27,10 @@ namespace SoftwareEngineeringProject
             {
                 //split the line based on \t
                 string[] tokens = lines[i + 1].Split('\t');
-                //use the constructor
+                //use the constructor to build a course out of each line
                 classes[i] = new Course(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], int.Parse(tokens[8]), int.Parse(tokens[9]), tokens[10]);
             }
+
             //start grabbing prerequisites
             for(int i = 0; i < lineCount2 - 1; ++i)
             {

@@ -281,7 +281,7 @@
             this.to.Size = new System.Drawing.Size(17, 13);
             this.to.TabIndex = 14;
             this.to.Text = "to";
-            this.to.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+           
             // 
             // beginTime
             // 

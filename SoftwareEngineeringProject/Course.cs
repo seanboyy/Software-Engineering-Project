@@ -40,6 +40,8 @@ namespace SoftwareEngineeringProject
             professor = prof;
         }
 
+        //draws an appropriately sized box on the calendar for each class
+        //based on days of the week, start and end times
         public void setBoxes(System.Drawing.Size size, System.Drawing.Point location)
         {
             if (beginTime != "NULL" && endTime != "NULL")
@@ -53,7 +55,7 @@ namespace SoftwareEngineeringProject
                 float hourpos = hour / 13.5F;
                 yPos = hourpos * (size.Height - 10);
                 yPos += 10;
-                //yPos = UpToNearest10(yPos);
+                
                 string[] tokens2 = endTime.Split(':');
                 hour = float.Parse(tokens2[0]);
                 minute = int.Parse(tokens2[1]);
@@ -64,7 +66,7 @@ namespace SoftwareEngineeringProject
                 height = (hourpos * (size.Height));
                 height += 10;
                 height -= yPos;
-                //height = UpToNearest10(yPos);
+                
                 xPos = new float[meets.Length];
                 courseBoxes = new List<System.Windows.Forms.Label>();
                 for (int i = 0; i < meets.Length; ++i)
@@ -104,7 +106,7 @@ namespace SoftwareEngineeringProject
             }
         }
 
-        private void box_MouseEnter(object sender, EventArgs e)
+        private void box_MouseEnter(object sender, EventArgs e) //to focus on a particular course calendar item
         {
             foreach(var label in courseBoxes)
             {
