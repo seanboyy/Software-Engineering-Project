@@ -55,13 +55,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Details = new System.Windows.Forms.ListBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
-            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,6 +157,7 @@
             // SearchBox
             // 
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
+            this.SearchBox.Multiline = false;
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(407, 24);
             this.SearchBox.TabIndex = 2;
@@ -347,10 +348,6 @@
             this.WeekCalendar.Size = new System.Drawing.Size(703, 300);
             this.WeekCalendar.TabIndex = 0;
             // 
-            // SearchHelp
-            // 
-            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
-            // 
             // Tuesday
             // 
             this.Tuesday.Frozen = true;
@@ -391,6 +388,10 @@
             this.Friday.Name = "Friday";
             this.Friday.ReadOnly = true;
             this.Friday.Width = 140;
+            // 
+            // SearchHelp
+            // 
+            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
             // Form1
             // 
