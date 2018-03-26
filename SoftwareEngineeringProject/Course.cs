@@ -16,7 +16,7 @@ namespace SoftwareEngineeringProject
         public string meets;
         public string building;
         public string room;
-        public List<Course> prerequisites;
+        public List<string> prerequisites;
         public int enrollment;
         public int capacity;
         public string professor;
@@ -36,7 +36,7 @@ namespace SoftwareEngineeringProject
             this.room = room;
             enrollment = enroll;
             this.capacity = capacity;
-            prerequisites = new List<Course>();
+            prerequisites = new List<string>();
             professor = prof;
         }
 
@@ -92,12 +92,14 @@ namespace SoftwareEngineeringProject
                         Text = courseCode + "\n" + beginTime + "-" + endTime,
                         AutoSize = false,
                         Size = new System.Drawing.Size(size.Width / 5, (int)height),
-                        Visible = true,
+                        Visible = false,
+                        Enabled = false,
                         Location = new System.Drawing.Point((int)xPos[i], location.Y + (int)yPos),
                         BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                     });
                     courseBoxes[i].MouseEnter += new EventHandler(box_MouseEnter);
                     courseBoxes[i].MouseLeave += new EventHandler(box_MouseLeave);
+                    
                 }
             }
         }
@@ -120,6 +122,7 @@ namespace SoftwareEngineeringProject
             }
         }
 
+       
         private float UpToNearest10(float input)
         {
             return (float)Math.Ceiling(input / 10F) * 10F;
