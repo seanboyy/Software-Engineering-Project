@@ -73,13 +73,72 @@ namespace SoftwareEngineeringProject
                 {
                     search_list.Add(temp);
                 }
-            }
+            } 
             #endregion
             //filter by days if radio button selected
             #region filter_Time
-            if (TimeButton.Checked)
+            if (TimeButton.Checked) //will not filter with a given end time only
             {
+                Course[] tempList = new Course[search_list.Count];
+                search_list.CopyTo(tempList);
+                string start = beginTime.Text;
+                string stop = endText.Text;
+               //filter
+                if(start != "")
+                {
+                    //translate to military time
+                    string[] temp = start.Split(':');
+                    int staHrs = int.Parse(temp[0]);
+                    if (staHrs < 8) //earliest class starts at 8
+                    {
+                        staHrs += 12;
+                        start = staHrs.ToString();
+                        for(int i = 1; i <temp.Length; i++)
+                        {
+                            start += ":" + temp[i];
+                        }
+                    }
+   
+                    if(stop != "") //filter by both
+                    {
+                        //translate to military time
+                        string[] tempSt = stop.Split(':');
+                        int stoHrs = int.Parse(tempSt[0]);
+                        if (staHrs >= stoHrs) //earliest class ends at 8:50
+                        {
+                            stoHrs += 12;
+                            stop = stoHrs.ToString();
+                            for (int i = 1; i < temp.Length; i++)
+                            {
+                                stop += ":" + tempSt[i];
+                            }
+                        }
 
+                        foreach (Course tempC in tempList)
+                        {
+                            if (!(tempC.beginTime.Contains(start)))
+                            {
+                                search_list.Remove(tempC);
+                            }
+                            else if(!(tempC.endTime.Contains(stop)))
+                            {
+                                search_list.Remove(tempC);
+                            }
+                        }
+
+                    }
+                    else //filter by start
+                    {
+                        foreach(Course tempC in tempList)
+                        {
+                            if(!(tempC.beginTime.Contains(start)))
+                            {
+                                search_list.Remove(tempC);
+                            }
+                        }
+                    }
+                }
+                
             }
             #endregion
 
