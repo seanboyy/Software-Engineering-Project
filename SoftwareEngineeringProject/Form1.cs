@@ -280,39 +280,41 @@ namespace SoftwareEngineeringProject
 
         private void AddCoursesButton_Click(object sender, EventArgs e)
         {
-            foreach(Course temp in COURSE_LIST)
+            if (Search_Results.SelectedItems.Count > 0)
             {
-                if(Search_Results.SelectedItems[0].ToString().Contains(temp.courseCode))
+                foreach (Course temp in COURSE_LIST)
                 {
-                    
-                    //add selected course to Schedule listview
-                    Schedule.Instance.AddClass(temp);
-                    //turn course visible to true (will appear on calendar
-                    if (temp.courseBoxes != null)
+                    if (Search_Results.SelectedItems[0].ToString().Contains(temp.courseCode))
                     {
-                        foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+
+                        //add selected course to Schedule listview
+                        Schedule.Instance.AddClass(temp);
+                        //turn course visible to true (will appear on calendar
+                        if (temp.courseBoxes != null)
                         {
-                            tempLabel.Visible = true;
-                            tempLabel.Enabled = true;
+                            foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                            {
+                                tempLabel.Visible = true;
+                                tempLabel.Enabled = true;
+                            }
                         }
+                        //add temp to my_courses list view
+                        string[] arr = new string[9];
+                        ListViewItem itm;
+                        arr[0] = temp.courseCode;
+                        arr[1] = temp.longTitle;
+                        arr[2] = temp.beginTime;
+                        arr[3] = temp.endTime;
+                        arr[4] = temp.meets;
+                        arr[5] = temp.building;
+                        arr[6] = temp.room;
+                        arr[7] = (temp.capacity - temp.enrollment).ToString();
+                        arr[8] = temp.professor;
+                        itm = new ListViewItem(arr);
+                        My_Courses.Items.Add(itm);
                     }
-                    //add temp to my_courses list view
-                    string[] arr = new string[9];
-                    ListViewItem itm;
-                    arr[0] = temp.courseCode;
-                    arr[1] = temp.longTitle;
-                    arr[2] = temp.beginTime;
-                    arr[3] = temp.endTime;
-                    arr[4] = temp.meets;
-                    arr[5] = temp.building;
-                    arr[6] = temp.room;
-                    arr[7] = (temp.capacity - temp.enrollment).ToString();
-                    arr[8] = temp.professor;
-                    itm = new ListViewItem(arr);
-                    My_Courses.Items.Add(itm);
                 }
             }
-           
             
         }
 
