@@ -39,6 +39,9 @@
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AddCoursesButton = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.endText = new System.Windows.Forms.RichTextBox();
             this.to = new System.Windows.Forms.TextBox();
             this.beginTime = new System.Windows.Forms.RichTextBox();
@@ -62,8 +65,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -169,6 +170,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.AddCoursesButton);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.endText);
@@ -188,6 +190,44 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
+            // 
+            // AddCoursesButton
+            // 
+            this.AddCoursesButton.Location = new System.Drawing.Point(31, 152);
+            this.AddCoursesButton.Name = "AddCoursesButton";
+            this.AddCoursesButton.Size = new System.Drawing.Size(75, 23);
+            this.AddCoursesButton.TabIndex = 18;
+            this.AddCoursesButton.Text = "Add Course";
+            this.AddCoursesButton.UseVisualStyleBackColor = true;
+            this.AddCoursesButton.Click += new System.EventHandler(this.AddCoursesButton_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.comboBox2.Location = new System.Drawing.Point(277, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(43, 21);
+            this.comboBox2.TabIndex = 17;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.comboBox1.Location = new System.Drawing.Point(132, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(43, 21);
+            this.comboBox1.TabIndex = 16;
             // 
             // endText
             // 
@@ -400,34 +440,6 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox1.Location = new System.Drawing.Point(132, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(43, 21);
-            this.comboBox1.TabIndex = 16;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox2.Location = new System.Drawing.Point(277, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(43, 21);
-            this.comboBox2.TabIndex = 17;
-            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -487,6 +499,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button AddCoursesButton;
     }
 }
 

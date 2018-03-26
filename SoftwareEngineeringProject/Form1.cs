@@ -31,6 +31,7 @@ namespace SoftwareEngineeringProject
             Search_Results.Columns.Add("Building", 100);
             Search_Results.Columns.Add("Room", 100);
             Search_Results.Columns.Add("Open Seats", 100);
+            Search_Results.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(Search_Results_Item_Selection_Changed);
 
             //add columns to my courses list
             My_Courses.View = View.Details;
@@ -42,7 +43,7 @@ namespace SoftwareEngineeringProject
             My_Courses.Columns.Add("Building");
             My_Courses.Columns.Add("Room");
             My_Courses.Columns.Add("Open Seats");
-
+            
             foreach (Course course in COURSE_LIST)
             {
                 course.setBoxes(WeekCalendar.Size, WeekCalendar.Location);
@@ -212,8 +213,21 @@ namespace SoftwareEngineeringProject
 
         }
         
+        private void Search_Results_Item_Selection_Changed(object sender, EventArgs e)
+        {
+
+        }
+
         private void box_Click(object sender, EventArgs e) {
             Details.Text = "You clicked a course";
+        }
+
+        private void AddCoursesButton_Click(object sender, EventArgs e)
+        {
+            if(Search_Results.SelectedItems.Count > 0)
+            {
+                Console.WriteLine(Search_Results.SelectedItems[0]);
+            }
         }
     }
 }
