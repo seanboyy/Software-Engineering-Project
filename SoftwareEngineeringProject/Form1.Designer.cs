@@ -62,6 +62,8 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -138,6 +140,7 @@
             // 
             // Search_Results
             // 
+            this.Search_Results.HoverSelection = true;
             this.Search_Results.Location = new System.Drawing.Point(4, 34);
             this.Search_Results.Name = "Search_Results";
             this.Search_Results.Size = new System.Drawing.Size(406, 164);
@@ -166,6 +169,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.endText);
             this.panel1.Controls.Add(this.to);
             this.panel1.Controls.Add(this.beginTime);
@@ -186,17 +191,17 @@
             // 
             // endText
             // 
-            this.endText.Location = new System.Drawing.Point(157, 21);
+            this.endText.Location = new System.Drawing.Point(199, 23);
             this.endText.Multiline = false;
             this.endText.Name = "endText";
-            this.endText.Size = new System.Drawing.Size(66, 19);
+            this.endText.Size = new System.Drawing.Size(66, 22);
             this.endText.TabIndex = 15;
             this.endText.Text = "";
             // 
             // to
             // 
             this.to.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.to.Location = new System.Drawing.Point(134, 25);
+            this.to.Location = new System.Drawing.Point(181, 30);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(17, 13);
             this.to.TabIndex = 14;
@@ -205,17 +210,17 @@
             // 
             // beginTime
             // 
-            this.beginTime.Location = new System.Drawing.Point(59, 21);
+            this.beginTime.Location = new System.Drawing.Point(59, 23);
             this.beginTime.Multiline = false;
             this.beginTime.Name = "beginTime";
-            this.beginTime.Size = new System.Drawing.Size(66, 19);
+            this.beginTime.Size = new System.Drawing.Size(66, 22);
             this.beginTime.TabIndex = 13;
             this.beginTime.Text = "";
             // 
             // checkTue
             // 
             this.checkTue.AutoSize = true;
-            this.checkTue.Location = new System.Drawing.Point(125, 45);
+            this.checkTue.Location = new System.Drawing.Point(125, 50);
             this.checkTue.Name = "checkTue";
             this.checkTue.Size = new System.Drawing.Size(67, 17);
             this.checkTue.TabIndex = 12;
@@ -225,7 +230,7 @@
             // checkWed
             // 
             this.checkWed.AutoSize = true;
-            this.checkWed.Location = new System.Drawing.Point(195, 45);
+            this.checkWed.Location = new System.Drawing.Point(195, 50);
             this.checkWed.Name = "checkWed";
             this.checkWed.Size = new System.Drawing.Size(83, 17);
             this.checkWed.TabIndex = 11;
@@ -235,7 +240,7 @@
             // checkThu
             // 
             this.checkThu.AutoSize = true;
-            this.checkThu.Location = new System.Drawing.Point(279, 45);
+            this.checkThu.Location = new System.Drawing.Point(279, 50);
             this.checkThu.Name = "checkThu";
             this.checkThu.Size = new System.Drawing.Size(70, 17);
             this.checkThu.TabIndex = 10;
@@ -245,7 +250,7 @@
             // checkFri
             // 
             this.checkFri.AutoSize = true;
-            this.checkFri.Location = new System.Drawing.Point(349, 45);
+            this.checkFri.Location = new System.Drawing.Point(349, 50);
             this.checkFri.Name = "checkFri";
             this.checkFri.Size = new System.Drawing.Size(54, 17);
             this.checkFri.TabIndex = 9;
@@ -255,7 +260,7 @@
             // checkMon
             // 
             this.checkMon.AutoSize = true;
-            this.checkMon.Location = new System.Drawing.Point(55, 45);
+            this.checkMon.Location = new System.Drawing.Point(55, 50);
             this.checkMon.Name = "checkMon";
             this.checkMon.Size = new System.Drawing.Size(64, 17);
             this.checkMon.TabIndex = 7;
@@ -274,7 +279,7 @@
             // DayButton
             // 
             this.DayButton.AutoSize = true;
-            this.DayButton.Location = new System.Drawing.Point(4, 43);
+            this.DayButton.Location = new System.Drawing.Point(4, 48);
             this.DayButton.Name = "DayButton";
             this.DayButton.Size = new System.Drawing.Size(49, 17);
             this.DayButton.TabIndex = 5;
@@ -285,7 +290,7 @@
             // PopularCourseButton
             // 
             this.PopularCourseButton.AutoSize = true;
-            this.PopularCourseButton.Location = new System.Drawing.Point(4, 66);
+            this.PopularCourseButton.Location = new System.Drawing.Point(4, 71);
             this.PopularCourseButton.Name = "PopularCourseButton";
             this.PopularCourseButton.Size = new System.Drawing.Size(102, 17);
             this.PopularCourseButton.TabIndex = 4;
@@ -296,7 +301,7 @@
             // TimeButton
             // 
             this.TimeButton.AutoSize = true;
-            this.TimeButton.Location = new System.Drawing.Point(4, 20);
+            this.TimeButton.Location = new System.Drawing.Point(4, 25);
             this.TimeButton.Name = "TimeButton";
             this.TimeButton.Size = new System.Drawing.Size(48, 17);
             this.TimeButton.TabIndex = 0;
@@ -395,8 +400,37 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.comboBox1.Location = new System.Drawing.Point(132, 23);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(43, 21);
+            this.comboBox1.TabIndex = 16;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.comboBox2.Location = new System.Drawing.Point(277, 23);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(43, 21);
+            this.comboBox2.TabIndex = 17;
+            // 
             // Form1
             // 
+            this.AcceptButton = this.Search;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 455);
@@ -451,6 +485,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
