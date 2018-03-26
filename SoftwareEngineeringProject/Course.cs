@@ -19,8 +19,8 @@ namespace SoftwareEngineeringProject
         public List<Course> prerequisites;
         public int enrollment;
         public int capacity;
-        public float xPos;
-        public float[] yPos;
+        public float yPos;
+        public float[] xPos;
         public float height;
         public List<System.Windows.Forms.Label> courseBoxes;
         public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity)
@@ -38,11 +38,6 @@ namespace SoftwareEngineeringProject
             prerequisites = new List<Course>();
         }
 
-        public void box_Click(object sender, EventArgs e)
-        {
-
-        }
-
         public void setBoxes(System.Drawing.Size size, System.Drawing.Point location)
         {
             if (beginTime != "NULL" && endTime != "NULL")
@@ -54,7 +49,7 @@ namespace SoftwareEngineeringProject
                 hour += temp;
                 hour -= 8;
                 float hourpos = hour / 13.0F;
-                xPos = hourpos * size.Height;
+                yPos = hourpos * size.Height;
                 string[] tokens2 = endTime.Split(':');
                 hour = float.Parse(tokens2[0]);
                 minute = int.Parse(tokens2[1]);
@@ -62,26 +57,26 @@ namespace SoftwareEngineeringProject
                 hour += temp;
                 hour -= 8;
                 hourpos = hour / 13.0F;
-                height = hourpos * size.Height - xPos;
-                yPos = new float[meets.Length];
+                height = hourpos * size.Height - yPos;
+                xPos = new float[meets.Length];
                 for (int i = 0; i < meets.Length; ++i)
                 {
                     switch (meets[i])
                     {
                         case 'M':
-                            yPos[i] = size.Width * (0F / 5);
+                            xPos[i] = size.Width * (0F / 5);
                             break;
                         case 'T':
-                            yPos[i] = size.Width * (1F / 5);
+                            xPos[i] = size.Width * (1F / 5);
                             break;
                         case 'W':
-                            yPos[i] = size.Width * (2F / 5);
+                            xPos[i] = size.Width * (2F / 5);
                             break;
                         case 'R':
-                            yPos[i] = size.Width * (3F / 5);
+                            xPos[i] = size.Width * (3F / 5);
                             break;
                         case 'F':
-                            yPos[i] = size.Width * (4F / 5);
+                            xPos[i] = size.Width * (4F / 5);
                             break;
                     }
                 }
@@ -94,7 +89,7 @@ namespace SoftwareEngineeringProject
                         AutoSize = false,
                         Size = new System.Drawing.Size(size.Width / 5, (int)height),
                         Visible = true,
-                        Location = new System.Drawing.Point((int)yPos[i], location.Y + (int)xPos),
+                        Location = new System.Drawing.Point((int)xPos[i], location.Y + (int)yPos),
                         BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                     });
                 };
