@@ -55,13 +55,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Details = new System.Windows.Forms.ListBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
-            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -186,6 +186,7 @@
             // endText
             // 
             this.endText.Location = new System.Drawing.Point(157, 21);
+            this.endText.Multiline = false;
             this.endText.Name = "endText";
             this.endText.Size = new System.Drawing.Size(66, 19);
             this.endText.TabIndex = 15;
@@ -204,6 +205,7 @@
             // beginTime
             // 
             this.beginTime.Location = new System.Drawing.Point(59, 21);
+            this.beginTime.Multiline = false;
             this.beginTime.Name = "beginTime";
             this.beginTime.Size = new System.Drawing.Size(66, 19);
             this.beginTime.TabIndex = 13;
@@ -347,10 +349,6 @@
             this.WeekCalendar.Size = new System.Drawing.Size(703, 300);
             this.WeekCalendar.TabIndex = 0;
             // 
-            // SearchHelp
-            // 
-            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
-            // 
             // Tuesday
             // 
             this.Tuesday.Frozen = true;
@@ -391,6 +389,10 @@
             this.Friday.Name = "Friday";
             this.Friday.ReadOnly = true;
             this.Friday.Width = 140;
+            // 
+            // SearchHelp
+            // 
+            this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
             // Form1
             // 
