@@ -11,8 +11,11 @@ The path to the .exe is as follows
 	- SoftwareEngineeringProject.exe
 To run, double click the .exe file.
 
-Things we did not include for this sprint:
-	- [enumerate here]
+Changes:
+	- instead of individual add buttons, there is one button that uses the selection from the list box
+	- instead of individual remove buttons, there are 2 (on search and calendar tabs) that remove based on user selection
+	- removed collapsible calendar functionality
+	- added AM/PM drop downs to avoid ambiguity for time filter
 	
 Everything else in our sprint breakdown works as expected.
 	- (https://docs.google.com/spreadsheets/d/1oKQSNMu295VGPaNDzGY4_ykkZrS3O8V7rkLE_NDJoG0/edit?usp=sharing) 
