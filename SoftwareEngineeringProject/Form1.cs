@@ -211,14 +211,9 @@ namespace SoftwareEngineeringProject
         {
 
         }
-
-        public DataGridView getCalendar()
-        {
-            return WeekCalendar;
-        }
+        
         private void box_Click(object sender, EventArgs e) {
             Details.Text = "You clicked a course";
-
         }
     }
 }
