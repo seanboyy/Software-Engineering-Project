@@ -19,7 +19,7 @@ namespace SoftwareEngineeringProject
         {
             get
             {
-                if(Instance == null)
+                if(instance == null)
                 {
                     instance = new Schedule();
                 }

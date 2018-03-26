@@ -57,21 +57,15 @@ namespace SoftwareEngineeringProject
                 //split the line based on \t
                 string[] tokens = lines2[i + 1].Split('\t');
                 //seach through the list of classes
-                for(int j = 0; j < classes.Length; ++j)
+                string[] tempArr = tokens[0].Split(' ');
+                string tempStr = tempArr[0] + ' ' + tempArr[1];
+                for (int j = 0; j < classes.Length; ++j)
                 {
                     //to find the class associated with the course code
-                    if(classes[j].courseCode.Contains(tokens[0]))
+                    if(classes[j].courseCode.Contains(tempStr))
                     {
-                        //search through the list of classes
-                        for(int k = 0; k < classes.Length; ++k)
-                        {
-                            //to find the class associated with the prerequisite's course code
-                            if(classes[k].courseCode.Contains(tokens[1]))
-                            {
-                                //add the class to the list of classes
-                                classes[j].prerequisites.Add(classes[k]);
-                            }
-                        }
+                        //add course code to prereq list
+                        classes[j].prerequisites.Add(tokens[1]);
                     }
                 }
             }

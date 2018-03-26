@@ -58,7 +58,6 @@
             this.TimeButton = new System.Windows.Forms.RadioButton();
             this.My_Courses = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Details = new System.Windows.Forms.ListBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +66,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Details_txt = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -232,6 +232,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(43, 21);
             this.comboBox1.TabIndex = 16;
+            // 
             // endAP
             // 
             this.endAP.AutoCompleteCustomSource.AddRange(new string[] {
@@ -390,7 +391,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Details);
+            this.tabPage2.Controls.Add(this.Details_txt);
             this.tabPage2.Controls.Add(this.WeekCalendar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -399,15 +400,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Calendar";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // Details
-            // 
-            this.Details.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.Details.FormattingEnabled = true;
-            this.Details.Location = new System.Drawing.Point(102, 319);
-            this.Details.Name = "Details";
-            this.Details.Size = new System.Drawing.Size(703, 95);
-            this.Details.TabIndex = 2;
             // 
             // WeekCalendar
             // 
@@ -471,6 +463,14 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
+            // Details_txt
+            // 
+            this.Details_txt.Location = new System.Drawing.Point(102, 319);
+            this.Details_txt.Name = "Details_txt";
+            this.Details_txt.Size = new System.Drawing.Size(702, 83);
+            this.Details_txt.TabIndex = 1;
+            this.Details_txt.Text = "";
+            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -514,7 +514,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox SearchBox;
         private System.Windows.Forms.DataGridView WeekCalendar;
-        private System.Windows.Forms.ListBox Details;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ToolTip SearchHelp;
         private System.Windows.Forms.ListView Search_Results;
@@ -533,6 +532,7 @@
         private System.Windows.Forms.Button AddCoursesButton;
         private System.Windows.Forms.ComboBox endAP;
         private System.Windows.Forms.ComboBox beginAP;
+        private System.Windows.Forms.RichTextBox Details_txt;
     }
 }
 

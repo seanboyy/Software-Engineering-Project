@@ -36,15 +36,16 @@ namespace SoftwareEngineeringProject
 
             //add columns to my courses list
             My_Courses.View = View.Details;
-            My_Courses.Columns.Add("Code");
-            My_Courses.Columns.Add("Course Name");
-            My_Courses.Columns.Add("Begin Time");
-            My_Courses.Columns.Add("End Time");
-            My_Courses.Columns.Add("Meets");
-            My_Courses.Columns.Add("Building");
-            My_Courses.Columns.Add("Room");
-            My_Courses.Columns.Add("Open Seats");
-            My_Courses.Columns.Add("Professor");
+            My_Courses.Columns.Add("Code", 100);
+            My_Courses.Columns.Add("Course Name", 200);
+            My_Courses.Columns.Add("Begin Time", 100);
+            My_Courses.Columns.Add("End Time", 100);
+            My_Courses.Columns.Add("Meets", 60);
+            My_Courses.Columns.Add("Building", 75);
+            My_Courses.Columns.Add("Room", 60);
+            My_Courses.Columns.Add("Open Seats", 75);
+            My_Courses.Columns.Add("Professor", 150);
+
             foreach (Course course in COURSE_LIST)
             {
                 course.setBoxes(WeekCalendar.Size, WeekCalendar.Location);
@@ -259,15 +260,69 @@ namespace SoftwareEngineeringProject
         }
 
         private void box_Click(object sender, EventArgs e) {
-            Details.Text = "You clicked a course";
+            var tempL = sender as Label;
+            string[] course = tempL.Text.Split('\n');
+
+            foreach(Course temp in COURSE_LIST)
+            {
+                if(temp.courseCode == course[0])
+                {
+                    string info = "Course Name: " + temp.longTitle + "\nMeets on: " + temp.meets + 
+                        "\nIn: "  +temp.building + " " + temp.room + "\nTaught by: " + temp.professor +"\nStarts at: " + temp.beginTime
+                        + "\nEnds at: "+ temp.endTime + "\nPrerequisites:\n";
+                    bool prerequs = false;
+                    foreach(string preReq in temp.prerequisites)
+                    {
+                        prerequs = true;
+                        info += "\t" + preReq + "\n";
+                    }
+                    if(!prerequs)
+                    {
+                        info += "None";
+                    }
+                    Details_txt.Text = info;
+                    break;
+                }
+            }
         }
 
         private void AddCoursesButton_Click(object sender, EventArgs e)
         {
-            if(Search_Results.SelectedItems.Count > 0)
+            foreach(Course temp in COURSE_LIST)
             {
-                Console.WriteLine(Search_Results.SelectedItems[0]);
+                if(Search_Results.SelectedItems[0].ToString().Contains(temp.courseCode))
+                {
+                    
+                    //add selected course to Schedule listview
+                    Schedule.Instance.AddClass(temp);
+                    //turn course visible to true (will appear on calendar
+                    if (temp.courseBoxes != null)
+                    {
+                        foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                        {
+                            tempLabel.Visible = true;
+                            tempLabel.Enabled = true;
+                        }
+                    }
+                    //add temp to my_courses list view
+                    string[] arr = new string[9];
+                    ListViewItem itm;
+                    arr[0] = temp.courseCode;
+                    arr[1] = temp.longTitle;
+                    arr[2] = temp.beginTime;
+                    arr[3] = temp.endTime;
+                    arr[4] = temp.meets;
+                    arr[5] = temp.building;
+                    arr[6] = temp.room;
+                    arr[7] = (temp.capacity - temp.enrollment).ToString();
+                    arr[8] = temp.professor;
+                    itm = new ListViewItem(arr);
+                    My_Courses.Items.Add(itm);
+                    break;
+                }
             }
+           
+            
         }
     }
 }
