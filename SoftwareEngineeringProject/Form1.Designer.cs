@@ -39,6 +39,8 @@
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.endAP = new System.Windows.Forms.ComboBox();
+            this.beginAP = new System.Windows.Forms.ComboBox();
             this.endText = new System.Windows.Forms.RichTextBox();
             this.to = new System.Windows.Forms.TextBox();
             this.beginTime = new System.Windows.Forms.RichTextBox();
@@ -62,8 +64,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -169,8 +169,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.endAP);
+            this.panel1.Controls.Add(this.beginAP);
             this.panel1.Controls.Add(this.endText);
             this.panel1.Controls.Add(this.to);
             this.panel1.Controls.Add(this.beginTime);
@@ -188,6 +188,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
+            // 
+            // endAP
+            // 
+            this.endAP.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.endAP.FormattingEnabled = true;
+            this.endAP.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.endAP.Location = new System.Drawing.Point(277, 23);
+            this.endAP.Name = "endAP";
+            this.endAP.Size = new System.Drawing.Size(43, 21);
+            this.endAP.TabIndex = 17;
+            // 
+            // beginAP
+            // 
+            this.beginAP.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.beginAP.FormattingEnabled = true;
+            this.beginAP.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.beginAP.Location = new System.Drawing.Point(132, 23);
+            this.beginAP.Name = "beginAP";
+            this.beginAP.Size = new System.Drawing.Size(43, 21);
+            this.beginAP.TabIndex = 16;
             // 
             // endText
             // 
@@ -400,34 +428,6 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox1.Location = new System.Drawing.Point(132, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(43, 21);
-            this.comboBox1.TabIndex = 16;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.comboBox2.Location = new System.Drawing.Point(277, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(43, 21);
-            this.comboBox2.TabIndex = 17;
-            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -485,8 +485,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox endAP;
+        private System.Windows.Forms.ComboBox beginAP;
     }
 }
 

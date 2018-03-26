@@ -94,7 +94,7 @@ namespace SoftwareEngineeringProject
                     //translate to military time
                     string[] temp = start.Split(':');
                     int staHrs = int.Parse(temp[0]);
-                    if (staHrs < 8) //earliest class starts at 8
+                    if (beginAP.Text == "PM" && staHrs!= 12) //earliest class starts at 8
                     {
                         staHrs += 12;
                         start = staHrs.ToString();
@@ -109,7 +109,7 @@ namespace SoftwareEngineeringProject
                         //translate to military time
                         string[] tempSt = stop.Split(':');
                         int stoHrs = int.Parse(tempSt[0]);
-                        if (staHrs > stoHrs) //earliest class ends at 8:50
+                        if (endAP.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
                         {
                             stoHrs += 12;
                             stop = stoHrs.ToString();
@@ -121,13 +121,36 @@ namespace SoftwareEngineeringProject
 
                         foreach (Course tempC in tempList)
                         {
-                            if (!(tempC.beginTime.Contains(start)))
+                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
                             {
                                 search_list.Remove(tempC);
+
                             }
-                            else if(!(tempC.endTime.Contains(stop)))
+                            else
                             {
-                                search_list.Remove(tempC);
+
+                                string[] courseBeg = tempC.beginTime.Split(':');
+                                string[] courseEnd = tempC.endTime.Split(':');
+                                int tempbegin = int.Parse(courseBeg[0]);
+                                int tempend = int.Parse(courseEnd[0]);
+
+
+                                if (!(tempC.beginTime.Contains(start)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if (!(tempC.endTime.Contains(stop)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((endAP.Text == "AM" && tempend >= 12) || (endAP.Text == "PM" && tempend < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
                             }
                         }
 
@@ -136,9 +159,24 @@ namespace SoftwareEngineeringProject
                     {
                         foreach(Course tempC in tempList)
                         {
-                            if(!(tempC.beginTime.Contains(start)))
+                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
                             {
                                 search_list.Remove(tempC);
+
+                            }
+                            else
+                            {
+                                string[] courseBeg = tempC.beginTime.Split(':');
+                                int tempbegin = int.Parse(courseBeg[0]);
+
+                                if (!(tempC.beginTime.Contains(start)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
                             }
                         }
                     }
