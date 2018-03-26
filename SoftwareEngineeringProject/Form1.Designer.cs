@@ -42,6 +42,8 @@
             this.AddCoursesButton = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.endAP = new System.Windows.Forms.ComboBox();
+            this.beginAP = new System.Windows.Forms.ComboBox();
             this.endText = new System.Windows.Forms.RichTextBox();
             this.to = new System.Windows.Forms.TextBox();
             this.beginTime = new System.Windows.Forms.RichTextBox();
@@ -173,6 +175,8 @@
             this.panel1.Controls.Add(this.AddCoursesButton);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.endAP);
+            this.panel1.Controls.Add(this.beginAP);
             this.panel1.Controls.Add(this.endText);
             this.panel1.Controls.Add(this.to);
             this.panel1.Controls.Add(this.beginTime);
@@ -228,6 +232,33 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(43, 21);
             this.comboBox1.TabIndex = 16;
+            // endAP
+            // 
+            this.endAP.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.endAP.FormattingEnabled = true;
+            this.endAP.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.endAP.Location = new System.Drawing.Point(277, 23);
+            this.endAP.Name = "endAP";
+            this.endAP.Size = new System.Drawing.Size(43, 21);
+            this.endAP.TabIndex = 17;
+            // 
+            // beginAP
+            // 
+            this.beginAP.AutoCompleteCustomSource.AddRange(new string[] {
+            "AM",
+            "PM"});
+            this.beginAP.FormattingEnabled = true;
+            this.beginAP.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.beginAP.Location = new System.Drawing.Point(132, 23);
+            this.beginAP.Name = "beginAP";
+            this.beginAP.Size = new System.Drawing.Size(43, 21);
+            this.beginAP.TabIndex = 16;
             // 
             // endText
             // 
@@ -500,6 +531,8 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button AddCoursesButton;
+        private System.Windows.Forms.ComboBox endAP;
+        private System.Windows.Forms.ComboBox beginAP;
     }
 }
 

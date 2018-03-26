@@ -32,6 +32,7 @@ namespace SoftwareEngineeringProject
             Search_Results.Columns.Add("Room", 100);
             Search_Results.Columns.Add("Open Seats", 100);
             Search_Results.ItemSelectionChanged += new ListViewItemSelectionChangedEventHandler(Search_Results_Item_Selection_Changed);
+            Search_Results.Columns.Add("Professor", 150);
 
             //add columns to my courses list
             My_Courses.View = View.Details;
@@ -43,7 +44,7 @@ namespace SoftwareEngineeringProject
             My_Courses.Columns.Add("Building");
             My_Courses.Columns.Add("Room");
             My_Courses.Columns.Add("Open Seats");
-            
+            My_Courses.Columns.Add("Professor");
             foreach (Course course in COURSE_LIST)
             {
                 course.setBoxes(WeekCalendar.Size, WeekCalendar.Location);
@@ -95,7 +96,7 @@ namespace SoftwareEngineeringProject
                     //translate to military time
                     string[] temp = start.Split(':');
                     int staHrs = int.Parse(temp[0]);
-                    if (staHrs < 8) //earliest class starts at 8
+                    if (beginAP.Text == "PM" && staHrs!= 12) //earliest class starts at 8
                     {
                         staHrs += 12;
                         start = staHrs.ToString();
@@ -110,7 +111,7 @@ namespace SoftwareEngineeringProject
                         //translate to military time
                         string[] tempSt = stop.Split(':');
                         int stoHrs = int.Parse(tempSt[0]);
-                        if (staHrs > stoHrs) //earliest class ends at 8:50
+                        if (endAP.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
                         {
                             stoHrs += 12;
                             stop = stoHrs.ToString();
@@ -122,13 +123,36 @@ namespace SoftwareEngineeringProject
 
                         foreach (Course tempC in tempList)
                         {
-                            if (!(tempC.beginTime.Contains(start)))
+                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
                             {
                                 search_list.Remove(tempC);
+
                             }
-                            else if(!(tempC.endTime.Contains(stop)))
+                            else
                             {
-                                search_list.Remove(tempC);
+
+                                string[] courseBeg = tempC.beginTime.Split(':');
+                                string[] courseEnd = tempC.endTime.Split(':');
+                                int tempbegin = int.Parse(courseBeg[0]);
+                                int tempend = int.Parse(courseEnd[0]);
+
+
+                                if (!(tempC.beginTime.Contains(start)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if (!(tempC.endTime.Contains(stop)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((endAP.Text == "AM" && tempend >= 12) || (endAP.Text == "PM" && tempend < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
                             }
                         }
 
@@ -137,9 +161,24 @@ namespace SoftwareEngineeringProject
                     {
                         foreach(Course tempC in tempList)
                         {
-                            if(!(tempC.beginTime.Contains(start)))
+                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
                             {
                                 search_list.Remove(tempC);
+
+                            }
+                            else
+                            {
+                                string[] courseBeg = tempC.beginTime.Split(':');
+                                int tempbegin = int.Parse(courseBeg[0]);
+
+                                if (!(tempC.beginTime.Contains(start)))
+                                {
+                                    search_list.Remove(tempC);
+                                }
+                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                {
+                                    search_list.Remove(tempC);
+                                }
                             }
                         }
                     }
@@ -193,7 +232,7 @@ namespace SoftwareEngineeringProject
             //get class information from search_list into SearchResults
             foreach (Course temp in search_list)
             {
-                string[] arr = new string[8];
+                string[] arr = new string[9];
                 ListViewItem itm;
                 arr[0] = temp.courseCode;
                 arr[1] = temp.longTitle;
@@ -203,6 +242,7 @@ namespace SoftwareEngineeringProject
                 arr[5] = temp.building;
                 arr[6] = temp.room;
                 arr[7] = (temp.capacity - temp.enrollment).ToString();
+                arr[8] = temp.professor;
                 itm = new ListViewItem(arr);
                 Search_Results.Items.Add(itm);
             }
