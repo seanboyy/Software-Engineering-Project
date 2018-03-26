@@ -48,17 +48,23 @@ namespace SoftwareEngineeringProject
                 float temp = minute / 60.0F;
                 hour += temp;
                 hour -= 8;
-                float hourpos = hour / 13.0F;
-                yPos = hourpos * size.Height;
+                float hourpos = hour / 13.5F;
+                yPos = hourpos * (size.Height - 10);
+                yPos += 10;
+                //yPos = UpToNearest10(yPos);
                 string[] tokens2 = endTime.Split(':');
                 hour = float.Parse(tokens2[0]);
                 minute = int.Parse(tokens2[1]);
                 temp = minute / 60.0F;
                 hour += temp;
                 hour -= 8;
-                hourpos = hour / 13.0F;
-                height = hourpos * size.Height - yPos;
+                hourpos = hour / 13.5F;
+                height = (hourpos * (size.Height));
+                height += 10;
+                height -= yPos;
+                //height = UpToNearest10(yPos);
                 xPos = new float[meets.Length];
+                courseBoxes = new List<System.Windows.Forms.Label>();
                 for (int i = 0; i < meets.Length; ++i)
                 {
                     switch (meets[i])
@@ -79,10 +85,6 @@ namespace SoftwareEngineeringProject
                             xPos[i] = size.Width * (4F / 5);
                             break;
                     }
-                }
-                courseBoxes = new List<System.Windows.Forms.Label>();
-                for (int i = 0; i < meets.Length; ++i)
-                {
                     courseBoxes.Add(new System.Windows.Forms.Label()
                     {
                         Text = courseCode + "\n" + beginTime + "-" + endTime,
@@ -92,8 +94,33 @@ namespace SoftwareEngineeringProject
                         Location = new System.Drawing.Point((int)xPos[i], location.Y + (int)yPos),
                         BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle,
                     });
-                };
+                    courseBoxes[i].MouseEnter += new EventHandler(box_MouseEnter);
+                    courseBoxes[i].MouseLeave += new EventHandler(box_MouseLeave);
+                }
             }
+        }
+
+        private void box_MouseEnter(object sender, EventArgs e)
+        {
+            foreach(var label in courseBoxes)
+            {
+                label.Size += new System.Drawing.Size(0, 20);
+                label.BringToFront();
+            }
+        }
+
+        private void box_MouseLeave(object sender, EventArgs e)
+        {
+            foreach(var label in courseBoxes)
+            {
+                label.Size -= new System.Drawing.Size(0, 20);
+                label.SendToBack();
+            }
+        }
+
+        private float UpToNearest10(float input)
+        {
+            return (float)Math.Ceiling(input / 10F) * 10F;
         }
     }
 }
