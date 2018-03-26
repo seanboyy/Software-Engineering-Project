@@ -96,7 +96,7 @@ namespace SoftwareEngineeringProject
                     //translate to military time
                     string[] temp = start.Split(':');
                     int staHrs = int.Parse(temp[0]);
-                    if (beginAP.Text == "PM" && staHrs!= 12) //earliest class starts at 8
+                    if (cbBegin.Text == "PM" && staHrs!= 12) //earliest class starts at 8
                     {
                         staHrs += 12;
                         start = staHrs.ToString();
@@ -111,7 +111,7 @@ namespace SoftwareEngineeringProject
                         //translate to military time
                         string[] tempSt = stop.Split(':');
                         int stoHrs = int.Parse(tempSt[0]);
-                        if (endAP.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
+                        if (cbEnd.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
                         {
                             stoHrs += 12;
                             stop = stoHrs.ToString();
@@ -141,7 +141,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -149,7 +149,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((endAP.Text == "AM" && tempend >= 12) || (endAP.Text == "PM" && tempend < 12))
+                                else if ((cbEnd.Text == "AM" && tempend >= 12) || (cbEnd.Text == "PM" && tempend < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -175,7 +175,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -397,5 +397,6 @@ namespace SoftwareEngineeringProject
                 Details_txt.Text = "";
             }
         }
+
     }
 }
