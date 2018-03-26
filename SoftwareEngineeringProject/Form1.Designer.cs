@@ -157,6 +157,7 @@
             // SearchBox
             // 
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
+            this.SearchBox.Multiline = false;
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(407, 24);
             this.SearchBox.TabIndex = 2;
