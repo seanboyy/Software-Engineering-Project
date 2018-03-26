@@ -39,6 +39,7 @@
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.RemoveCourseButton = new System.Windows.Forms.Button();
             this.AddCoursesButton = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -58,6 +59,8 @@
             this.TimeButton = new System.Windows.Forms.RadioButton();
             this.My_Courses = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
+            this.Details_txt = new System.Windows.Forms.RichTextBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +69,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Details_txt = new System.Windows.Forms.RichTextBox();
-            this.RemoveCourseButton = new System.Windows.Forms.Button();
-            this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -198,6 +198,16 @@
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
             // 
+            // RemoveCourseButton
+            // 
+            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 155);
+            this.RemoveCourseButton.Name = "RemoveCourseButton";
+            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 20);
+            this.RemoveCourseButton.TabIndex = 19;
+            this.RemoveCourseButton.Text = "Remove Course";
+            this.RemoveCourseButton.UseVisualStyleBackColor = true;
+            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
+            // 
             // AddCoursesButton
             // 
             this.AddCoursesButton.Location = new System.Drawing.Point(31, 152);
@@ -281,7 +291,6 @@
             this.to.Size = new System.Drawing.Size(17, 13);
             this.to.TabIndex = 14;
             this.to.Text = "to";
-           
             // 
             // beginTime
             // 
@@ -405,9 +414,28 @@
             this.tabPage2.Text = "Calendar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // RemoveCourseButtonCal
+            // 
+            this.RemoveCourseButtonCal.Location = new System.Drawing.Point(6, 319);
+            this.RemoveCourseButtonCal.Name = "RemoveCourseButtonCal";
+            this.RemoveCourseButtonCal.Size = new System.Drawing.Size(92, 25);
+            this.RemoveCourseButtonCal.TabIndex = 2;
+            this.RemoveCourseButtonCal.Text = "Remove Course";
+            this.RemoveCourseButtonCal.UseVisualStyleBackColor = true;
+            this.RemoveCourseButtonCal.Click += new System.EventHandler(this.RemoveCourseButtonCal_Click);
+            // 
+            // Details_txt
+            // 
+            this.Details_txt.Location = new System.Drawing.Point(102, 319);
+            this.Details_txt.Name = "Details_txt";
+            this.Details_txt.Size = new System.Drawing.Size(702, 83);
+            this.Details_txt.TabIndex = 1;
+            this.Details_txt.Text = "";
+            // 
             // WeekCalendar
             // 
             this.WeekCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.WeekCalendar.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.WeekCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WeekCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tuesday,
@@ -415,6 +443,7 @@
             this.Thursday,
             this.Monday,
             this.Friday});
+            this.WeekCalendar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.WeekCalendar.Location = new System.Drawing.Point(102, 13);
             this.WeekCalendar.Name = "WeekCalendar";
             this.WeekCalendar.ReadOnly = true;
@@ -466,34 +495,6 @@
             // SearchHelp
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
-            // 
-            // Details_txt
-            // 
-            this.Details_txt.Location = new System.Drawing.Point(102, 319);
-            this.Details_txt.Name = "Details_txt";
-            this.Details_txt.Size = new System.Drawing.Size(702, 83);
-            this.Details_txt.TabIndex = 1;
-            this.Details_txt.Text = "";
-            // 
-            // RemoveCourseButton
-            // 
-            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 155);
-            this.RemoveCourseButton.Name = "RemoveCourseButton";
-            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 20);
-            this.RemoveCourseButton.TabIndex = 19;
-            this.RemoveCourseButton.Text = "Remove Course";
-            this.RemoveCourseButton.UseVisualStyleBackColor = true;
-            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
-            // 
-            // RemoveCourseButtonCal
-            // 
-            this.RemoveCourseButtonCal.Location = new System.Drawing.Point(6, 319);
-            this.RemoveCourseButtonCal.Name = "RemoveCourseButtonCal";
-            this.RemoveCourseButtonCal.Size = new System.Drawing.Size(92, 25);
-            this.RemoveCourseButtonCal.TabIndex = 2;
-            this.RemoveCourseButtonCal.Text = "Remove Course";
-            this.RemoveCourseButtonCal.UseVisualStyleBackColor = true;
-            this.RemoveCourseButtonCal.Click += new System.EventHandler(this.RemoveCourseButtonCal_Click);
             // 
             // Form1
             // 
