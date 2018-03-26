@@ -321,6 +321,7 @@ namespace SoftwareEngineeringProject
             if(My_Courses.SelectedItems != null && My_Courses.SelectedItems.Count != 0)
             {
                 string tempCC = My_Courses.SelectedItems[0].ToString();
+                List<ListViewItem> listremove = new List<ListViewItem>();
                 foreach (Course temp in COURSE_LIST)
                 {
                     
@@ -329,7 +330,14 @@ namespace SoftwareEngineeringProject
                         //remove from Schedule
                         Schedule.Instance.RemoveClass(temp);
                         //remove from mycourses
-                        My_Courses.Items.Remove(My_Courses.SelectedItems[0]);
+                        foreach (ListViewItem tempItm in My_Courses.Items)
+                        {
+                            if (tempItm.Text == temp.courseCode)
+                            {
+                                listremove.Add(tempItm);
+                            }
+                        }
+                        
                         //remove from calendar view
                         if (temp.courseBoxes != null)
                         {
@@ -340,7 +348,10 @@ namespace SoftwareEngineeringProject
                             }
                         }
                     }
-                    
+                    foreach(ListViewItem itmTemp in listremove)
+                    {
+                        My_Courses.Items.Remove(itmTemp);
+                    }
                 }
             }
         }
