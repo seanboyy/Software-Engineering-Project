@@ -45,9 +45,12 @@ namespace SoftwareEngineeringProject
 
             foreach (Course course in COURSE_LIST)
             {
-                foreach(Label courseBox in course.courseBoxes)
+                if (course.courseBoxes != null)
                 {
-                    WeekCalendar.Controls.Add(courseBox);
+                    foreach (Label courseBox in course.courseBoxes)
+                    {
+                        WeekCalendar.Controls.Add(courseBox);
+                    }
                 }
             }
         }

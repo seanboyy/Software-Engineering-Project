@@ -62,8 +62,6 @@
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Saturday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sunday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -341,9 +339,7 @@
             this.Wednesday,
             this.Thursday,
             this.Monday,
-            this.Friday,
-            this.Saturday,
-            this.Sunday});
+            this.Friday});
             this.WeekCalendar.Location = new System.Drawing.Point(102, 13);
             this.WeekCalendar.Name = "WeekCalendar";
             this.WeekCalendar.RowHeadersVisible = false;
@@ -359,18 +355,21 @@
             this.Tuesday.Frozen = true;
             this.Tuesday.HeaderText = "Monday";
             this.Tuesday.Name = "Tuesday";
+            this.Tuesday.Width = 140;
             // 
             // Wednesday
             // 
             this.Wednesday.Frozen = true;
             this.Wednesday.HeaderText = "Tuesday";
             this.Wednesday.Name = "Wednesday";
+            this.Wednesday.Width = 140;
             // 
             // Thursday
             // 
             this.Thursday.Frozen = true;
             this.Thursday.HeaderText = "Wednesday";
             this.Thursday.Name = "Thursday";
+            this.Thursday.Width = 140;
             // 
             // Monday
             // 
@@ -378,24 +377,14 @@
             this.Monday.Frozen = true;
             this.Monday.HeaderText = "Thursday";
             this.Monday.Name = "Monday";
+            this.Monday.Width = 140;
             // 
             // Friday
             // 
             this.Friday.Frozen = true;
             this.Friday.HeaderText = "Friday";
             this.Friday.Name = "Friday";
-            // 
-            // Saturday
-            // 
-            this.Saturday.Frozen = true;
-            this.Saturday.HeaderText = "Saturday";
-            this.Saturday.Name = "Saturday";
-            // 
-            // Sunday
-            // 
-            this.Sunday.Frozen = true;
-            this.Sunday.HeaderText = "Sunday";
-            this.Sunday.Name = "Sunday";
+            this.Friday.Width = 140;
             // 
             // Form1
             // 
@@ -453,8 +442,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Saturday;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sunday;
     }
 }
 
