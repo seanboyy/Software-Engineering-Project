@@ -342,6 +342,7 @@
             this.Friday});
             this.WeekCalendar.Location = new System.Drawing.Point(102, 13);
             this.WeekCalendar.Name = "WeekCalendar";
+            this.WeekCalendar.ReadOnly = true;
             this.WeekCalendar.RowHeadersVisible = false;
             this.WeekCalendar.Size = new System.Drawing.Size(703, 300);
             this.WeekCalendar.TabIndex = 0;
@@ -355,6 +356,7 @@
             this.Tuesday.Frozen = true;
             this.Tuesday.HeaderText = "Monday";
             this.Tuesday.Name = "Tuesday";
+            this.Tuesday.ReadOnly = true;
             this.Tuesday.Width = 140;
             // 
             // Wednesday
@@ -362,6 +364,7 @@
             this.Wednesday.Frozen = true;
             this.Wednesday.HeaderText = "Tuesday";
             this.Wednesday.Name = "Wednesday";
+            this.Wednesday.ReadOnly = true;
             this.Wednesday.Width = 140;
             // 
             // Thursday
@@ -369,6 +372,7 @@
             this.Thursday.Frozen = true;
             this.Thursday.HeaderText = "Wednesday";
             this.Thursday.Name = "Thursday";
+            this.Thursday.ReadOnly = true;
             this.Thursday.Width = 140;
             // 
             // Monday
@@ -377,6 +381,7 @@
             this.Monday.Frozen = true;
             this.Monday.HeaderText = "Thursday";
             this.Monday.Name = "Monday";
+            this.Monday.ReadOnly = true;
             this.Monday.Width = 140;
             // 
             // Friday
@@ -384,6 +389,7 @@
             this.Friday.Frozen = true;
             this.Friday.HeaderText = "Friday";
             this.Friday.Name = "Friday";
+            this.Friday.ReadOnly = true;
             this.Friday.Width = 140;
             // 
             // Form1

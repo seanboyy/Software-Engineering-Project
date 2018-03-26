@@ -45,10 +45,12 @@ namespace SoftwareEngineeringProject
 
             foreach (Course course in COURSE_LIST)
             {
+                course.setBoxes(WeekCalendar.Size, WeekCalendar.Location);
                 if (course.courseBoxes != null)
                 {
                     foreach (Label courseBox in course.courseBoxes)
                     {
+                        courseBox.Click += new EventHandler(box_Click);
                         WeekCalendar.Controls.Add(courseBox);
                     }
                 }
@@ -213,6 +215,9 @@ namespace SoftwareEngineeringProject
         public DataGridView getCalendar()
         {
             return WeekCalendar;
+        }
+        private void box_Click(object sender, EventArgs e) {
+            Details.Text = "You clicked a course";
         }
     }
 }
