@@ -31,6 +31,7 @@ namespace SoftwareEngineeringProject
             Search_Results.Columns.Add("Building", 100);
             Search_Results.Columns.Add("Room", 100);
             Search_Results.Columns.Add("Open Seats", 100);
+            Search_Results.Columns.Add("Professor", 150);
 
             //add columns to my courses list
             My_Courses.View = View.Details;
@@ -42,6 +43,7 @@ namespace SoftwareEngineeringProject
             My_Courses.Columns.Add("Building");
             My_Courses.Columns.Add("Room");
             My_Courses.Columns.Add("Open Seats");
+            My_Courses.Columns.Add("Professor");
 
             foreach (Course course in COURSE_LIST)
             {
@@ -230,7 +232,7 @@ namespace SoftwareEngineeringProject
             //get class information from search_list into SearchResults
             foreach (Course temp in search_list)
             {
-                string[] arr = new string[8];
+                string[] arr = new string[9];
                 ListViewItem itm;
                 arr[0] = temp.courseCode;
                 arr[1] = temp.longTitle;
@@ -240,6 +242,7 @@ namespace SoftwareEngineeringProject
                 arr[5] = temp.building;
                 arr[6] = temp.room;
                 arr[7] = (temp.capacity - temp.enrollment).ToString();
+                arr[8] = temp.professor;
                 itm = new ListViewItem(arr);
                 Search_Results.Items.Add(itm);
             }

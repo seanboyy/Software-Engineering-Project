@@ -19,11 +19,12 @@ namespace SoftwareEngineeringProject
         public List<Course> prerequisites;
         public int enrollment;
         public int capacity;
+        public string professor;
         public float yPos;
         public float[] xPos;
         public float height;
         public List<System.Windows.Forms.Label> courseBoxes;
-        public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity)
+        public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity, string prof)
         {
             courseCode = code;
             this.shortTitle = shortTitle;
@@ -36,6 +37,7 @@ namespace SoftwareEngineeringProject
             enrollment = enroll;
             this.capacity = capacity;
             prerequisites = new List<Course>();
+            professor = prof;
         }
 
         public void setBoxes(System.Drawing.Size size, System.Drawing.Point location)
