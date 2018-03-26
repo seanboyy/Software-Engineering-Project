@@ -318,11 +318,39 @@ namespace SoftwareEngineeringProject
                     arr[8] = temp.professor;
                     itm = new ListViewItem(arr);
                     My_Courses.Items.Add(itm);
-                    break;
                 }
             }
            
             
+        }
+
+        private void RemoveCourseButton_Click(object sender, EventArgs e)
+        {
+            if(My_Courses.SelectedItems != null)
+            {
+                string tempCC = My_Courses.SelectedItems[0].ToString();
+                foreach (Course temp in COURSE_LIST)
+                {
+                    
+                    if(tempCC.Contains(temp.courseCode))
+                    {
+                        //remove from Schedule
+                        Schedule.Instance.RemoveClass(temp);
+                        //remove from mycourses
+                        My_Courses.Items.Remove(My_Courses.SelectedItems[0]);
+                        //remove from calendar view
+                        if (temp.courseBoxes != null)
+                        {
+                            foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                            {
+                                tempLabel.Visible = false;
+                                tempLabel.Enabled = false;
+                            }
+                        }
+                    }
+                    
+                }
+            }
         }
     }
 }

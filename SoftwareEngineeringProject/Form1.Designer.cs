@@ -67,6 +67,7 @@
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Details_txt = new System.Windows.Forms.RichTextBox();
+            this.RemoveCourseButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -172,6 +173,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.RemoveCourseButton);
             this.panel1.Controls.Add(this.AddCoursesButton);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
@@ -471,6 +473,16 @@
             this.Details_txt.TabIndex = 1;
             this.Details_txt.Text = "";
             // 
+            // RemoveCourseButton
+            // 
+            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 155);
+            this.RemoveCourseButton.Name = "RemoveCourseButton";
+            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 20);
+            this.RemoveCourseButton.TabIndex = 19;
+            this.RemoveCourseButton.Text = "Remove Course";
+            this.RemoveCourseButton.UseVisualStyleBackColor = true;
+            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -533,6 +545,7 @@
         private System.Windows.Forms.ComboBox endAP;
         private System.Windows.Forms.ComboBox beginAP;
         private System.Windows.Forms.RichTextBox Details_txt;
+        private System.Windows.Forms.Button RemoveCourseButton;
     }
 }
 
