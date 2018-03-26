@@ -1,0 +1,18 @@
+INSTALL.txt - Software Engineering 
+Sean Bamford, Sarah Miller, Brister Jones, Amy Lang 
+
+To build/run: finding the .exe
+If you have found this document, you are in the root folder.
+The path to the .exe is as follows
+	- root (Software-Engineering-Project)
+	- SoftwareEngineeringProject
+	- bin
+	- debug
+	- SoftwareEngineeringProject.exe
+To run, double click the .exe file.
+
+Things we did not include for this sprint:
+	- [enumerate here]
+	
+Everything else in our sprint breakdown works as expected.
+	- (https://docs.google.com/spreadsheets/d/1oKQSNMu295VGPaNDzGY4_ykkZrS3O8V7rkLE_NDJoG0/edit?usp=sharing) 
