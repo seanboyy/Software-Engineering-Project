@@ -267,7 +267,7 @@ namespace SoftwareEngineeringProject
             {
                 if(temp.courseCode == course[0])
                 {
-                    string info = "Course Name: " + temp.longTitle + "\nMeets on: " + temp.meets + 
+                    string info = temp.courseCode + "\nCourse Name: " + temp.longTitle + "\nMeets on: " + temp.meets + 
                         "\nIn: "  +temp.building + " " + temp.room + "\nTaught by: " + temp.professor +"\nStarts at: " + temp.beginTime
                         + "\nEnds at: "+ temp.endTime + "\nPrerequisites:\n";
                     bool prerequs = false;
@@ -350,6 +350,46 @@ namespace SoftwareEngineeringProject
                     }
                     
                 }
+            }
+        }
+
+        private void RemoveCourseButtonCal_Click(object sender, EventArgs e)
+        {
+            if(Details_txt.Text != "")
+            {
+                string tempCode = Details_txt.Text.Split('\n')[0];
+                //find course
+                foreach (Course temp in COURSE_LIST)
+                {
+                    if(tempCode == temp.courseCode)
+                    {
+                        //remove from schedule
+                        Schedule.Instance.RemoveClass(temp);
+                        //remove from mycourses
+                        List<ListViewItem> removeClasses = new List<ListViewItem>();
+                        foreach(ListViewItem tempItm in My_Courses.Items)
+                        {
+                            if(tempItm.Text == tempCode)
+                            {
+                                removeClasses.Add(tempItm);
+                            }
+                        }
+                        foreach(ListViewItem tempItm in removeClasses)
+                        {
+                            My_Courses.Items.Remove(tempItm);
+                        }
+                        //remove from calendar
+                        if (temp.courseBoxes != null)
+                        {
+                            foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                            {
+                                tempLabel.Visible = false;
+                                tempLabel.Enabled = false;
+                            }
+                        }
+                    }
+                }
+                Details_txt.Text = "";
             }
         }
     }

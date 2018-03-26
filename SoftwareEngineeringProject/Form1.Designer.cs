@@ -68,6 +68,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Details_txt = new System.Windows.Forms.RichTextBox();
             this.RemoveCourseButton = new System.Windows.Forms.Button();
+            this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -393,6 +394,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.RemoveCourseButtonCal);
             this.tabPage2.Controls.Add(this.Details_txt);
             this.tabPage2.Controls.Add(this.WeekCalendar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -483,6 +485,16 @@
             this.RemoveCourseButton.UseVisualStyleBackColor = true;
             this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
             // 
+            // RemoveCourseButtonCal
+            // 
+            this.RemoveCourseButtonCal.Location = new System.Drawing.Point(6, 319);
+            this.RemoveCourseButtonCal.Name = "RemoveCourseButtonCal";
+            this.RemoveCourseButtonCal.Size = new System.Drawing.Size(92, 25);
+            this.RemoveCourseButtonCal.TabIndex = 2;
+            this.RemoveCourseButtonCal.Text = "Remove Course";
+            this.RemoveCourseButtonCal.UseVisualStyleBackColor = true;
+            this.RemoveCourseButtonCal.Click += new System.EventHandler(this.RemoveCourseButtonCal_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -546,6 +558,7 @@
         private System.Windows.Forms.ComboBox beginAP;
         private System.Windows.Forms.RichTextBox Details_txt;
         private System.Windows.Forms.Button RemoveCourseButton;
+        private System.Windows.Forms.Button RemoveCourseButtonCal;
     }
 }
 
