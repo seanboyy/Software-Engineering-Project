@@ -194,34 +194,38 @@ namespace SoftwareEngineeringProject
             {
                 Course[] tempList = new Course[search_list.Count];
                 search_list.CopyTo(tempList);
-                string tempStr = "";
+                List<string> tempStr  = new List<string>();
 
                 if (checkMon.Checked)
                 {
-                    tempStr += "M";
+                    tempStr.Add("M");
                 }
                 if (checkTue.Checked)
                 {
-                    tempStr += "T";
+                    tempStr.Add("T");
                 }
                 if (checkWed.Checked)
                 {
-                    tempStr += "W";
+                    tempStr.Add("W");
                 }
                 if (checkThu.Checked)
                 {
-                    tempStr += "R";
+                    tempStr.Add("R");
                 }
                 if (checkFri.Checked)
                 {
-                    tempStr += "F";
+                    tempStr.Add("F");
                 }
 
                 foreach (Course tempC in tempList)
                 {
-                    if (!(tempC.meets.Contains(tempStr)))
+                    foreach(string tempSS in tempStr)
                     {
-                        search_list.Remove(tempC);
+                        if(!(tempC.meets.Contains(tempSS)))
+                        {
+                            search_list.Remove(tempC);
+                            break;
+                        }
                     }
                 }
             }
@@ -326,7 +330,7 @@ namespace SoftwareEngineeringProject
 
         private void RemoveCourseButton_Click(object sender, EventArgs e)
         {
-            if(My_Courses.SelectedItems != null)
+            if(My_Courses.SelectedItems != null && My_Courses.SelectedItems.Count != 0)
             {
                 string tempCC = My_Courses.SelectedItems[0].ToString();
                 foreach (Course temp in COURSE_LIST)
