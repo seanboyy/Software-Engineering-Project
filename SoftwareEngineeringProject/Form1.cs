@@ -65,20 +65,20 @@ namespace SoftwareEngineeringProject
             string input = SearchBox.Text.ToUpper(); //results will ignore case of search 
             List<Course> search_list = new List<Course>();
             #region genSearch
-            foreach (Course temp in COURSE_LIST)
+            foreach (Course course in COURSE_LIST)
             {
 
-                if ((temp.longTitle.Contains(input)))
+                if ((course.longTitle.Contains(input)))
                 {
-                    search_list.Add(temp);
+                    search_list.Add(course);
                 }
-                else if ((temp.shortTitle.Contains(input)))
+                else if ((course.shortTitle.Contains(input)))
                 {
-                    search_list.Add(temp);
+                    search_list.Add(course);
                 }
-                else if ((temp.courseCode.Contains(input)))
+                else if ((course.courseCode.Contains(input)))
                 {
-                    search_list.Add(temp);
+                    search_list.Add(course);
                 }
             } 
             #endregion
@@ -182,8 +182,7 @@ namespace SoftwareEngineeringProject
                             }
                         }
                     }
-                }
-                
+                } 
             }
             #endregion
 
