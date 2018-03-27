@@ -434,6 +434,10 @@
             // 
             // WeekCalendar
             // 
+            this.WeekCalendar.AllowUserToAddRows = false;
+            this.WeekCalendar.AllowUserToDeleteRows = false;
+            this.WeekCalendar.AllowUserToResizeColumns = false;
+            this.WeekCalendar.AllowUserToResizeRows = false;
             this.WeekCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.WeekCalendar.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.WeekCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
