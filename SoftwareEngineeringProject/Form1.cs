@@ -96,7 +96,7 @@ namespace SoftwareEngineeringProject
                     //translate to military time
                     string[] temp = start.Split(':');
                     int staHrs = int.Parse(temp[0]);
-                    if (beginAP.Text == "PM" && staHrs != 12) //earliest class starts at 8
+                    if (cbBegin.Text == "PM" && staHrs!= 12) //earliest class starts at 8
                     {
                         staHrs += 12;
                         start = staHrs.ToString();
@@ -111,7 +111,7 @@ namespace SoftwareEngineeringProject
                         //translate to military time
                         string[] tempSt = stop.Split(':');
                         int stoHrs = int.Parse(tempSt[0]);
-                        if (endAP.Text == "PM" && stoHrs != 12) //earliest class ends at 8:50
+                        if (cbEnd.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
                         {
                             stoHrs += 12;
                             stop = stoHrs.ToString();
@@ -141,7 +141,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -149,7 +149,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((endAP.Text == "AM" && tempend >= 12) || (endAP.Text == "PM" && tempend < 12))
+                                else if ((cbEnd.Text == "AM" && tempend >= 12) || (cbEnd.Text == "PM" && tempend < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -175,7 +175,7 @@ namespace SoftwareEngineeringProject
                                 {
                                     search_list.Remove(tempC);
                                 }
-                                else if ((beginAP.Text == "AM" && tempbegin >= 12) || (beginAP.Text == "PM" && tempbegin < 12))
+                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
                                 {
                                     search_list.Remove(tempC);
                                 }
@@ -291,30 +291,35 @@ namespace SoftwareEngineeringProject
                     //turn course visible to true (will appear on calendar
                     if (temp.courseBoxes != null)
                     {
-                        foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+
+                        //add selected course to Schedule listview
+                        Schedule.Instance.AddClass(temp);
+                        //turn course visible to true (will appear on calendar
+                        if (temp.courseBoxes != null)
                         {
-                            tempLabel.Visible = true;
-                            tempLabel.Enabled = true;
+                            foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                            {
+                                tempLabel.Visible = true;
+                                tempLabel.Enabled = true;
+                            }
                         }
+                        //add temp to my_courses list view
+                        string[] arr = new string[9];
+                        ListViewItem itm;
+                        arr[0] = temp.courseCode;
+                        arr[1] = temp.longTitle;
+                        arr[2] = temp.beginTime;
+                        arr[3] = temp.endTime;
+                        arr[4] = temp.meets;
+                        arr[5] = temp.building;
+                        arr[6] = temp.room;
+                        arr[7] = (temp.capacity - temp.enrollment).ToString();
+                        arr[8] = temp.professor;
+                        itm = new ListViewItem(arr);
+                        My_Courses.Items.Add(itm);
                     }
-                    //add temp to my_courses list view
-                    string[] arr = new string[9];
-                    ListViewItem itm;
-                    arr[0] = temp.courseCode;
-                    arr[1] = temp.longTitle;
-                    arr[2] = temp.beginTime;
-                    arr[3] = temp.endTime;
-                    arr[4] = temp.meets;
-                    arr[5] = temp.building;
-                    arr[6] = temp.room;
-                    arr[7] = (temp.capacity - temp.enrollment).ToString();
-                    arr[8] = temp.professor;
-                    itm = new ListViewItem(arr);
-                    My_Courses.Items.Add(itm);
                 }
             }
-
-
         }
 
         private void RemoveCourseButton_Click(object sender, EventArgs e)
@@ -322,6 +327,7 @@ namespace SoftwareEngineeringProject
             if (My_Courses.SelectedItems != null && My_Courses.SelectedItems.Count != 0)
             {
                 string tempCC = My_Courses.SelectedItems[0].ToString();
+                List<ListViewItem> listremove = new List<ListViewItem>();
                 foreach (Course temp in COURSE_LIST)
                 {
 
@@ -330,7 +336,14 @@ namespace SoftwareEngineeringProject
                         //remove from Schedule
                         Schedule.Instance.RemoveClass(temp);
                         //remove from mycourses
-                        My_Courses.Items.Remove(My_Courses.SelectedItems[0]);
+                        foreach (ListViewItem tempItm in My_Courses.Items)
+                        {
+                            if (tempItm.Text == temp.courseCode)
+                            {
+                                listremove.Add(tempItm);
+                            }
+                        }
+                        
                         //remove from calendar view
                         if (temp.courseBoxes != null)
                         {
@@ -341,7 +354,10 @@ namespace SoftwareEngineeringProject
                             }
                         }
                     }
-
+                    foreach(ListViewItem itmTemp in listremove)
+                    {
+                        My_Courses.Items.Remove(itmTemp);
+                    }
                 }
             }
         }
@@ -385,7 +401,7 @@ namespace SoftwareEngineeringProject
                 Details_txt.Text = "";
             }
         }
-
+        
         private void beginTime_TextChanged(object sender, EventArgs e)
         {
             PopularCourseButton.Checked = false;
@@ -442,8 +458,8 @@ namespace SoftwareEngineeringProject
         {
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
             checkMon.Checked = false;
             checkTue.Checked = false;
             checkWed.Checked = false;
@@ -455,8 +471,8 @@ namespace SoftwareEngineeringProject
         {
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
             checkMon.Checked = false;
             checkTue.Checked = false;
             checkWed.Checked = false;
@@ -468,8 +484,8 @@ namespace SoftwareEngineeringProject
         {
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
 
         private void checkMon_CheckedChanged(object sender, EventArgs e)
@@ -480,8 +496,8 @@ namespace SoftwareEngineeringProject
             AllButton.Checked = false;
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
 
         private void checkTue_CheckedChanged(object sender, EventArgs e)
@@ -492,8 +508,8 @@ namespace SoftwareEngineeringProject
             AllButton.Checked = false;
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
 
         private void checkWed_CheckedChanged(object sender, EventArgs e)
@@ -504,8 +520,8 @@ namespace SoftwareEngineeringProject
             AllButton.Checked = false;
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
 
         private void checkThu_CheckedChanged(object sender, EventArgs e)
@@ -516,8 +532,8 @@ namespace SoftwareEngineeringProject
             AllButton.Checked = false;
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
 
         private void checkFri_CheckedChanged(object sender, EventArgs e)
@@ -528,8 +544,8 @@ namespace SoftwareEngineeringProject
             AllButton.Checked = false;
             beginTime.Text = "";
             endText.Text = "";
-            comboBox1.ResetText();
-            comboBox2.ResetText();
+            cbBegin.ResetText();
+            cbEnd.ResetText();
         }
     }
 }

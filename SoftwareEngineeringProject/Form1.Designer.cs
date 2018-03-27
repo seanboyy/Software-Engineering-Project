@@ -42,8 +42,8 @@
             this.AllButton = new System.Windows.Forms.RadioButton();
             this.RemoveCourseButton = new System.Windows.Forms.Button();
             this.AddCoursesButton = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbEnd = new System.Windows.Forms.ComboBox();
+            this.cbBegin = new System.Windows.Forms.ComboBox();
             this.endAP = new System.Windows.Forms.ComboBox();
             this.beginAP = new System.Windows.Forms.ComboBox();
             this.endText = new System.Windows.Forms.RichTextBox();
@@ -178,8 +178,8 @@
             this.panel1.Controls.Add(this.AllButton);
             this.panel1.Controls.Add(this.RemoveCourseButton);
             this.panel1.Controls.Add(this.AddCoursesButton);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbEnd);
+            this.panel1.Controls.Add(this.cbBegin);
             this.panel1.Controls.Add(this.endAP);
             this.panel1.Controls.Add(this.beginAP);
             this.panel1.Controls.Add(this.endText);
@@ -225,7 +225,7 @@
             // 
             // AddCoursesButton
             // 
-            this.AddCoursesButton.Location = new System.Drawing.Point(31, 152);
+            this.AddCoursesButton.Location = new System.Drawing.Point(28, 152);
             this.AddCoursesButton.Name = "AddCoursesButton";
             this.AddCoursesButton.Size = new System.Drawing.Size(111, 23);
             this.AddCoursesButton.TabIndex = 18;
@@ -233,35 +233,35 @@
             this.AddCoursesButton.UseVisualStyleBackColor = true;
             this.AddCoursesButton.Click += new System.EventHandler(this.AddCoursesButton_Click);
             // 
-            // comboBox2
+            // cbEnd
             // 
-            this.comboBox2.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbEnd.AutoCompleteCustomSource.AddRange(new string[] {
             "AM",
             "PM"});
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbEnd.FormattingEnabled = true;
+            this.cbEnd.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox2.Location = new System.Drawing.Point(277, 23);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(43, 21);
-            this.comboBox2.TabIndex = 17;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbEnd.Location = new System.Drawing.Point(277, 23);
+            this.cbEnd.Name = "cbEnd";
+            this.cbEnd.Size = new System.Drawing.Size(43, 21);
+            this.cbEnd.TabIndex = 17;
+            this.cbEnd.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cbBegin
             // 
-            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbBegin.AutoCompleteCustomSource.AddRange(new string[] {
             "AM",
             "PM"});
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbBegin.FormattingEnabled = true;
+            this.cbBegin.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox1.Location = new System.Drawing.Point(132, 23);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(43, 21);
-            this.comboBox1.TabIndex = 16;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbBegin.Location = new System.Drawing.Point(132, 23);
+            this.cbBegin.Name = "cbBegin";
+            this.cbBegin.Size = new System.Drawing.Size(43, 21);
+            this.cbBegin.TabIndex = 16;
+            this.cbBegin.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // endAP
             // 
@@ -458,6 +458,7 @@
             // WeekCalendar
             // 
             this.WeekCalendar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.WeekCalendar.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.WeekCalendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.WeekCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Tuesday,
@@ -465,6 +466,7 @@
             this.Thursday,
             this.Monday,
             this.Friday});
+            this.WeekCalendar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.WeekCalendar.Location = new System.Drawing.Point(102, 13);
             this.WeekCalendar.Name = "WeekCalendar";
             this.WeekCalendar.ReadOnly = true;
@@ -573,8 +575,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbEnd;
+        private System.Windows.Forms.ComboBox cbBegin;
         private System.Windows.Forms.Button AddCoursesButton;
         private System.Windows.Forms.ComboBox endAP;
         private System.Windows.Forms.ComboBox beginAP;
