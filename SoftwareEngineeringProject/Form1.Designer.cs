@@ -39,6 +39,8 @@
             this.Search = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AllButton = new System.Windows.Forms.RadioButton();
+            this.RemoveCourseButton = new System.Windows.Forms.Button();
             this.AddCoursesButton = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -58,6 +60,8 @@
             this.TimeButton = new System.Windows.Forms.RadioButton();
             this.My_Courses = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
+            this.Details_txt = new System.Windows.Forms.RichTextBox();
             this.WeekCalendar = new System.Windows.Forms.DataGridView();
             this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +70,6 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.Details_txt = new System.Windows.Forms.RichTextBox();
-            this.RemoveCourseButton = new System.Windows.Forms.Button();
-            this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -174,6 +175,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.AllButton);
             this.panel1.Controls.Add(this.RemoveCourseButton);
             this.panel1.Controls.Add(this.AddCoursesButton);
             this.panel1.Controls.Add(this.comboBox2);
@@ -198,11 +200,34 @@
             this.panel1.Size = new System.Drawing.Size(417, 199);
             this.panel1.TabIndex = 0;
             // 
+            // AllButton
+            // 
+            this.AllButton.AutoSize = true;
+            this.AllButton.Checked = true;
+            this.AllButton.Location = new System.Drawing.Point(4, 94);
+            this.AllButton.Name = "AllButton";
+            this.AllButton.Size = new System.Drawing.Size(36, 17);
+            this.AllButton.TabIndex = 20;
+            this.AllButton.TabStop = true;
+            this.AllButton.Text = "All";
+            this.AllButton.UseVisualStyleBackColor = true;
+            this.AllButton.CheckedChanged += new System.EventHandler(this.AllButton_CheckedChanged);
+            // 
+            // RemoveCourseButton
+            // 
+            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 152);
+            this.RemoveCourseButton.Name = "RemoveCourseButton";
+            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 23);
+            this.RemoveCourseButton.TabIndex = 19;
+            this.RemoveCourseButton.Text = "Remove Course";
+            this.RemoveCourseButton.UseVisualStyleBackColor = true;
+            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
+            // 
             // AddCoursesButton
             // 
             this.AddCoursesButton.Location = new System.Drawing.Point(31, 152);
             this.AddCoursesButton.Name = "AddCoursesButton";
-            this.AddCoursesButton.Size = new System.Drawing.Size(75, 23);
+            this.AddCoursesButton.Size = new System.Drawing.Size(111, 23);
             this.AddCoursesButton.TabIndex = 18;
             this.AddCoursesButton.Text = "Add Course";
             this.AddCoursesButton.UseVisualStyleBackColor = true;
@@ -221,6 +246,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(43, 21);
             this.comboBox2.TabIndex = 17;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -235,6 +261,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(43, 21);
             this.comboBox1.TabIndex = 16;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // endAP
             // 
@@ -272,6 +299,7 @@
             this.endText.Size = new System.Drawing.Size(66, 22);
             this.endText.TabIndex = 15;
             this.endText.Text = "";
+            this.endText.TextChanged += new System.EventHandler(this.endText_TextChanged);
             // 
             // to
             // 
@@ -281,7 +309,6 @@
             this.to.Size = new System.Drawing.Size(17, 13);
             this.to.TabIndex = 14;
             this.to.Text = "to";
-           
             // 
             // beginTime
             // 
@@ -291,6 +318,7 @@
             this.beginTime.Size = new System.Drawing.Size(66, 22);
             this.beginTime.TabIndex = 13;
             this.beginTime.Text = "";
+            this.beginTime.TextChanged += new System.EventHandler(this.beginTime_TextChanged);
             // 
             // checkTue
             // 
@@ -301,6 +329,7 @@
             this.checkTue.TabIndex = 12;
             this.checkTue.Text = "Tuesday";
             this.checkTue.UseVisualStyleBackColor = true;
+            this.checkTue.CheckedChanged += new System.EventHandler(this.checkTue_CheckedChanged);
             // 
             // checkWed
             // 
@@ -311,6 +340,7 @@
             this.checkWed.TabIndex = 11;
             this.checkWed.Text = "Wednesday";
             this.checkWed.UseVisualStyleBackColor = true;
+            this.checkWed.CheckedChanged += new System.EventHandler(this.checkWed_CheckedChanged);
             // 
             // checkThu
             // 
@@ -321,6 +351,7 @@
             this.checkThu.TabIndex = 10;
             this.checkThu.Text = "Thursday";
             this.checkThu.UseVisualStyleBackColor = true;
+            this.checkThu.CheckedChanged += new System.EventHandler(this.checkThu_CheckedChanged);
             // 
             // checkFri
             // 
@@ -331,6 +362,7 @@
             this.checkFri.TabIndex = 9;
             this.checkFri.Text = "Friday";
             this.checkFri.UseVisualStyleBackColor = true;
+            this.checkFri.CheckedChanged += new System.EventHandler(this.checkFri_CheckedChanged);
             // 
             // checkMon
             // 
@@ -341,6 +373,7 @@
             this.checkMon.TabIndex = 7;
             this.checkMon.Text = "Monday";
             this.checkMon.UseVisualStyleBackColor = true;
+            this.checkMon.CheckedChanged += new System.EventHandler(this.checkMon_CheckedChanged);
             // 
             // SearchLabel
             // 
@@ -358,9 +391,9 @@
             this.DayButton.Name = "DayButton";
             this.DayButton.Size = new System.Drawing.Size(49, 17);
             this.DayButton.TabIndex = 5;
-            this.DayButton.TabStop = true;
             this.DayButton.Text = "Days";
             this.DayButton.UseVisualStyleBackColor = true;
+            this.DayButton.CheckedChanged += new System.EventHandler(this.DayButton_CheckedChanged);
             // 
             // PopularCourseButton
             // 
@@ -369,9 +402,9 @@
             this.PopularCourseButton.Name = "PopularCourseButton";
             this.PopularCourseButton.Size = new System.Drawing.Size(102, 17);
             this.PopularCourseButton.TabIndex = 4;
-            this.PopularCourseButton.TabStop = true;
             this.PopularCourseButton.Text = "Popular Courses";
             this.PopularCourseButton.UseVisualStyleBackColor = true;
+            this.PopularCourseButton.CheckedChanged += new System.EventHandler(this.PopularCourseButton_CheckedChanged);
             // 
             // TimeButton
             // 
@@ -380,7 +413,6 @@
             this.TimeButton.Name = "TimeButton";
             this.TimeButton.Size = new System.Drawing.Size(48, 17);
             this.TimeButton.TabIndex = 0;
-            this.TimeButton.TabStop = true;
             this.TimeButton.Text = "Time";
             this.TimeButton.UseVisualStyleBackColor = true;
             // 
@@ -404,6 +436,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Calendar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // RemoveCourseButtonCal
+            // 
+            this.RemoveCourseButtonCal.Location = new System.Drawing.Point(6, 319);
+            this.RemoveCourseButtonCal.Name = "RemoveCourseButtonCal";
+            this.RemoveCourseButtonCal.Size = new System.Drawing.Size(92, 25);
+            this.RemoveCourseButtonCal.TabIndex = 2;
+            this.RemoveCourseButtonCal.Text = "Remove Course";
+            this.RemoveCourseButtonCal.UseVisualStyleBackColor = true;
+            this.RemoveCourseButtonCal.Click += new System.EventHandler(this.RemoveCourseButtonCal_Click);
+            // 
+            // Details_txt
+            // 
+            this.Details_txt.Location = new System.Drawing.Point(102, 319);
+            this.Details_txt.Name = "Details_txt";
+            this.Details_txt.Size = new System.Drawing.Size(702, 83);
+            this.Details_txt.TabIndex = 1;
+            this.Details_txt.Text = "";
             // 
             // WeekCalendar
             // 
@@ -466,34 +516,6 @@
             // SearchHelp
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
-            // 
-            // Details_txt
-            // 
-            this.Details_txt.Location = new System.Drawing.Point(102, 319);
-            this.Details_txt.Name = "Details_txt";
-            this.Details_txt.Size = new System.Drawing.Size(702, 83);
-            this.Details_txt.TabIndex = 1;
-            this.Details_txt.Text = "";
-            // 
-            // RemoveCourseButton
-            // 
-            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 155);
-            this.RemoveCourseButton.Name = "RemoveCourseButton";
-            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 20);
-            this.RemoveCourseButton.TabIndex = 19;
-            this.RemoveCourseButton.Text = "Remove Course";
-            this.RemoveCourseButton.UseVisualStyleBackColor = true;
-            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
-            // 
-            // RemoveCourseButtonCal
-            // 
-            this.RemoveCourseButtonCal.Location = new System.Drawing.Point(6, 319);
-            this.RemoveCourseButtonCal.Name = "RemoveCourseButtonCal";
-            this.RemoveCourseButtonCal.Size = new System.Drawing.Size(92, 25);
-            this.RemoveCourseButtonCal.TabIndex = 2;
-            this.RemoveCourseButtonCal.Text = "Remove Course";
-            this.RemoveCourseButtonCal.UseVisualStyleBackColor = true;
-            this.RemoveCourseButtonCal.Click += new System.EventHandler(this.RemoveCourseButtonCal_Click);
             // 
             // Form1
             // 
@@ -559,6 +581,7 @@
         private System.Windows.Forms.RichTextBox Details_txt;
         private System.Windows.Forms.Button RemoveCourseButton;
         private System.Windows.Forms.Button RemoveCourseButtonCal;
+        private System.Windows.Forms.RadioButton AllButton;
     }
 }
 
