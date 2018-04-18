@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using SoftwareEngineeringProject;
 
 
@@ -16,6 +15,8 @@ namespace SoftwareEngineeringProject
     public partial class Form1 : Form
     {
         public Course[] COURSE_LIST = CSVParser.ParseCSV();
+
+        public Filter filter = new Filter();
 
         public Form1()
         {
@@ -68,15 +69,7 @@ namespace SoftwareEngineeringProject
             foreach (Course course in COURSE_LIST)
             {
 
-                if ((course.longTitle.Contains(input)))
-                {
-                    search_list.Add(course);
-                }
-                else if ((course.shortTitle.Contains(input)))
-                {
-                    search_list.Add(course);
-                }
-                else if ((course.courseCode.Contains(input)))
+                if ((course.longTitle.Contains(input)) || (course.shortTitle.Contains(input)) || (course.courseCode.Contains(input)))
                 {
                     search_list.Add(course);
                 }

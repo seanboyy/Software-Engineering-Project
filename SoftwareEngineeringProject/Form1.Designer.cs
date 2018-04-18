@@ -206,10 +206,10 @@
             this.AllButton.Checked = true;
             this.AllButton.Location = new System.Drawing.Point(4, 94);
             this.AllButton.Name = "AllButton";
-            this.AllButton.Size = new System.Drawing.Size(36, 17);
+            this.AllButton.Size = new System.Drawing.Size(64, 17);
             this.AllButton.TabIndex = 20;
             this.AllButton.TabStop = true;
-            this.AllButton.Text = "All";
+            this.AllButton.Text = "No Filter";
             this.AllButton.UseVisualStyleBackColor = true;
             this.AllButton.CheckedChanged += new System.EventHandler(this.AllButton_CheckedChanged);
             // 
