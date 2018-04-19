@@ -10,18 +10,112 @@ namespace SoftwareEngineeringProject
     {
         //takes pre-filtered list of classes and filtering spec. days
         //returns filtered list
-        public List<Course> Filter_Days(List<Course> tempList, List<String> days)
+        public List<Course> Filter_Days(List<Course> search_List, List<String> days)
         {
-
-            return tempList;
+            Course[] tempList = new Course[search_List.Count];
+            search_List.CopyTo(tempList);
+            foreach (Course tempC in tempList)
+            {
+                foreach (string tempSS in days)
+                {
+                    if (!(tempC.meets.Contains(tempSS)))
+                    {
+                        search_List.Remove(tempC);
+                        break;
+                    }
+                }
+            }
+            return search_List;
         }
 
         //takes pre-filtered list of classes and filtering spec. time
         //returns filtered list
-        public List<Course> Filter_Time(List<Course> tempList)
+        public List<Course> Filter_Time(List<Course> search_List, int bR_hours, int eR_hours, int bR_min, int eR_min)
         {
+            int temp_B_H = 0, temp_B_M = 0, temp_E_H = 0, temp_E_M = 0;
+            Course[] tempList = new Course[search_List.Count];
+            search_List.CopyTo(tempList);
+      
+            if (bR_hours != 0 && eR_hours != 0) //filter by full time range
+            {
+                foreach(Course tempC in tempList)
+                {
+                    if (tempC.beginTime != "NULL" && tempC.endTime!= "NULL")
+                    {
+                        string[] tempStr = tempC.beginTime.Split(':');
+                        int.TryParse(tempStr[0], out temp_B_H);
+                        int.TryParse(tempStr[1], out temp_B_M);
 
-            return tempList;
+                        tempStr = tempC.endTime.Split(':');
+                        int.TryParse(tempStr[0], out temp_E_H);
+                        int.TryParse(tempStr[1], out temp_E_M);
+
+                        //check for greater/equal begin
+                        if (bR_hours > temp_B_H || (bR_hours == temp_B_H && bR_min > temp_B_M))
+                        {
+                            search_List.Remove(tempC);
+                        }
+
+                        //check for less/equal end
+                        else if (eR_hours < temp_E_H || (eR_hours == temp_E_H && eR_hours < temp_E_M))
+                        {
+                            search_List.Remove(tempC);
+                        }
+                    }
+                    else
+                    {
+                        search_List.Remove(tempC);
+                    }
+                }
+            }
+            else if(bR_hours!= 0) //filter by beginning time range
+            {
+                foreach (Course tempC in tempList)
+                {
+                    if (tempC.beginTime != "NULL" && tempC.endTime != "NULL")
+                    {
+                        string[] tempStr = tempC.beginTime.Split(':');
+                        int.TryParse(tempStr[0], out temp_B_H);
+                        int.TryParse(tempStr[1], out temp_B_M);
+
+                        //check for greater/equals begin
+                        if (bR_hours > temp_B_H || (bR_hours == temp_B_H && bR_min > temp_B_M))
+                        {
+                            search_List.Remove(tempC);
+                        }
+                    }
+                    else
+                    {
+                        search_List.Remove(tempC);
+                    }
+                }
+
+            }
+            else if(eR_hours != 0) //filter by ending time range
+            {
+                foreach (Course tempC in tempList)
+                {
+                    if (tempC.beginTime != "NULL" && tempC.endTime != "NULL")
+                    {
+                        string[] tempStr = tempC.endTime.Split(':');
+                        int.TryParse(tempStr[0], out temp_E_H);
+                        int.TryParse(tempStr[1], out temp_E_M);
+
+                        //check for less/equal to end
+                        if (eR_hours < temp_E_H || (eR_hours == temp_E_H && eR_hours < temp_E_M))
+                        {
+                            search_List.Remove(tempC);
+                        }
+                    }
+                    else
+                    {
+                        search_List.Remove(tempC);
+                    }
+                }
+               
+            } 
+
+            return search_List;
         }
 
         //takes pre-filtered list of classes

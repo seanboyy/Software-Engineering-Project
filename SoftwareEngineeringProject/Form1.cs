@@ -79,103 +79,35 @@ namespace SoftwareEngineeringProject
             #region filter_Time
             if (TimeButton.Checked) //will not filter with a given end time only
             {
-                Course[] tempList = new Course[search_list.Count];
-                search_list.CopyTo(tempList);
-                string start = beginTime.Text;
-                string stop = endText.Text;
-                //filter
-                if (start != "")
+                string beginStr = beginTime.Text, endStr = endText.Text;
+                int beginHr = 0 , beginMin= 0, endHr = 0, endMin = 0;
+                //get beginning of range
+                if(beginStr != "")
                 {
-                    //translate to military time
-                    string[] temp = start.Split(':');
-                    int staHrs = int.Parse(temp[0]);
-                    if (cbBegin.Text == "PM" && staHrs!= 12) //earliest class starts at 8
+                    string[] temp = beginStr.Split(':');
+                    bool isNumeric = int.TryParse(temp[0], out beginHr);
+                    if(isNumeric&&(cbBegin.Text == "PM" && beginHr < 12)) //needs translated to military time
                     {
-                        staHrs += 12;
-                        start = staHrs.ToString();
-                        for (int i = 1; i < temp.Length; i++)
-                        {
-                            start += ":" + temp[i];
-                        }
+                        beginHr += 12;
                     }
-
-                    if (stop != "") //filter by both
-                    {
-                        //translate to military time
-                        string[] tempSt = stop.Split(':');
-                        int stoHrs = int.Parse(tempSt[0]);
-                        if (cbEnd.Text == "PM" && stoHrs!= 12) //earliest class ends at 8:50
-                        {
-                            stoHrs += 12;
-                            stop = stoHrs.ToString();
-                            for (int i = 1; i < temp.Length; i++)
-                            {
-                                stop += ":" + tempSt[i];
-                            }
-                        }
-
-                        foreach (Course tempC in tempList)
-                        {
-                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
-                            {
-                                search_list.Remove(tempC);
-
-                            }
-                            else
-                            {
-
-                                string[] courseBeg = tempC.beginTime.Split(':');
-                                string[] courseEnd = tempC.endTime.Split(':');
-                                int tempbegin = int.Parse(courseBeg[0]);
-                                int tempend = int.Parse(courseEnd[0]);
-
-
-                                if (!(tempC.beginTime.Contains(start)))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                                else if (!(tempC.endTime.Contains(stop)))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                                else if ((cbEnd.Text == "AM" && tempend >= 12) || (cbEnd.Text == "PM" && tempend < 12))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                            }
-                        }
-
-                    }
-                    else //filter by start
-                    {
-                        foreach (Course tempC in tempList)
-                        {
-                            if (tempC.beginTime == "NULL" || tempC.endTime == "NULL")
-                            {
-                                search_list.Remove(tempC);
-
-                            }
-                            else
-                            {
-                                string[] courseBeg = tempC.beginTime.Split(':');
-                                int tempbegin = int.Parse(courseBeg[0]);
-
-                                if (!(tempC.beginTime.Contains(start)))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                                else if ((cbBegin.Text == "AM" && tempbegin >= 12) || (cbBegin.Text == "PM" && tempbegin < 12))
-                                {
-                                    search_list.Remove(tempC);
-                                }
-                            }
-                        }
-                    }
+                    if(temp.Length > 1)
+                        int.TryParse(temp[1], out beginMin);
+           
                 }
+
+                //get end of range
+                if (endStr != "")
+                {
+                    string[] temp = endStr.Split(':');
+                    bool isNumeric = int.TryParse(temp[0], out endHr);
+                    if(isNumeric&&(cbEnd.Text == "PM" && endHr <12)) //needs translated to military time
+                    {
+                        endHr += 12;
+                    }
+                    if(temp.Length >1)
+                        int.TryParse(temp[1], out endMin);
+                }
+                search_list = filter.Filter_Time(search_list, beginHr, endHr, beginMin, endMin);
             }
             #endregion
 
@@ -183,8 +115,6 @@ namespace SoftwareEngineeringProject
             #region filter_Days
             else if (DayButton.Checked)
             {
-                Course[] tempList = new Course[search_list.Count];
-                search_list.CopyTo(tempList);
                 List<string> tempStr = new List<string>();
 
                 if (checkMon.Checked)
@@ -208,17 +138,8 @@ namespace SoftwareEngineeringProject
                     tempStr.Add("F");
                 }
 
-                foreach (Course tempC in tempList)
-                {
-                    foreach (string tempSS in tempStr)
-                    {
-                        if (!(tempC.meets.Contains(tempSS)))
-                        {
-                            search_list.Remove(tempC);
-                            break;
-                        }
-                    }
-                }
+                search_list = filter.Filter_Days(search_list, tempStr);
+                
             }
             #endregion
             /*
