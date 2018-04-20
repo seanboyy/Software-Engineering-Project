@@ -32,15 +32,32 @@ namespace SoftwareEngineeringProject
              
             return labList;
         }
+
+
         //find corresponding lecture
         public List<Course> Find_Labs(Course added_course, Course[] COURSE_LIST)
         {
-            List<Course> lectureList = new List<Course>();
+            List<Course> labList = new List<Course>();
 
-            //determine if there is a corresponding lab for the class
-
-
-            return lectureList;
+            //if the added class is not a lab
+            if (!(added_course.longTitle.Contains("Laboratory")))
+            {
+                //determine if there is a corresponding lab for the class
+                string[] tempCode = added_course.courseCode.Split(' ');
+                if (tempCode.Length > 1)
+                {
+                    string posLab = tempCode[0] + tempCode[1];
+                    foreach (Course course in COURSE_LIST)
+                    { 
+                        //same section number and a lab
+                        if(course.courseCode.Contains(posLab) && course.longTitle.Contains("Laboratory"))
+                        {
+                            labList.Add(course);
+                        }
+                    }
+                }
+            }
+            return labList;
         }
     }
 }
