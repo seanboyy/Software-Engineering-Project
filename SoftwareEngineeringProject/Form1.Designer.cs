@@ -420,6 +420,7 @@
             // 
             // My_Courses
             // 
+            this.My_Courses.FullRowSelect = true;
             this.My_Courses.Location = new System.Drawing.Point(3, 214);
             this.My_Courses.Name = "My_Courses";
             this.My_Courses.Size = new System.Drawing.Size(844, 204);
