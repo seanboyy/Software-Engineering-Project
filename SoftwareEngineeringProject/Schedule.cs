@@ -27,14 +27,14 @@ namespace SoftwareEngineeringProject
             }
         }
 
-        public void AddClass(Course _class)
+        public void AddClass(Course course)
         {
-            classes.Add(_class);
+            classes.Add(course);
         }
 
-        public void RemoveClass(Course _class)
+        public void RemoveClass(Course course)
         {
-            classes.RemoveAll(i => i.courseCode == _class.courseCode);
+            classes.RemoveAll(i => i.courseCode == course.courseCode);
         }
     }
 }
