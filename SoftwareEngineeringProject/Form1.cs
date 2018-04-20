@@ -321,80 +321,32 @@ namespace SoftwareEngineeringProject
         
         private void beginTime_TextChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = false;
-            TimeButton.Checked = true;
-            AllButton.Checked = false;
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAllButTime();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = false;
-            TimeButton.Checked = true;
-            AllButton.Checked = false;
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAllButTime();
         }
 
         private void endText_TextChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = false;
-            TimeButton.Checked = true;
-            AllButton.Checked = false;
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAllButTime();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = false;
-            TimeButton.Checked = true;
-            AllButton.Checked = false;
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAllButTime();
         }
 
         private void AllButton_CheckedChanged(object sender, EventArgs e)
         {
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAll();
         }
 
         private void PopularCourseButton_CheckedChanged(object sender, EventArgs e)
         {
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
-            checkMon.Checked = false;
-            checkTue.Checked = false;
-            checkWed.Checked = false;
-            checkThu.Checked = false;
-            checkFri.Checked = false;
+            ClearAll();
         }
 
         private void DayButton_CheckedChanged(object sender, EventArgs e)
@@ -407,53 +359,30 @@ namespace SoftwareEngineeringProject
 
         private void checkMon_CheckedChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = true;
-            TimeButton.Checked = false;
-            AllButton.Checked = false;
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
+            ClearAllButDay();
         }
 
         private void checkTue_CheckedChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = true;
-            TimeButton.Checked = false;
-            AllButton.Checked = false;
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
+            ClearAllButDay();
         }
 
         private void checkWed_CheckedChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = true;
-            TimeButton.Checked = false;
-            AllButton.Checked = false;
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
+            ClearAllButDay();
         }
 
         private void checkThu_CheckedChanged(object sender, EventArgs e)
         {
-            PopularCourseButton.Checked = false;
-            DayButton.Checked = true;
-            TimeButton.Checked = false;
-            AllButton.Checked = false;
-            beginTime.Text = "";
-            endText.Text = "";
-            cbBegin.ResetText();
-            cbEnd.ResetText();
+            ClearAllButDay();
         }
 
         private void checkFri_CheckedChanged(object sender, EventArgs e)
+        {
+            ClearAllButDay();
+        }
+
+        private void ClearAllButDay()
         {
             PopularCourseButton.Checked = false;
             DayButton.Checked = true;
@@ -463,6 +392,33 @@ namespace SoftwareEngineeringProject
             endText.Text = "";
             cbBegin.ResetText();
             cbEnd.ResetText();
+
+        }
+
+        private void ClearAll()
+        {
+            beginTime.Text = "";
+            endText.Text = "";
+            cbBegin.ResetText();
+            cbEnd.ResetText();
+            checkMon.Checked = false;
+            checkTue.Checked = false;
+            checkWed.Checked = false;
+            checkThu.Checked = false;
+            checkFri.Checked = false;
+        }
+
+        private void ClearAllButTime()
+        {
+            PopularCourseButton.Checked = false;
+            DayButton.Checked = false;
+            TimeButton.Checked = true;
+            AllButton.Checked = false;
+            checkMon.Checked = false;
+            checkTue.Checked = false;
+            checkWed.Checked = false;
+            checkThu.Checked = false;
+            checkFri.Checked = false;
         }
     }
 }
