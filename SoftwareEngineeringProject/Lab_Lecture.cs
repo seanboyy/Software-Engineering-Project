@@ -11,7 +11,7 @@ namespace SoftwareEngineeringProject
         //find corresponding lab
         public List<Course> Find_Lectures(Course added_course, Course[] COURSE_LIST)
         {
-            List<Course> labList = new List<Course>();
+            List<Course> lectureList = new List<Course>();
             //determine if courseCode is a lab time
             if(added_course.longTitle.Contains("Laboratory"))
             {
@@ -24,13 +24,13 @@ namespace SoftwareEngineeringProject
                     {
                         if (course.courseCode.Contains(posLect))
                         {
-                            labList.Add(course);
+                            lectureList.Add(course);
                         }
                     }
                 }
             }
              
-            return labList;
+            return lectureList;
         }
 
 
