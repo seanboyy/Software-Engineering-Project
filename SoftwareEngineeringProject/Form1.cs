@@ -213,7 +213,7 @@ namespace SoftwareEngineeringProject
                             //turn course visible to true (will appear on calendar
                             if (temp.courseBoxes != null)
                             {
-                                foreach (System.Windows.Forms.Label tempLabel in temp.courseBoxes)
+                                foreach (Label tempLabel in temp.courseBoxes)
                                 {
                                     tempLabel.Visible = true;
                                     tempLabel.Enabled = true;
@@ -419,6 +419,12 @@ namespace SoftwareEngineeringProject
             checkWed.Checked = false;
             checkThu.Checked = false;
             checkFri.Checked = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConflictPopup popup = new ConflictPopup();
+            popup.Show();
         }
     }
 }

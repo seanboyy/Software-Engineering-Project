@@ -70,6 +70,7 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -175,6 +176,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AllButton);
             this.panel1.Controls.Add(this.RemoveCourseButton);
             this.panel1.Controls.Add(this.AddCoursesButton);
@@ -523,6 +525,16 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(199, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
@@ -588,6 +600,7 @@
         private System.Windows.Forms.Button RemoveCourseButton;
         private System.Windows.Forms.Button RemoveCourseButtonCal;
         private System.Windows.Forms.RadioButton AllButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
