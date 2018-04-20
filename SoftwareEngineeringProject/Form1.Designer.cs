@@ -147,7 +147,9 @@
             // 
             // Search_Results
             // 
+            this.Search_Results.FullRowSelect = true;
             this.Search_Results.HoverSelection = true;
+            this.Search_Results.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Search_Results.Location = new System.Drawing.Point(4, 34);
             this.Search_Results.Name = "Search_Results";
             this.Search_Results.Size = new System.Drawing.Size(406, 164);
@@ -420,6 +422,7 @@
             // 
             // My_Courses
             // 
+            this.My_Courses.FullRowSelect = true;
             this.My_Courses.Location = new System.Drawing.Point(3, 214);
             this.My_Courses.Name = "My_Courses";
             this.My_Courses.Size = new System.Drawing.Size(844, 204);
