@@ -146,7 +146,9 @@
             // 
             // Search_Results
             // 
+            this.Search_Results.FullRowSelect = true;
             this.Search_Results.HoverSelection = true;
+            this.Search_Results.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Search_Results.Location = new System.Drawing.Point(4, 34);
             this.Search_Results.Name = "Search_Results";
             this.Search_Results.Size = new System.Drawing.Size(406, 164);
