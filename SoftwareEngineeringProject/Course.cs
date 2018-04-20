@@ -8,22 +8,22 @@ namespace SoftwareEngineeringProject
 {
     public class Course
     {
-        public string courseCode;
-        public string shortTitle;
-        public string longTitle;
-        public string beginTime;
-        public string endTime;
-        public string meets;
-        public string building;
-        public string room;
-        public List<string> prerequisites;
-        public int enrollment;
-        public int capacity;
-        public string professor;
-        public float yPos;
-        public float[] xPos;
-        public float height;
-        public List<System.Windows.Forms.Label> courseBoxes;
+        public readonly string courseCode;
+        public readonly string shortTitle;
+        public readonly string longTitle;
+        public readonly string beginTime;
+        public readonly string endTime;
+        public readonly string meets;
+        public readonly string building;
+        public readonly string room;
+        public readonly List<string> prerequisites;
+        public readonly int enrollment;
+        public readonly int capacity;
+        public readonly string professor;
+        private float yPos;
+        private float[] xPos;
+        private float height;
+        public readonly List<System.Windows.Forms.Label> courseBoxes = new List<System.Windows.Forms.Label>();
         public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity, string prof)
         {
             courseCode = code;
@@ -68,7 +68,6 @@ namespace SoftwareEngineeringProject
                 height -= yPos;
                 
                 xPos = new float[meets.Length];
-                courseBoxes = new List<System.Windows.Forms.Label>();
                 for (int i = 0; i < meets.Length; ++i)
                 {
                     switch (meets[i])
