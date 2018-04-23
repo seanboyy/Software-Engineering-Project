@@ -122,7 +122,26 @@ namespace SoftwareEngineeringProject
         //returns filtered list
         public List<Course> Filter_Popular(List<Course> tempList)
         {
-
+            //TO FIND THE "difficulty" LEVEL OF THE COURSE
+            //Take the course name
+            //chop off the letters
+            //int level = class number - (class number %100)/100
+            
+            //TO FIND THE NUM BER OF CREDITS (aproximately)
+            //If days per week = NA --> Int numCred = 3
+            //Find the days of the week the class meets (example: "MWF")
+            //Int numCred =  # of letters in that string
+            
+            //PopCourse = (numCred + level)/2
+                       
+            
+            //
+            
+            
+            
+            
+            
+            
             return tempList;
         }
     }
