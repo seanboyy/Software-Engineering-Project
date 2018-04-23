@@ -133,21 +133,13 @@ namespace SoftwareEngineeringProject
                 //int level = class number - (class number %100)/100
                 int level = 0;
                 int.TryParse((tempName[1])[0].ToString(), out level);  //if this fails level will remain 0
-
-                //TO FIND OPEN SEAT - CAPACITY RATIO
-               
-                //PER CENT OF SEATS OPEN IS LESS THAN 20%, GIVE 1
-                //LESS THAN 35%, GIVE 2
-                //LESS THAN 50%, GIVE 3
-                //ELSE, FILTER
-
-                //PopCourse = (numCred + level)/2
-
-
-                //
-
+ 
                 //if popularity score is under a certain point, course code begins with HUMA or WRIT or SSFT
-                //remove it from search_List
+                if(tempName[0] == "HUMA" | tempName[0] == "WRIT" | tempName[0] == "SSFT" | (tempC.creditHours+level)/2 > 3)
+                {
+                    //remove it from search_List
+                    search_List.Remove(tempC);
+                }  
             }
             return search_List;
         }
