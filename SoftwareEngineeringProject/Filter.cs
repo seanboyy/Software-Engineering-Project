@@ -120,29 +120,30 @@ namespace SoftwareEngineeringProject
 
         //takes pre-filtered list of classes
         //returns filtered list
-        public List<Course> Filter_Popular(List<Course> tempList)
+        public List<Course> Filter_Popular(List<Course> search_List)
         {
-            //TO FIND THE "difficulty" LEVEL OF THE COURSE
-            //Take the course name
-            //chop off the letters
-            //int level = class number - (class number %100)/100
-            
-            //TO FIND THE NUM BER OF CREDITS (aproximately)
-            //If days per week = NA --> Int numCred = 3
-            //Find the days of the week the class meets (example: "MWF")
-            //Int numCred =  # of letters in that string
-            
-            //PopCourse = (numCred + level)/2
-                       
-            
-            //
-            
-            
-            
-            
-            
-            
-            return tempList;
+            Course[] tempList = new Course[search_List.Count];
+            search_List.CopyTo(tempList);
+            foreach (Course tempC in tempList)
+            {
+                //TO FIND THE "difficulty" LEVEL OF THE COURSE
+                //Take the course name
+                //chop off the letters
+                //int level = class number - (class number %100)/100
+
+                //TO FIND THE NUMBER OF CREDITS (aproximately)
+                //If days per week = NA --> Int numCred = 3
+                //Find the days of the week the class meets (example: "MWF")
+                //Int numCred =  # of letters in that string
+
+                //PopCourse = (numCred + level)/2
+
+
+                //
+
+                //if popularity score is under a certain point, remove it from search_List
+            }
+            return search_List;
         }
     }
 }
