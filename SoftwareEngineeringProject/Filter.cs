@@ -128,20 +128,26 @@ namespace SoftwareEngineeringProject
             {
                 //TO FIND THE "difficulty" LEVEL OF THE COURSE
                 //Take the course name
+                string[] tempName = tempC.courseCode.Split(' ');
                 //chop off the letters
                 //int level = class number - (class number %100)/100
+                int level = 0;
+                int.TryParse((tempName[1])[0].ToString(), out level);  //if this fails level will remain 0
 
-                //TO FIND THE NUMBER OF CREDITS (aproximately)
-                //If days per week = NA --> Int numCred = 3
-                //Find the days of the week the class meets (example: "MWF")
-                //Int numCred =  # of letters in that string
+                //TO FIND OPEN SEAT - CAPACITY RATIO
+               
+                //PER CENT OF SEATS OPEN IS LESS THAN 20%, GIVE 1
+                //LESS THAN 35%, GIVE 2
+                //LESS THAN 50%, GIVE 3
+                //ELSE, FILTER
 
                 //PopCourse = (numCred + level)/2
 
 
                 //
 
-                //if popularity score is under a certain point, remove it from search_List
+                //if popularity score is under a certain point, course code begins with HUMA or WRIT or SSFT
+                //remove it from search_List
             }
             return search_List;
         }
