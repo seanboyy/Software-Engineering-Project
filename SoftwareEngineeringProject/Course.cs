@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 
 namespace SoftwareEngineeringProject
 {
+    public struct CourseCode
+    {
+        public CourseCode(string input)
+        {
+            string[] temp = input.Split(' ');
+            department = temp[0];
+            code = int.Parse(temp[1]);
+            section = "";
+            for(int i = 2; i < temp.Length; ++i)
+            {
+                section += temp[i];
+            }
+        }
+        public readonly string department;
+        public readonly int code;
+        public readonly string section;
+    }
     public class Course
     {
-        public readonly string courseCode;
+        public readonly CourseCode courseCode;
         public readonly string shortTitle;
         public readonly string longTitle;
         public readonly string beginTime;
@@ -25,9 +42,9 @@ namespace SoftwareEngineeringProject
         private float[] xPos;
         private float height;
         public readonly List<System.Windows.Forms.Label> courseBoxes = new List<System.Windows.Forms.Label>();
-        public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity, string prof)
+        public Course(string code, string shortTitle, string longTitle, string begin, string end, string days, string building, string room, int enroll, int capacity, string prof, int hours)
         {
-            courseCode = code;
+            courseCode = new CourseCode(code);
             this.shortTitle = shortTitle;
             this.longTitle = longTitle;
             beginTime = begin;
@@ -39,6 +56,7 @@ namespace SoftwareEngineeringProject
             this.capacity = capacity;
             prerequisites = new List<string>();
             professor = prof;
+            creditHours = hours;
         }
 
         //draws an appropriately sized box on the calendar for each class
