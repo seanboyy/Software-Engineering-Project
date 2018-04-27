@@ -16,17 +16,15 @@ namespace SoftwareEngineeringProject
             if(added_course.longTitle.Contains("Lab"))
             {
                 //parse courseCode on " "
-                string[] tempCode = added_course.courseCode.Split(' ');
-                if(tempCode.Length >1)
+                string posLect = added_course.courseCode.department + " " +added_course.courseCode.code.ToString();
+                foreach(Course course in COURSE_LIST)
                 {
-                    string posLect = tempCode[0] + tempCode[1];
-                    foreach(Course course in COURSE_LIST)
+                    string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
+                    if(tempCode.Contains(posLect))
                     {
-                        if (course.courseCode.Contains(posLect))
-                        {
-                            lectureList.Add(course);
-                        }
+                        lectureList.Add(course);
                     }
+                    
                 }
             }
              
@@ -43,17 +41,14 @@ namespace SoftwareEngineeringProject
             if (!(added_course.longTitle.Contains("Lab")))
             {
                 //determine if there is a corresponding lab for the class
-                string[] tempCode = added_course.courseCode.Split(' ');
-                if (tempCode.Length > 1)
+
+                string posLab = added_course.courseCode.department + " " + added_course.courseCode.code.ToString();
+                foreach(Course course in COURSE_LIST)
                 {
-                    string posLab = tempCode[0] + tempCode[1];
-                    foreach (Course course in COURSE_LIST)
-                    { 
-                        //same section number and a lab
-                        if(course.courseCode.Contains(posLab) && course.longTitle.Contains("Laboratory"))
-                        {
-                            labList.Add(course);
-                        }
+                    string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
+                    if(tempCode.Contains(posLab) && course.longTitle.Contains("Laboratory"))
+                    {
+                        labList.Add(course);
                     }
                 }
             }

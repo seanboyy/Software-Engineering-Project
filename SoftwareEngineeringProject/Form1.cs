@@ -68,8 +68,8 @@ namespace SoftwareEngineeringProject
             #region genSearch
             foreach (Course course in COURSE_LIST)
             {
-
-                if ((course.longTitle.Contains(input)) || (course.shortTitle.Contains(input)) || (course.courseCode.Contains(input)))
+                string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
+                if ((course.longTitle.Contains(input)) || (course.shortTitle.Contains(input)) || (tempCode.Contains(input)))
                 {
                     search_list.Add(course);
                 }
@@ -151,7 +151,8 @@ namespace SoftwareEngineeringProject
             {
                 string[] arr = new string[9];
                 ListViewItem itm;
-                arr[0] = temp.courseCode;
+                arr[0] =temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                
                 arr[1] = temp.longTitle;
                 arr[2] = temp.beginTime;
                 arr[3] = temp.endTime;
@@ -172,7 +173,8 @@ namespace SoftwareEngineeringProject
 
             foreach (Course temp in COURSE_LIST)
             {
-                if (temp.courseCode == course[0])
+                string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                if (tempCode == course[0])
                 {
                     string info = temp.courseCode + "\nCourse Name: " + temp.longTitle + "\nMeets on: " + temp.meets +
                         "\nIn: " + temp.building + " " + temp.room + "\nTaught by: " + temp.professor + "\nEmpty Seats: " + (temp.capacity - temp.enrollment).ToString() + "\nStarts at: " + temp.beginTime
@@ -199,7 +201,8 @@ namespace SoftwareEngineeringProject
             {
                 foreach (Course temp in COURSE_LIST)
                 {
-                    if (Search_Results.SelectedItems[0].ToString().Contains(temp.courseCode))
+                    string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                    if (Search_Results.SelectedItems[0].ToString().Contains(tempCode))
                     {
 
                         //add selected course to Schedule listview
@@ -219,7 +222,7 @@ namespace SoftwareEngineeringProject
                             //add temp to my_courses list view
                             string[] arr = new string[9];
                             ListViewItem itm;
-                            arr[0] = temp.courseCode;
+                            arr[0] =temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                             arr[1] = temp.longTitle;
                             arr[2] = temp.beginTime;
                             arr[3] = temp.endTime;
@@ -244,15 +247,15 @@ namespace SoftwareEngineeringProject
                 List<ListViewItem> listremove = new List<ListViewItem>();
                 foreach (Course temp in COURSE_LIST)
                 {
-
-                    if (tempCC.Contains(temp.courseCode))
+                    string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                    if (tempCC.Contains(tempCode))
                     {
                         //remove from Schedule
                         Schedule.Instance.RemoveClass(temp);
                         //remove from mycourses
                         foreach (ListViewItem tempItm in My_Courses.Items)
                         {
-                            if (tempItm.Text == temp.courseCode)
+                            if (tempItm.Text == tempCode)
                             {
                                 listremove.Add(tempItm);
                             }
@@ -284,7 +287,8 @@ namespace SoftwareEngineeringProject
                 //find course
                 foreach (Course temp in COURSE_LIST)
                 {
-                    if (tempCode == temp.courseCode)
+                    string temp_courseCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                    if (tempCode == temp_courseCode)
                     {
                         //remove from schedule
                         Schedule.Instance.RemoveClass(temp);
