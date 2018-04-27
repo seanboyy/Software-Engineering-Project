@@ -13,7 +13,7 @@ namespace SoftwareEngineeringProject
         {
             List<Course> lectureList = new List<Course>();
             //determine if courseCode is a lab time
-            if(added_course.longTitle.Contains("Laboratory"))
+            if(added_course.longTitle.Contains("Lab"))
             {
                 //parse courseCode on " "
                 string[] tempCode = added_course.courseCode.Split(' ');
@@ -40,7 +40,7 @@ namespace SoftwareEngineeringProject
             List<Course> labList = new List<Course>();
 
             //if the added class is not a lab
-            if (!(added_course.longTitle.Contains("Laboratory")))
+            if (!(added_course.longTitle.Contains("Lab")))
             {
                 //determine if there is a corresponding lab for the class
                 string[] tempCode = added_course.courseCode.Split(' ');

@@ -19,6 +19,7 @@ namespace SoftwareEngineeringProject
         public readonly List<string> prerequisites;
         public readonly int enrollment;
         public readonly int capacity;
+        public readonly int creditHours;
         public readonly string professor;
         private float yPos;
         private float[] xPos;

@@ -120,10 +120,28 @@ namespace SoftwareEngineeringProject
 
         //takes pre-filtered list of classes
         //returns filtered list
-        public List<Course> Filter_Popular(List<Course> tempList)
+        public List<Course> Filter_Popular(List<Course> search_List)
         {
-
-            return tempList;
+            Course[] tempList = new Course[search_List.Count];
+            search_List.CopyTo(tempList);
+            foreach (Course tempC in tempList)
+            {
+                //TO FIND THE "difficulty" LEVEL OF THE COURSE
+                //Take the course name
+                string[] tempName = tempC.courseCode.Split(' ');
+                //chop off the letters
+                //int level = class number - (class number %100)/100
+                int level = 0;
+                int.TryParse((tempName[1])[0].ToString(), out level);  //if this fails level will remain 0
+ 
+                //if popularity score is under a certain point, course code begins with HUMA or WRIT or SSFT
+                if(tempName[0] == "HUMA" | tempName[0] == "WRIT" | tempName[0] == "SSFT" | (tempC.creditHours+level)/2 > 3)
+                {
+                    //remove it from search_List
+                    search_List.Remove(tempC);
+                }  
+            }
+            return search_List;
         }
     }
 }
