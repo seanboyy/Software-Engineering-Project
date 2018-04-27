@@ -42,7 +42,7 @@ namespace SoftwareEngineeringProject
                 for (int j = 0; j < classes.Length; ++j)
                 {
                     //to find the class associated with the course code
-                    if(classes[j].courseCode.Contains(tempStr))
+                    if (classes[j].courseCode.department == tempStr.Split()[0] && classes[j].courseCode.code == int.Parse(tempStr.Split()[1]))
                     {
                         //add course code to prereq list
                         classes[j].prerequisites.Add(tokens[1]);
