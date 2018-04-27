@@ -128,14 +128,13 @@ namespace SoftwareEngineeringProject
             {
                 //TO FIND THE "difficulty" LEVEL OF THE COURSE
                 //Take the course name
-                string[] tempName = tempC.courseCode.Split(' ');
                 //chop off the letters
                 //int level = class number - (class number %100)/100
                 int level = 0;
-                int.TryParse((tempName[1])[0].ToString(), out level);  //if this fails level will remain 0
+                level = tempC.courseCode.code / 100;
  
                 //if popularity score is under a certain point, course code begins with HUMA or WRIT or SSFT
-                if(tempName[0] == "HUMA" | tempName[0] == "WRIT" | tempName[0] == "SSFT" | (tempC.creditHours+level)/2 > 3)
+                if(tempC.courseCode.department == "HUMA" | tempC.courseCode.department == "WRIT" | tempC.courseCode.department == "SSFT" | (tempC.creditHours+level)/2 > 3)
                 {
                     //remove it from search_List
                     search_List.Remove(tempC);
