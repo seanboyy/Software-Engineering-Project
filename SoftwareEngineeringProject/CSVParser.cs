@@ -28,7 +28,20 @@ namespace SoftwareEngineeringProject
                 //split the line based on \t
                 string[] tokens = lines[i + 1].Split('\t');
                 //use the constructor to build a course out of each line
-                classes[i] = new Course(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5], tokens[6], tokens[7], int.Parse(tokens[8]), int.Parse(tokens[9]), tokens[10], int.Parse(tokens[11]));
+                classes[i] = new Course(
+                    tokens[0],
+                    tokens[1],
+                    tokens[2],
+                    tokens[3],
+                    tokens[4],
+                    tokens[5],
+                    tokens[6],
+                    tokens[7],
+                    int.Parse(tokens[8]),
+                    int.Parse(tokens[9]),
+                    tokens[10],
+                    int.Parse(tokens[11])
+                    );
             }
 
             //start grabbing prerequisites
