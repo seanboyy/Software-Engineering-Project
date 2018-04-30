@@ -424,8 +424,8 @@ namespace SoftwareEngineeringProject
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ConflictPopup popup = new ConflictPopup();
-            popup.Show();
+            //ConflictPopup popup = new ConflictPopup();
+            //popup.Show();
         }
     }
 }

@@ -12,9 +12,11 @@ namespace SoftwareEngineeringProject
 {
     public partial class ConflictPopup : Form
     {
-        public ConflictPopup()
+        public ConflictPopup(string name1, string name2)
         {
             InitializeComponent();
+            label2.Text = name1;
+            label4.Text = name2;
         }
     }
 }

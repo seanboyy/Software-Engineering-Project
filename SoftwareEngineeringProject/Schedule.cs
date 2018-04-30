@@ -19,7 +19,7 @@ namespace SoftwareEngineeringProject
         {
             get
             {
-                if(instance == null)
+                if (instance == null)
                 {
                     instance = new Schedule();
                 }
@@ -29,6 +29,15 @@ namespace SoftwareEngineeringProject
 
         public void AddClass(Course course)
         {
+            foreach (Course _course in classes)
+            {
+                if (course.beginTime == _course.beginTime && course.meets == _course.meets)
+                {
+                    ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle);
+                    popup.Show();
+                    return;
+                }
+            }
             classes.Add(course);
         }
 
