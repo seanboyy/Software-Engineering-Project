@@ -363,10 +363,6 @@ namespace SoftwareEngineeringProject
             ClearAllButDay();
         }
 
-        private void checkTue_CheckedChanged(object sender, EventArgs e)
-        {
-            ClearAllButDay();
-        }
 
         private void checkWed_CheckedChanged(object sender, EventArgs e)
         {
@@ -422,10 +418,10 @@ namespace SoftwareEngineeringProject
             checkFri.Checked = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            ConflictPopup popup = new ConflictPopup();
-            popup.Show();
+
         }
     }
 }

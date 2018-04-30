@@ -33,19 +33,20 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.My_Courses = new System.Windows.Forms.ListView();
+            this.RemoveCourseButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Search_Results = new System.Windows.Forms.ListView();
             this.Search = new System.Windows.Forms.Button();
+            this.AddCoursesButton = new System.Windows.Forms.Button();
             this.SearchBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.AllButton = new System.Windows.Forms.RadioButton();
-            this.RemoveCourseButton = new System.Windows.Forms.Button();
-            this.AddCoursesButton = new System.Windows.Forms.Button();
             this.cbEnd = new System.Windows.Forms.ComboBox();
             this.cbBegin = new System.Windows.Forms.ComboBox();
-            this.endAP = new System.Windows.Forms.ComboBox();
-            this.beginAP = new System.Windows.Forms.ComboBox();
             this.endText = new System.Windows.Forms.RichTextBox();
             this.to = new System.Windows.Forms.TextBox();
             this.beginTime = new System.Windows.Forms.RichTextBox();
@@ -58,7 +59,6 @@
             this.DayButton = new System.Windows.Forms.RadioButton();
             this.PopularCourseButton = new System.Windows.Forms.RadioButton();
             this.TimeButton = new System.Windows.Forms.RadioButton();
-            this.My_Courses = new System.Windows.Forms.ListView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.RemoveCourseButtonCal = new System.Windows.Forms.Button();
             this.Details_txt = new System.Windows.Forms.RichTextBox();
@@ -70,10 +70,10 @@
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SearchHelp = new System.Windows.Forms.ToolTip(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,7 +89,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(864, 455);
+            this.tabControl1.Size = new System.Drawing.Size(940, 478);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -98,7 +98,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(856, 429);
+            this.tabPage1.Size = new System.Drawing.Size(932, 452);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Search";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -108,22 +108,62 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.My_Courses, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(850, 423);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(926, 446);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.My_Courses);
+            this.panel3.Controls.Add(this.RemoveCourseButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 226);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(920, 217);
+            this.panel3.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Current Courses:";
+            // 
+            // My_Courses
+            // 
+            this.My_Courses.FullRowSelect = true;
+            this.My_Courses.Location = new System.Drawing.Point(3, 33);
+            this.My_Courses.Name = "My_Courses";
+            this.My_Courses.Size = new System.Drawing.Size(910, 181);
+            this.My_Courses.TabIndex = 20;
+            this.My_Courses.UseCompatibleStateImageBehavior = false;
+            // 
+            // RemoveCourseButton
+            // 
+            this.RemoveCourseButton.Location = new System.Drawing.Point(824, 5);
+            this.RemoveCourseButton.Name = "RemoveCourseButton";
+            this.RemoveCourseButton.Size = new System.Drawing.Size(89, 22);
+            this.RemoveCourseButton.TabIndex = 19;
+            this.RemoveCourseButton.Text = "Remove Course";
+            this.RemoveCourseButton.UseVisualStyleBackColor = true;
+            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.88152F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.11848F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.6087F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.3913F));
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,18 +171,19 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(844, 205);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(920, 217);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.Search_Results);
             this.panel2.Controls.Add(this.Search);
+            this.panel2.Controls.Add(this.AddCoursesButton);
             this.panel2.Controls.Add(this.SearchBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(415, 199);
+            this.panel2.Size = new System.Drawing.Size(662, 211);
             this.panel2.TabIndex = 1;
             // 
             // Search_Results
@@ -152,7 +193,7 @@
             this.Search_Results.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Search_Results.Location = new System.Drawing.Point(4, 34);
             this.Search_Results.Name = "Search_Results";
-            this.Search_Results.Size = new System.Drawing.Size(406, 164);
+            this.Search_Results.Size = new System.Drawing.Size(655, 164);
             this.Search_Results.TabIndex = 4;
             this.Search_Results.UseCompatibleStateImageBehavior = false;
             // 
@@ -166,6 +207,16 @@
             this.Search.UseVisualStyleBackColor = true;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
+            // AddCoursesButton
+            // 
+            this.AddCoursesButton.Location = new System.Drawing.Point(580, 5);
+            this.AddCoursesButton.Name = "AddCoursesButton";
+            this.AddCoursesButton.Size = new System.Drawing.Size(79, 22);
+            this.AddCoursesButton.TabIndex = 18;
+            this.AddCoursesButton.Text = "Add Course";
+            this.AddCoursesButton.UseVisualStyleBackColor = true;
+            this.AddCoursesButton.Click += new System.EventHandler(this.AddCoursesButton_Click);
+            // 
             // SearchBox
             // 
             this.SearchBox.Location = new System.Drawing.Point(4, 4);
@@ -178,14 +229,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.AllButton);
-            this.panel1.Controls.Add(this.RemoveCourseButton);
-            this.panel1.Controls.Add(this.AddCoursesButton);
             this.panel1.Controls.Add(this.cbEnd);
             this.panel1.Controls.Add(this.cbBegin);
-            this.panel1.Controls.Add(this.endAP);
-            this.panel1.Controls.Add(this.beginAP);
             this.panel1.Controls.Add(this.endText);
             this.panel1.Controls.Add(this.to);
             this.panel1.Controls.Add(this.beginTime);
@@ -199,16 +245,16 @@
             this.panel1.Controls.Add(this.PopularCourseButton);
             this.panel1.Controls.Add(this.TimeButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(424, 3);
+            this.panel1.Location = new System.Drawing.Point(671, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(417, 199);
+            this.panel1.Size = new System.Drawing.Size(246, 211);
             this.panel1.TabIndex = 0;
             // 
             // AllButton
             // 
             this.AllButton.AutoSize = true;
             this.AllButton.Checked = true;
-            this.AllButton.Location = new System.Drawing.Point(4, 94);
+            this.AllButton.Location = new System.Drawing.Point(30, 180);
             this.AllButton.Name = "AllButton";
             this.AllButton.Size = new System.Drawing.Size(64, 17);
             this.AllButton.TabIndex = 20;
@@ -216,26 +262,6 @@
             this.AllButton.Text = "No Filter";
             this.AllButton.UseVisualStyleBackColor = true;
             this.AllButton.CheckedChanged += new System.EventHandler(this.AllButton_CheckedChanged);
-            // 
-            // RemoveCourseButton
-            // 
-            this.RemoveCourseButton.Location = new System.Drawing.Point(277, 152);
-            this.RemoveCourseButton.Name = "RemoveCourseButton";
-            this.RemoveCourseButton.Size = new System.Drawing.Size(111, 23);
-            this.RemoveCourseButton.TabIndex = 19;
-            this.RemoveCourseButton.Text = "Remove Course";
-            this.RemoveCourseButton.UseVisualStyleBackColor = true;
-            this.RemoveCourseButton.Click += new System.EventHandler(this.RemoveCourseButton_Click);
-            // 
-            // AddCoursesButton
-            // 
-            this.AddCoursesButton.Location = new System.Drawing.Point(28, 152);
-            this.AddCoursesButton.Name = "AddCoursesButton";
-            this.AddCoursesButton.Size = new System.Drawing.Size(111, 23);
-            this.AddCoursesButton.TabIndex = 18;
-            this.AddCoursesButton.Text = "Add Course";
-            this.AddCoursesButton.UseVisualStyleBackColor = true;
-            this.AddCoursesButton.Click += new System.EventHandler(this.AddCoursesButton_Click);
             // 
             // cbEnd
             // 
@@ -246,7 +272,7 @@
             this.cbEnd.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.cbEnd.Location = new System.Drawing.Point(277, 23);
+            this.cbEnd.Location = new System.Drawing.Point(157, 60);
             this.cbEnd.Name = "cbEnd";
             this.cbEnd.Size = new System.Drawing.Size(43, 21);
             this.cbEnd.TabIndex = 17;
@@ -261,43 +287,15 @@
             this.cbBegin.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.cbBegin.Location = new System.Drawing.Point(132, 23);
+            this.cbBegin.Location = new System.Drawing.Point(157, 31);
             this.cbBegin.Name = "cbBegin";
             this.cbBegin.Size = new System.Drawing.Size(43, 21);
             this.cbBegin.TabIndex = 16;
             this.cbBegin.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // endAP
-            // 
-            this.endAP.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.endAP.FormattingEnabled = true;
-            this.endAP.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.endAP.Location = new System.Drawing.Point(277, 23);
-            this.endAP.Name = "endAP";
-            this.endAP.Size = new System.Drawing.Size(43, 21);
-            this.endAP.TabIndex = 17;
-            // 
-            // beginAP
-            // 
-            this.beginAP.AutoCompleteCustomSource.AddRange(new string[] {
-            "AM",
-            "PM"});
-            this.beginAP.FormattingEnabled = true;
-            this.beginAP.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.beginAP.Location = new System.Drawing.Point(132, 23);
-            this.beginAP.Name = "beginAP";
-            this.beginAP.Size = new System.Drawing.Size(43, 21);
-            this.beginAP.TabIndex = 16;
-            // 
             // endText
             // 
-            this.endText.Location = new System.Drawing.Point(199, 23);
+            this.endText.Location = new System.Drawing.Point(85, 60);
             this.endText.Multiline = false;
             this.endText.Name = "endText";
             this.endText.Size = new System.Drawing.Size(66, 22);
@@ -308,7 +306,7 @@
             // to
             // 
             this.to.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.to.Location = new System.Drawing.Point(181, 30);
+            this.to.Location = new System.Drawing.Point(62, 63);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(17, 13);
             this.to.TabIndex = 14;
@@ -316,7 +314,7 @@
             // 
             // beginTime
             // 
-            this.beginTime.Location = new System.Drawing.Point(59, 23);
+            this.beginTime.Location = new System.Drawing.Point(85, 30);
             this.beginTime.Multiline = false;
             this.beginTime.Name = "beginTime";
             this.beginTime.Size = new System.Drawing.Size(66, 22);
@@ -327,18 +325,17 @@
             // checkTue
             // 
             this.checkTue.AutoSize = true;
-            this.checkTue.Location = new System.Drawing.Point(125, 50);
+            this.checkTue.Location = new System.Drawing.Point(169, 88);
             this.checkTue.Name = "checkTue";
             this.checkTue.Size = new System.Drawing.Size(67, 17);
             this.checkTue.TabIndex = 12;
             this.checkTue.Text = "Tuesday";
             this.checkTue.UseVisualStyleBackColor = true;
-            this.checkTue.CheckedChanged += new System.EventHandler(this.checkTue_CheckedChanged);
             // 
             // checkWed
             // 
             this.checkWed.AutoSize = true;
-            this.checkWed.Location = new System.Drawing.Point(195, 50);
+            this.checkWed.Location = new System.Drawing.Point(85, 111);
             this.checkWed.Name = "checkWed";
             this.checkWed.Size = new System.Drawing.Size(83, 17);
             this.checkWed.TabIndex = 11;
@@ -349,7 +346,7 @@
             // checkThu
             // 
             this.checkThu.AutoSize = true;
-            this.checkThu.Location = new System.Drawing.Point(279, 50);
+            this.checkThu.Location = new System.Drawing.Point(169, 111);
             this.checkThu.Name = "checkThu";
             this.checkThu.Size = new System.Drawing.Size(70, 17);
             this.checkThu.TabIndex = 10;
@@ -360,7 +357,7 @@
             // checkFri
             // 
             this.checkFri.AutoSize = true;
-            this.checkFri.Location = new System.Drawing.Point(349, 50);
+            this.checkFri.Location = new System.Drawing.Point(85, 134);
             this.checkFri.Name = "checkFri";
             this.checkFri.Size = new System.Drawing.Size(54, 17);
             this.checkFri.TabIndex = 9;
@@ -371,7 +368,7 @@
             // checkMon
             // 
             this.checkMon.AutoSize = true;
-            this.checkMon.Location = new System.Drawing.Point(55, 50);
+            this.checkMon.Location = new System.Drawing.Point(85, 88);
             this.checkMon.Name = "checkMon";
             this.checkMon.Size = new System.Drawing.Size(64, 17);
             this.checkMon.TabIndex = 7;
@@ -382,16 +379,16 @@
             // SearchLabel
             // 
             this.SearchLabel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SearchLabel.Location = new System.Drawing.Point(4, 4);
+            this.SearchLabel.Location = new System.Drawing.Point(30, 9);
             this.SearchLabel.Name = "SearchLabel";
             this.SearchLabel.Size = new System.Drawing.Size(65, 13);
             this.SearchLabel.TabIndex = 6;
-            this.SearchLabel.Text = "Search By:";
+            this.SearchLabel.Text = "Filter By:";
             // 
             // DayButton
             // 
             this.DayButton.AutoSize = true;
-            this.DayButton.Location = new System.Drawing.Point(4, 48);
+            this.DayButton.Location = new System.Drawing.Point(30, 86);
             this.DayButton.Name = "DayButton";
             this.DayButton.Size = new System.Drawing.Size(49, 17);
             this.DayButton.TabIndex = 5;
@@ -402,7 +399,7 @@
             // PopularCourseButton
             // 
             this.PopularCourseButton.AutoSize = true;
-            this.PopularCourseButton.Location = new System.Drawing.Point(4, 71);
+            this.PopularCourseButton.Location = new System.Drawing.Point(30, 157);
             this.PopularCourseButton.Name = "PopularCourseButton";
             this.PopularCourseButton.Size = new System.Drawing.Size(102, 17);
             this.PopularCourseButton.TabIndex = 4;
@@ -413,21 +410,12 @@
             // TimeButton
             // 
             this.TimeButton.AutoSize = true;
-            this.TimeButton.Location = new System.Drawing.Point(4, 25);
+            this.TimeButton.Location = new System.Drawing.Point(31, 31);
             this.TimeButton.Name = "TimeButton";
             this.TimeButton.Size = new System.Drawing.Size(48, 17);
             this.TimeButton.TabIndex = 0;
             this.TimeButton.Text = "Time";
             this.TimeButton.UseVisualStyleBackColor = true;
-            // 
-            // My_Courses
-            // 
-            this.My_Courses.FullRowSelect = true;
-            this.My_Courses.Location = new System.Drawing.Point(3, 214);
-            this.My_Courses.Name = "My_Courses";
-            this.My_Courses.Size = new System.Drawing.Size(844, 204);
-            this.My_Courses.TabIndex = 1;
-            this.My_Courses.UseCompatibleStateImageBehavior = false;
             // 
             // tabPage2
             // 
@@ -437,7 +425,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(856, 429);
+            this.tabPage2.Size = new System.Drawing.Size(932, 452);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Calendar";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -528,22 +516,12 @@
             // 
             this.SearchHelp.ForeColor = System.Drawing.Color.Ivory;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(199, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AcceptButton = this.Search;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 455);
+            this.ClientSize = new System.Drawing.Size(940, 478);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -551,6 +529,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -597,13 +577,12 @@
         private System.Windows.Forms.ComboBox cbEnd;
         private System.Windows.Forms.ComboBox cbBegin;
         private System.Windows.Forms.Button AddCoursesButton;
-        private System.Windows.Forms.ComboBox endAP;
-        private System.Windows.Forms.ComboBox beginAP;
         private System.Windows.Forms.RichTextBox Details_txt;
         private System.Windows.Forms.Button RemoveCourseButton;
         private System.Windows.Forms.Button RemoveCourseButtonCal;
         private System.Windows.Forms.RadioButton AllButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }
 
