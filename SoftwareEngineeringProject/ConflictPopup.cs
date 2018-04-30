@@ -17,6 +17,17 @@ namespace SoftwareEngineeringProject
             InitializeComponent();
             label2.Text = name1;
             label4.Text = name2;
+            //add columns to search results list
+            SuggestedCoursesList.View = View.Details;
+            SuggestedCoursesList.Columns.Add("Code", 100);
+            SuggestedCoursesList.Columns.Add("Course Name", 200);
+            SuggestedCoursesList.Columns.Add("Begin Time", 100);
+            SuggestedCoursesList.Columns.Add("End Time", 100);
+            SuggestedCoursesList.Columns.Add("Meets", 100);
+            SuggestedCoursesList.Columns.Add("Building", 100);
+            SuggestedCoursesList.Columns.Add("Room", 100);
+            SuggestedCoursesList.Columns.Add("Open Seats", 100);
+            SuggestedCoursesList.Columns.Add("Professor", 150);
         }
     }
 }

@@ -43,7 +43,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Add_Different = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.SuggestedCoursesList = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,7 +171,7 @@
             // 
             this.panel3.Controls.Add(this.Add_Different);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.listView1);
+            this.panel3.Controls.Add(this.SuggestedCoursesList);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 133);
             this.panel3.Name = "panel3";
@@ -196,14 +196,14 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Or maybe you would like to try a different section";
             // 
-            // listView1
+            // SuggestedCoursesList
             // 
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(-3, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(440, 73);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.SuggestedCoursesList.FullRowSelect = true;
+            this.SuggestedCoursesList.Location = new System.Drawing.Point(-3, 25);
+            this.SuggestedCoursesList.Name = "SuggestedCoursesList";
+            this.SuggestedCoursesList.Size = new System.Drawing.Size(440, 73);
+            this.SuggestedCoursesList.TabIndex = 0;
+            this.SuggestedCoursesList.UseCompatibleStateImageBehavior = false;
             // 
             // ConflictPopup
             // 
@@ -244,6 +244,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button Add_Different;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView SuggestedCoursesList;
     }
 }
