@@ -142,9 +142,14 @@ namespace SoftwareEngineeringProject
                 
             }
             #endregion
-            /*
-             * TODO: filter by popular courses if radio button selected
-             */
+
+            //filter by popular courses
+            #region filter_popular
+            if(PopularCourseButton.Checked)
+            {
+                search_list = filter.Filter_Popular(search_list);
+            }
+            #endregion
 
             //get class information from search_list into SearchResults
             foreach (Course temp in search_list)
