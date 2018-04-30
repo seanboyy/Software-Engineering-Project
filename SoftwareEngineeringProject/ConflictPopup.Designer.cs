@@ -33,17 +33,17 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.Class_1_Remove = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.Class_2_Remove = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Add_Different = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,14 +102,14 @@
             this.panel1.Size = new System.Drawing.Size(211, 118);
             this.panel1.TabIndex = 0;
             // 
-            // label2
+            // Class_1_Remove
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.Class_1_Remove.Location = new System.Drawing.Point(64, 82);
+            this.Class_1_Remove.Name = "Class_1_Remove";
+            this.Class_1_Remove.Size = new System.Drawing.Size(80, 23);
+            this.Class_1_Remove.TabIndex = 2;
+            this.Class_1_Remove.Text = "Remove";
+            this.Class_1_Remove.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -119,6 +119,15 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 1;
             this.label3.Text = "label3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "label2";
             // 
             // panel2
             // 
@@ -131,14 +140,14 @@
             this.panel2.Size = new System.Drawing.Size(211, 118);
             this.panel2.TabIndex = 1;
             // 
-            // label4
+            // Class_2_Remove
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "label4";
+            this.Class_2_Remove.Location = new System.Drawing.Point(69, 82);
+            this.Class_2_Remove.Name = "Class_2_Remove";
+            this.Class_2_Remove.Size = new System.Drawing.Size(80, 23);
+            this.Class_2_Remove.TabIndex = 3;
+            this.Class_2_Remove.Text = "Remove";
+            this.Class_2_Remove.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -149,14 +158,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "label5";
             // 
-            // Class_1_Remove
+            // label4
             // 
-            this.Class_1_Remove.Location = new System.Drawing.Point(64, 82);
-            this.Class_1_Remove.Name = "Class_1_Remove";
-            this.Class_1_Remove.Size = new System.Drawing.Size(80, 23);
-            this.Class_1_Remove.TabIndex = 2;
-            this.Class_1_Remove.Text = "Remove";
-            this.Class_1_Remove.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "label4";
             // 
             // panel3
             // 
@@ -169,22 +178,14 @@
             this.panel3.Size = new System.Drawing.Size(434, 124);
             this.panel3.TabIndex = 1;
             // 
-            // Class_2_Remove
+            // Add_Different
             // 
-            this.Class_2_Remove.Location = new System.Drawing.Point(69, 82);
-            this.Class_2_Remove.Name = "Class_2_Remove";
-            this.Class_2_Remove.Size = new System.Drawing.Size(80, 23);
-            this.Class_2_Remove.TabIndex = 3;
-            this.Class_2_Remove.Text = "Remove";
-            this.Class_2_Remove.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(-3, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(440, 73);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.Add_Different.Location = new System.Drawing.Point(3, 98);
+            this.Add_Different.Name = "Add_Different";
+            this.Add_Different.Size = new System.Drawing.Size(80, 23);
+            this.Add_Different.TabIndex = 4;
+            this.Add_Different.Text = "Add";
+            this.Add_Different.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -195,14 +196,14 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Or maybe you would like to try a different section";
             // 
-            // Add_Different
+            // listView1
             // 
-            this.Add_Different.Location = new System.Drawing.Point(3, 98);
-            this.Add_Different.Name = "Add_Different";
-            this.Add_Different.Size = new System.Drawing.Size(80, 23);
-            this.Add_Different.TabIndex = 4;
-            this.Add_Different.Text = "Add";
-            this.Add_Different.UseVisualStyleBackColor = true;
+            this.listView1.FullRowSelect = true;
+            this.listView1.Location = new System.Drawing.Point(-3, 25);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(440, 73);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ConflictPopup
             // 

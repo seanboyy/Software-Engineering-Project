@@ -46,7 +46,7 @@ namespace SoftwareEngineeringProject
                 foreach(Course course in COURSE_LIST)
                 {
                     string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
-                    if(tempCode.Contains(posLab) && course.longTitle.Contains("Laboratory"))
+                    if(tempCode.Contains(posLab) && course.longTitle.Contains("Lab"))
                     {
                         labList.Add(course);
                     }

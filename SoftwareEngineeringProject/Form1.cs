@@ -142,9 +142,14 @@ namespace SoftwareEngineeringProject
                 
             }
             #endregion
-            /*
-             * TODO: filter by popular courses if radio button selected
-             */
+
+            //filter by popular courses
+            #region filter_popular
+            if(PopularCourseButton.Checked)
+            {
+                search_list = filter.Filter_Popular(search_list);
+            }
+            #endregion
 
             //get class information from search_list into SearchResults
             foreach (Course temp in search_list)
@@ -363,10 +368,6 @@ namespace SoftwareEngineeringProject
             ClearAllButDay();
         }
 
-        private void checkTue_CheckedChanged(object sender, EventArgs e)
-        {
-            ClearAllButDay();
-        }
 
         private void checkWed_CheckedChanged(object sender, EventArgs e)
         {
@@ -420,12 +421,6 @@ namespace SoftwareEngineeringProject
             checkWed.Checked = false;
             checkThu.Checked = false;
             checkFri.Checked = false;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //ConflictPopup popup = new ConflictPopup();
-            //popup.Show();
         }
     }
 }
