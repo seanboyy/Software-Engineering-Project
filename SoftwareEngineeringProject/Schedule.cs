@@ -27,13 +27,23 @@ namespace SoftwareEngineeringProject
             }
         }
 
-        public void AddClass(Course course)
+        public void AddClass(Course course, Course[] COURSE_LIST)
         {
             foreach (Course _course in classes)
             {
                 if (course.beginTime == _course.beginTime && (course.meets.Contains(_course.meets) || _course.meets.Contains(course.meets)))
                 {
-                    ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle);
+                    string tempCode1 = _course.courseCode.department + " " + _course.courseCode.code.ToString() + " " + _course.courseCode.section;
+                    string tempCode2 = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
+                    List<Course> suggestions = new List<Course>();
+                    foreach(Course temp in COURSE_LIST)
+                    {
+                        if(temp.longTitle == course.longTitle && temp.courseCode.section != course.courseCode.section)
+                        {
+                            suggestions.Add(temp);
+                        }
+                    }
+                    ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle, tempCode1, tempCode2, suggestions);
                     popup.Show();
                     return;
                 }

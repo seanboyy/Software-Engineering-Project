@@ -73,7 +73,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 260);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(516, 295);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -88,7 +88,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(434, 124);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(510, 141);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -99,7 +99,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(211, 118);
+            this.panel1.Size = new System.Drawing.Size(249, 135);
             this.panel1.TabIndex = 0;
             // 
             // Class_1_Remove
@@ -135,9 +135,9 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(220, 3);
+            this.panel2.Location = new System.Drawing.Point(258, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 118);
+            this.panel2.Size = new System.Drawing.Size(249, 135);
             this.panel2.TabIndex = 1;
             // 
             // Class_2_Remove
@@ -173,14 +173,14 @@
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.SuggestedCoursesList);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 133);
+            this.panel3.Location = new System.Drawing.Point(3, 150);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(434, 124);
+            this.panel3.Size = new System.Drawing.Size(510, 142);
             this.panel3.TabIndex = 1;
             // 
             // Add_Different
             // 
-            this.Add_Different.Location = new System.Drawing.Point(3, 98);
+            this.Add_Different.Location = new System.Drawing.Point(0, 110);
             this.Add_Different.Name = "Add_Different";
             this.Add_Different.Size = new System.Drawing.Size(80, 23);
             this.Add_Different.TabIndex = 4;
@@ -201,7 +201,7 @@
             this.SuggestedCoursesList.FullRowSelect = true;
             this.SuggestedCoursesList.Location = new System.Drawing.Point(-3, 25);
             this.SuggestedCoursesList.Name = "SuggestedCoursesList";
-            this.SuggestedCoursesList.Size = new System.Drawing.Size(440, 73);
+            this.SuggestedCoursesList.Size = new System.Drawing.Size(516, 79);
             this.SuggestedCoursesList.TabIndex = 0;
             this.SuggestedCoursesList.UseCompatibleStateImageBehavior = false;
             // 
@@ -209,7 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 288);
+            this.ClientSize = new System.Drawing.Size(516, 323);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ConflictPopup";
