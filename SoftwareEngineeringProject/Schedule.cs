@@ -31,7 +31,7 @@ namespace SoftwareEngineeringProject
         {
             foreach (Course _course in classes)
             {
-                if (course.beginTime == _course.beginTime && course.meets == _course.meets)
+                if (course.beginTime == _course.beginTime && (course.meets.Contains(_course.meets) || _course.meets.Contains(course.meets)))
                 {
                     ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle);
                     popup.Show();
