@@ -8,14 +8,14 @@ using System.IO;
 
 namespace SoftwareEngineeringProject
 {
-    class CSVParser
+    public class CSVParser
     {
         public static Course[] ParseCSV()
         {
             
             //grab each line separately from both files
-            string[] lines = System.IO.File.ReadAllLines("courses.txt");
-            string[] lines2 = System.IO.File.ReadAllLines("prereqs.txt");
+            string[] lines = File.ReadAllLines("../../../courses.txt");
+            string[] lines2 = File.ReadAllLines("../../../prereqs.txt");
             //get the length of each one
             int lineCount = lines.Length;
             int lineCount2 = lines2.Length;
