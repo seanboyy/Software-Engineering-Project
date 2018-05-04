@@ -13,14 +13,14 @@ namespace SoftwareEngineeringProject
         {
             List<Course> lectureList = new List<Course>();
             //determine if courseCode is a lab time
-            if(added_course.longTitle.Contains("Lab"))
+            if(added_course.longTitle.Contains("LAB"))
             {
                 //parse courseCode on " "
                 string posLect = added_course.courseCode.department + " " +added_course.courseCode.code.ToString();
                 foreach(Course course in COURSE_LIST)
                 {
                     string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
-                    if(tempCode.Contains(posLect))
+                    if(tempCode.Contains(posLect) && !course.longTitle.Contains("LAB"))
                     {
                         lectureList.Add(course);
                     }
@@ -38,16 +38,17 @@ namespace SoftwareEngineeringProject
             List<Course> labList = new List<Course>();
 
             //if the added class is not a lab
-            if (!(added_course.longTitle.Contains("Lab")))
+            if (!(added_course.longTitle.Contains("LAB")))
             {
                 //determine if there is a corresponding lab for the class
-
+                Console.Write("This is not a lab");
                 string posLab = added_course.courseCode.department + " " + added_course.courseCode.code.ToString();
                 foreach(Course course in COURSE_LIST)
                 {
                     string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
-                    if(tempCode.Contains(posLab) && course.longTitle.Contains("Lab"))
+                    if(tempCode.Contains(posLab) && course.longTitle.Contains("LAB"))
                     {
+                        Console.Write("This has a corresponding lab");
                         labList.Add(course);
                     }
                 }
