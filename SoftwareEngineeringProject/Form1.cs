@@ -181,7 +181,7 @@ namespace SoftwareEngineeringProject
                 string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                 if (tempCode == course[0])
                 {
-                    string info = temp.courseCode + "\nCourse Name: " + temp.longTitle + "\nMeets on: " + temp.meets +
+                    string info = temp.courseCode.department + " " +temp.courseCode.code + " " + temp.courseCode.section + "\nCourse Name: " + temp.longTitle + "\nMeets on: " + temp.meets +
                         "\nIn: " + temp.building + " " + temp.room + "\nTaught by: " + temp.professor + "\nEmpty Seats: " + (temp.capacity - temp.enrollment).ToString() + "\nStarts at: " + temp.beginTime
                         + "\nEnds at: " + temp.endTime + "\nPrerequisites:\n";
                     bool prerequs = false;

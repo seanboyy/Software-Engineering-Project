@@ -109,7 +109,7 @@ namespace SoftwareEngineeringProject
                     }
                     courseBoxes.Add(new System.Windows.Forms.Label()
                     {
-                        Text = courseCode + "\n" + beginTime + "-" + endTime,
+                        Text = courseCode.department +" " + courseCode.code + " " + courseCode.section + "\n" + beginTime + "-" + endTime,
                         AutoSize = false,
                         Size = new System.Drawing.Size(size.Width / 5, (int)height),
                         Visible = false,
