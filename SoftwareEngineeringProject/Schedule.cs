@@ -56,13 +56,14 @@ namespace SoftwareEngineeringProject
             {
                 foreach (Course _course in labList)
                 {
-                    if (course.longTitle == _course.longTitle)
+                    if (course.longTitle == _course.longTitle) //checking for section already in schedule
                     {
                         inSchedule = true;
                     }
                 }
                 if (!inSchedule)
                 {
+                    //trigger popup
                     LabPopup popLab = new LabPopup(labList);
                     popLab.Show();
                 }
@@ -71,13 +72,14 @@ namespace SoftwareEngineeringProject
             {
                 foreach (Course _course in lectureList)
                 {
-                    if (course.longTitle == _course.longTitle)
+                    if (course.longTitle == _course.longTitle) //check for section already in schedule
                     {
                         inSchedule = true;
                     }
                 }
-                if (!inSchedule)
+                if (!inSchedule) 
                 {
+                    //trigger popup
                     LabPopup popLab = new LabPopup(lectureList);
                     popLab.Show();
                 }
