@@ -134,7 +134,7 @@ namespace SoftwareEngineeringProject
                 level = tempC.courseCode.code / 100;
  
                 //if popularity score is under a certain point, course code begins with HUMA or WRIT or SSFT
-                if(tempC.courseCode.department == "HUMA" | tempC.courseCode.department == "WRIT" | tempC.courseCode.department == "SSFT" | (tempC.creditHours+level)/2 > 2)
+                if(tempC.courseCode.department == "HUMA" | tempC.courseCode.department == "WRIT" | tempC.courseCode.department == "SSFT" | tempC.shortTitle.Contains("FIT/WELL") |(tempC.creditHours+level)/2 > 2)
                 {
                     //remove it from search_List
                     search_List.Remove(tempC);
