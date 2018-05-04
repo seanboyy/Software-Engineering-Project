@@ -57,7 +57,7 @@ namespace SoftwareEngineeringProject
                         }
 
                         //check for less/equal end
-                        else if (eR_hours < temp_E_H || (eR_hours == temp_E_H && eR_min < temp_E_M))
+                        else if (eR_hours < temp_E_H || (eR_hours == temp_E_H && eR_hours < temp_E_M))
                         {
                             search_List.Remove(tempC);
                         }

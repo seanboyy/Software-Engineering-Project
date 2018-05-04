@@ -64,7 +64,7 @@ namespace SoftwareEngineeringProject
                 if (!inSchedule)
                 {
                     //trigger popup
-                    LabPopup popLab = new LabPopup();
+                    LabPopup popLab = new LabPopup(labList);
                     popLab.Show();
                 }
             }
@@ -80,7 +80,7 @@ namespace SoftwareEngineeringProject
                 if (!inSchedule) 
                 {
                     //trigger popup
-                    LabPopup popLab = new LabPopup();
+                    LabPopup popLab = new LabPopup(lectureList);
                     popLab.Show();
                 }
             }
