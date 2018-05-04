@@ -17,6 +17,7 @@ Unit tests:
 	-TestProject
 	-UnitTest1.cs
 To run: open solution, ctrl-r-a
+Tests Find_Labs function in Lab_Lecture class
 
 Changes (SPRINT 1):
 	- instead of individual add buttons, there is one button that uses the selection from the list box
