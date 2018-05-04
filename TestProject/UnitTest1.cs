@@ -15,6 +15,7 @@ namespace TestProject
             for(int i = 0; i < courses.Count; ++i)
             {
                 Assert.AreEqual(courses[i].courseCode.department, "BIOL");
+                Assert.AreEqual(courses[i].courseCode.code, 102);
             }
         }
     }
