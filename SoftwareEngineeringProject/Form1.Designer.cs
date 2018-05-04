@@ -563,7 +563,7 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.ToolTip SearchHelp;
         private System.Windows.Forms.ListView Search_Results;
-        private System.Windows.Forms.ListView My_Courses;
+        public System.Windows.Forms.ListView My_Courses;
         private System.Windows.Forms.TextBox to;
         private System.Windows.Forms.RichTextBox beginTime;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;

@@ -45,7 +45,7 @@ namespace SoftwareEngineeringProject
             My_Courses.Columns.Add("Room", 60);
             My_Courses.Columns.Add("Open Seats", 75);
             My_Courses.Columns.Add("Professor", 150);
-
+            
             foreach (Course course in COURSE_LIST)
             {
                 course.setBoxes(WeekCalendar.Size, WeekCalendar.Location);
@@ -227,7 +227,7 @@ namespace SoftwareEngineeringProject
                             //add temp to my_courses list view
                             string[] arr = new string[9];
                             ListViewItem itm;
-                            arr[0] =temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                            arr[0] = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                             arr[1] = temp.longTitle;
                             arr[2] = temp.beginTime;
                             arr[3] = temp.endTime;
