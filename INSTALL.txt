@@ -11,12 +11,23 @@ The path to the .exe is as follows
 	- SoftwareEngineeringProject.exe
 To run, double click the .exe file.
 
-Changes:
+Unit tests:
+	-root
+	-SoftwareEngineeringProject
+	-TestProject
+	-UnitTest1.cs
+To run: open solution, ctrl-r-a
+
+Changes (SPRINT 1):
 	- instead of individual add buttons, there is one button that uses the selection from the list box
 	- instead of individual remove buttons, there are 2 (on search and calendar tabs) that remove based on user selection
 	- removed collapsible calendar functionality
 	- added AM/PM drop downs to avoid ambiguity for time filter
 	- also changed time filter drop down to user-inputted times, to allow for class time discrepancies 
 	
-Everything else in our sprint 1 breakdown works as expected.
-	- (https://docs.google.com/spreadsheets/d/1oKQSNMu295VGPaNDzGY4_ykkZrS3O8V7rkLE_NDJoG0/edit?usp=sharing) 
+Changes (SPRINT 2):
+	None
+
+Sprint 1 backlog: https://docs.google.com/spreadsheets/d/1oKQSNMu295VGPaNDzGY4_ykkZrS3O8V7rkLE_NDJoG0/edit?usp=sharing
+Sprint 2 backlog: https://docs.google.com/spreadsheets/d/1idBa2qbKXFT933tPzWrYURY2LgFbWyCOeaBQIL0W64o/edit?usp=sharing
+Product backlog: https://docs.google.com/spreadsheets/d/1-WqakRdhssYrqBsGVsq3r8nZlk90REujf9xyL7bj1pI/edit?usp=sharing
