@@ -91,5 +91,20 @@ namespace SoftwareEngineeringProject
         {
             classes.RemoveAll(i => (i.courseCode.code == course.courseCode.code && i.courseCode.department == course.courseCode.department && i.courseCode.section == course.courseCode.section));
         }
+        
+        public bool InSchedule(Course course)
+        {
+            return classes.Contains(course);
+        }
+        public bool InSchedule(string coursecode)
+        {
+            foreach(Course temp in classes)
+            {
+                string tempcode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
+                if (coursecode.Contains(tempcode))
+                    return true;
+            }
+            return false;
+        }
     }
 }
