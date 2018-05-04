@@ -22,6 +22,10 @@ namespace SoftwareEngineeringProject
                     string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
                     if(tempCode.Contains(posLect) && !course.longTitle.Contains("LAB"))
                     {
+                        if(Schedule.Instance.InSchedule(course))
+                        {
+                            return new List<Course>();
+                        }
                         lectureList.Add(course);
                     }
                     
@@ -41,14 +45,16 @@ namespace SoftwareEngineeringProject
             if (!(added_course.longTitle.Contains("LAB")))
             {
                 //determine if there is a corresponding lab for the class
-                Console.Write("This is not a lab");
                 string posLab = added_course.courseCode.department + " " + added_course.courseCode.code.ToString();
                 foreach(Course course in COURSE_LIST)
                 {
                     string tempCode = course.courseCode.department + " " + course.courseCode.code.ToString() + " " + course.courseCode.section;
                     if(tempCode.Contains(posLab) && course.longTitle.Contains("LAB"))
                     {
-                        Console.Write("This has a corresponding lab");
+                        if (Schedule.Instance.InSchedule(course))
+                        {
+                            return new List<Course>();
+                        }
                         labList.Add(course);
                     }
                 }
