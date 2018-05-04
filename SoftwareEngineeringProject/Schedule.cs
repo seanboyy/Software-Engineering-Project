@@ -48,6 +48,40 @@ namespace SoftwareEngineeringProject
                     return;
                 }
             }
+            Lab_Lecture check = new Lab_Lecture();
+            List<Course> labList = check.Find_Labs(course, COURSE_LIST);
+            List<Course> lectureList = check.Find_Lectures(course, COURSE_LIST);
+            bool inSchedule = false;
+            if (labList.Any())
+            {
+                foreach (Course _course in labList)
+                {
+                    if (course.longTitle == _course.longTitle)
+                    {
+                        inSchedule = true;
+                    }
+                }
+                if (!inSchedule)
+                {
+                    LabPopup popLab = new LabPopup();
+                    popLab.Show();
+                }
+            }
+            if (lectureList.Any())
+            {
+                foreach (Course _course in lectureList)
+                {
+                    if (course.longTitle == _course.longTitle)
+                    {
+                        inSchedule = true;
+                    }
+                }
+                if (!inSchedule)
+                {
+                    LabPopup popLab = new LabPopup();
+                    popLab.Show();
+                }
+            }
             classes.Add(course);
         }
 

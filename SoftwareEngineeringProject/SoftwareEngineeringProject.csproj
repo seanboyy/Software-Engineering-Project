@@ -61,6 +61,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LabPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabPopup.Designer.cs">
+      <DependentUpon>LabPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lab_Lecture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
