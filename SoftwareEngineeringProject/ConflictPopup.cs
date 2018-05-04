@@ -12,16 +12,13 @@ namespace SoftwareEngineeringProject
 {
     public partial class ConflictPopup : Form
     {
-        public Form1 f1;
-        public Course[] COURSE_LIST;
         private string conflictCourse1;
         private string conflictCourse2;
         private string conflictCourseCode1;
         private string conflictCourseCode2;
-        public ConflictPopup(string name1, string name2, string code1, string code2, List<Course> suggested_list, Course[] COURSE_IN)
+        public ConflictPopup(string name1, string name2, string code1, string code2, List<Course> suggested_list)
         {
             InitializeComponent();
-            COURSE_LIST = COURSE_IN;
             conflictCourse1 = name1;
             conflictCourse2 = name2;
             conflictCourseCode1 = code1;
@@ -67,7 +64,7 @@ namespace SoftwareEngineeringProject
         private void Class_1_Remove_Click(object sender, EventArgs e)
         {
             List<ListViewItem> listremove = new List<ListViewItem>();
-            foreach (Course temp in COURSE_LIST)
+            foreach (Course temp in Form1.Instance.COURSE_LIST)
             {
                 string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                 if (conflictCourseCode1.Contains(tempCode))
@@ -75,7 +72,7 @@ namespace SoftwareEngineeringProject
                     //remove from Schedule
                     Schedule.Instance.RemoveClass(temp);
                     //remove from mycourses
-                    foreach (ListViewItem tempItm in f1.My_Courses.Items)
+                    foreach (ListViewItem tempItm in Form1.Instance.My_Courses.Items)
                     {
                         if (tempItm.Text == tempCode)
                         {
@@ -95,7 +92,7 @@ namespace SoftwareEngineeringProject
                 }
                 foreach(ListViewItem itmTemp in listremove)
                 {
-                    f1.My_Courses.Items.Remove(itmTemp);
+                    Form1.Instance.My_Courses.Items.Remove(itmTemp);
                 }
             }
         }
@@ -103,7 +100,7 @@ namespace SoftwareEngineeringProject
         private void Class_2_Remove_Click(object sender, EventArgs e)
         {
             List<ListViewItem> listremove = new List<ListViewItem>();
-            foreach (Course temp in COURSE_LIST)
+            foreach (Course temp in Form1.Instance.COURSE_LIST)
             {
                 string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                 if (conflictCourseCode2.Contains(tempCode))
@@ -111,7 +108,7 @@ namespace SoftwareEngineeringProject
                     //remove from Schedule
                     Schedule.Instance.RemoveClass(temp);
                     //remove from mycourses
-                    foreach (ListViewItem tempItm in f1.My_Courses.Items)
+                    foreach (ListViewItem tempItm in Form1.Instance.My_Courses.Items)
                     {
                         if (tempItm.Text == tempCode)
                         {
@@ -131,7 +128,7 @@ namespace SoftwareEngineeringProject
                 }
                 foreach (ListViewItem itmTemp in listremove)
                 {
-                    f1.My_Courses.Items.Remove(itmTemp);
+                    Form1.Instance.My_Courses.Items.Remove(itmTemp);
                 }
             }
         }
@@ -140,13 +137,13 @@ namespace SoftwareEngineeringProject
         {
             if (SuggestedCoursesList.SelectedItems.Count != 0)
             {
-                foreach (Course temp in COURSE_LIST)
+                foreach (Course temp in Form1.Instance.COURSE_LIST)
                 {
                     string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                     if (SuggestedCoursesList.SelectedItems[0].ToString().Contains(tempCode))
                     {
                         //add selected course to Schedule listview
-                        Schedule.Instance.AddClass(temp, COURSE_LIST);
+                        Schedule.Instance.AddClass(temp, Form1.Instance.COURSE_LIST);
                         //turn course visible to true (will appear on calendar
                         if (temp.courseBoxes != null)
                         {
@@ -172,7 +169,7 @@ namespace SoftwareEngineeringProject
                             arr[7] = (temp.capacity - temp.enrollment).ToString();
                             arr[8] = temp.professor;
                             itm = new ListViewItem(arr);
-                            f1.My_Courses.Items.Add(itm);
+                            Form1.Instance.My_Courses.Items.Add(itm);
                         }
                     }
                 }

@@ -14,11 +14,22 @@ namespace SoftwareEngineeringProject
 {
     public partial class Form1 : Form
     {
+        private static Form1 instance;
+
+        public static Form1 Instance
+        {
+            get
+            {
+                if (instance == null) instance = new Form1();
+                return instance;
+            }
+        }
+
         public Course[] COURSE_LIST = CSVParser.ParseCSV();
 
         public Filter filter = new Filter();
 
-        public Form1()
+        private Form1()
         {
             InitializeComponent();
 
@@ -209,9 +220,7 @@ namespace SoftwareEngineeringProject
                     string tempCode = temp.courseCode.department + " " + temp.courseCode.code.ToString() + " " + temp.courseCode.section;
                     if (Search_Results.SelectedItems[0].ToString().Contains(tempCode))
                     {
-
                         //add selected course to Schedule listview
-                        Schedule.Instance.f1in = this;
                         Schedule.Instance.AddClass(temp, COURSE_LIST);
                         //turn course visible to true (will appear on calendar
                         if (temp.courseBoxes != null)

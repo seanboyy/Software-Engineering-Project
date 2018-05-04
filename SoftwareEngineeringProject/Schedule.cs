@@ -8,7 +8,6 @@ namespace SoftwareEngineeringProject
 {
     class Schedule
     {
-        public Form1 f1in;
         private static Schedule instance;
         public List<Course> classes;
 
@@ -44,8 +43,7 @@ namespace SoftwareEngineeringProject
                             suggestions.Add(temp);
                         }
                     }
-                    ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle, tempCode1, tempCode2, suggestions, COURSE_LIST);
-                    popup.f1 = f1in;
+                    ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle, tempCode1, tempCode2, suggestions);
                     popup.Show();
                     return;
                 }

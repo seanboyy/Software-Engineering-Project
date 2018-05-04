@@ -110,6 +110,7 @@
             this.Class_1_Remove.TabIndex = 2;
             this.Class_1_Remove.Text = "Remove";
             this.Class_1_Remove.UseVisualStyleBackColor = true;
+            this.Class_1_Remove.Click += new System.EventHandler(this.Class_1_Remove_Click);
             // 
             // label3
             // 
@@ -148,6 +149,7 @@
             this.Class_2_Remove.TabIndex = 3;
             this.Class_2_Remove.Text = "Remove";
             this.Class_2_Remove.UseVisualStyleBackColor = true;
+            this.Class_2_Remove.Click += new System.EventHandler(this.Class_2_Remove_Click);
             // 
             // label5
             // 
@@ -186,6 +188,7 @@
             this.Add_Different.TabIndex = 4;
             this.Add_Different.Text = "Add";
             this.Add_Different.UseVisualStyleBackColor = true;
+            this.Add_Different.Click += new System.EventHandler(this.Add_Different_Click);
             // 
             // label6
             // 
