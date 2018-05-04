@@ -211,6 +211,7 @@ namespace SoftwareEngineeringProject
                     {
 
                         //add selected course to Schedule listview
+                        Schedule.Instance.f1in = this;
                         Schedule.Instance.AddClass(temp, COURSE_LIST);
                         //turn course visible to true (will appear on calendar
                         if (temp.courseBoxes != null)

@@ -10,26 +10,29 @@ using System.Windows.Forms;
 
 namespace SoftwareEngineeringProject
 {
-    public partial class ConflictPopup : Form1
+    public partial class ConflictPopup : Form
     {
+        public Form1 f1;
+        public Course[] COURSE_LIST;
         private string conflictCourse1;
         private string conflictCourse2;
         private string conflictCourseCode1;
         private string conflictCourseCode2;
-        public ConflictPopup(string name1, string name2, string code1, string code2, List<Course> suggested_list)
+        public ConflictPopup(string name1, string name2, string code1, string code2, List<Course> suggested_list, Course[] COURSE_IN)
         {
             InitializeComponent();
+            COURSE_LIST = COURSE_IN;
             conflictCourse1 = name1;
             conflictCourse2 = name2;
             conflictCourseCode1 = code1;
             conflictCourseCode2 = code2;
-
+            
             label2.Text = code1;
             label3.Text = name1;
 
             label4.Text = code2;
             label5.Text = name2;
-
+            
             //add columns to suggested replacements list
             SuggestedCoursesList.View = View.Details;
             SuggestedCoursesList.Columns.Add("Code", 100);
@@ -72,7 +75,7 @@ namespace SoftwareEngineeringProject
                     //remove from Schedule
                     Schedule.Instance.RemoveClass(temp);
                     //remove from mycourses
-                    foreach (ListViewItem tempItm in My_Courses.Items)
+                    foreach (ListViewItem tempItm in f1.My_Courses.Items)
                     {
                         if (tempItm.Text == tempCode)
                         {
@@ -92,7 +95,7 @@ namespace SoftwareEngineeringProject
                 }
                 foreach(ListViewItem itmTemp in listremove)
                 {
-                    My_Courses.Items.Remove(itmTemp);
+                    f1.My_Courses.Items.Remove(itmTemp);
                 }
             }
         }
@@ -108,7 +111,7 @@ namespace SoftwareEngineeringProject
                     //remove from Schedule
                     Schedule.Instance.RemoveClass(temp);
                     //remove from mycourses
-                    foreach (ListViewItem tempItm in My_Courses.Items)
+                    foreach (ListViewItem tempItm in f1.My_Courses.Items)
                     {
                         if (tempItm.Text == tempCode)
                         {
@@ -128,7 +131,7 @@ namespace SoftwareEngineeringProject
                 }
                 foreach (ListViewItem itmTemp in listremove)
                 {
-                    My_Courses.Items.Remove(itmTemp);
+                    f1.My_Courses.Items.Remove(itmTemp);
                 }
             }
         }
@@ -169,7 +172,7 @@ namespace SoftwareEngineeringProject
                             arr[7] = (temp.capacity - temp.enrollment).ToString();
                             arr[8] = temp.professor;
                             itm = new ListViewItem(arr);
-                            My_Courses.Items.Add(itm);
+                            f1.My_Courses.Items.Add(itm);
                         }
                     }
                 }
