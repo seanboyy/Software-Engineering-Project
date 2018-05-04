@@ -45,6 +45,7 @@ namespace SoftwareEngineeringProject
                     }
                     ConflictPopup popup = new ConflictPopup(_course.longTitle, course.longTitle, tempCode1, tempCode2, suggestions);
                     popup.Show();
+                    classes.Add(course);
                     return;
                 }
             }
